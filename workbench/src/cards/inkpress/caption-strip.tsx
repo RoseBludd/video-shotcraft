@@ -2,8 +2,8 @@ import React from "react";
 import { AbsoluteFill, interpolate, useCurrentFrame } from "remotion";
 import type { CardDef } from "../types";
 
-// 解说字幕条 · Ink Press —— 参数化版（源出 template/src/aifl/Caption.tsx）
-// 屏幕空间等宽小字 + 琥珀方点，8f 上浮入场、尾 8f 淡出（FIXED）。开放文案 / 底距 / 字号 / 颜色。
+// Caption Strip · Ink Press — parameterized version (derived from template/src/aifl/Caption.tsx)
+// Screen-space small mono text + amber square dot, 8f float-up entry, last 8f fade-out (FIXED). Exposed: copy / bottom offset / font size / colors.
 
 const MONO = "ui-monospace, SFMono-Regular, Menlo, monospace";
 
@@ -59,19 +59,19 @@ const CaptionStrip: React.FC<Props> = ({
 
 export const captionStripCard: CardDef = {
   id: "inkpress-caption",
-  name: "解说字幕条",
-  category: "工作台",
+  name: "Caption Strip",
+  category: "Workbench",
   durationInFrames: 60,
   accent: "#34c759",
   durationProp: "duration",
   component: CaptionStrip as React.ComponentType<Record<string, unknown>>,
-  summary: "底部通栏等宽解说条，琥珀方点引导；透明底，叠在任何镜头上",
+  summary: "Full-width bottom mono caption strip led by an amber square dot; transparent, layers over any shot",
   schema: [
-    { type: "text", key: "text", label: "文案", default: "SEARCH · FILTER · OPEN" },
-    { type: "slider", key: "bottom", label: "底距", default: 72, min: 20, max: 400, step: 2, unit: "px" },
-    { type: "slider", key: "fontSize", label: "字号", default: 22, min: 14, max: 48, step: 1, unit: "px" },
-    { type: "color", key: "color", label: "文字色", default: "#615c54" },
-    { type: "color", key: "accent", label: "方点色", default: "#b5651d" },
-    { type: "boolean", key: "uppercase", label: "全大写", default: true },
+    { type: "text", key: "text", label: "Copy", default: "SEARCH · FILTER · OPEN" },
+    { type: "slider", key: "bottom", label: "Bottom Offset", default: 72, min: 20, max: 400, step: 2, unit: "px" },
+    { type: "slider", key: "fontSize", label: "Font Size", default: 22, min: 14, max: 48, step: 1, unit: "px" },
+    { type: "color", key: "color", label: "Text Color", default: "#615c54" },
+    { type: "color", key: "accent", label: "Dot Color", default: "#b5651d" },
+    { type: "boolean", key: "uppercase", label: "Uppercase", default: true },
   ],
 };

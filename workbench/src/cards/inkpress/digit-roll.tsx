@@ -1,7 +1,7 @@
 import React from "react";
 import { Easing, interpolate, useCurrentFrame } from "remotion";
 
-// 里程表数字滚动（源出 template/src/aifl/DigitRoll.tsx，字卡副标用）
+// Odometer digit roll (derived from template/src/aifl/DigitRoll.tsx, used by the title-card subtitle)
 const DIGITS = "0123456789";
 
 export const DigitRoll: React.FC<{

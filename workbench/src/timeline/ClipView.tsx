@@ -6,7 +6,7 @@ import { useStore } from "../store";
 
 const SNAP_PX = 6;
 
-/** 吸附候选：其他 clip 的首尾 + 播放头（帧） */
+/** Snap candidates: other clips' edges + the playhead (frames) */
 const collectSnaps = (excludeClipId: string): number[] => {
   const s = useStore.getState();
   const out: number[] = [s.playhead, 0];
@@ -86,8 +86,8 @@ export const ClipView: React.FC<{
       const df = Math.round((ev.clientX - startX) / ppf);
       if (side === "left") {
         let d = df;
-        d = Math.max(d, -orig.start); // 不越过时间轴 0 点
-        d = Math.max(d, Math.ceil(-orig.inOffset / orig.speed)); // 裁入点不为负
+        d = Math.max(d, -orig.start); // never cross timeline 0
+        d = Math.max(d, Math.ceil(-orig.inOffset / orig.speed)); // trim-in never negative
         d = Math.min(d, orig.duration - 2);
         updateClip(clip.id, {
           start: orig.start + d,

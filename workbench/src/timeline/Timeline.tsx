@@ -6,7 +6,7 @@ import { DRAG_MIME, readDragPayload } from "../dnd";
 
 const HEADER_W = 140;
 
-/** 播放头竖线：唯一订阅 playhead 的时间轨组件——播放中每帧只动它 */
+/** Playhead vertical line: the only timeline component subscribing to the playhead — while playing, each frame moves only it */
 const PlayheadLine: React.FC = () => {
   const playhead = useStore((s) => s.playhead);
   const ppf = useStore((s) => s.pxPerFrame);
@@ -50,14 +50,14 @@ export const Timeline: React.FC = () => {
     if (w) setZoom((w - HEADER_W - 80) / duration);
   };
 
-  // —— 轨道拖拽排序：按住轨道头上下拖，蓝线标出插入位，松手落位（一步撤销）——
+  // —— Track drag reorder: hold the track header and drag up/down; a blue line marks the insert slot, drop to commit (one undo step)——
   const rowRefs = useRef(new Map<string, HTMLDivElement>());
-  /** 拖动中：被拖轨道 id + 目标插入位（原数组下标，0..tracks.length） */
+  /** While dragging: the dragged track id + target insert slot (original array index, 0..tracks.length) */
   const [trackDrag, setTrackDrag] = useState<{ id: string; to: number } | null>(null);
 
   const onTrackHeadDown = (trackId: string) => (e: React.PointerEvent) => {
     if (e.button !== 0) return;
-    if ((e.target as HTMLElement).closest("button")) return; // 👁 / ✕ 照常点击
+    if ((e.target as HTMLElement).closest("button")) return; // 👁 / ✕ clicks pass through
     e.preventDefault();
     const startY = e.clientY;
     const from = useStore.getState().project.tracks.findIndex((t) => t.id === trackId);
@@ -66,11 +66,11 @@ export const Timeline: React.FC = () => {
     let dragging = false;
     const onMove = (ev: PointerEvent) => {
       if (!dragging) {
-        if (Math.abs(ev.clientY - startY) < 4) return; // 抖动阈值：点一下不算拖
+        if (Math.abs(ev.clientY - startY) < 4) return; // jitter threshold: a click is not a drag
         dragging = true;
         setTrackDrag({ id: trackId, to });
       }
-      // 插入位 = 中线在指针上方的轨道数
+      // Insert slot = number of tracks whose centerline is above the pointer
       let idx = 0;
       for (const t of useStore.getState().project.tracks) {
         const el = rowRefs.current.get(t.id);
@@ -78,7 +78,7 @@ export const Timeline: React.FC = () => {
         const r = el.getBoundingClientRect();
         if (ev.clientY > r.top + r.height / 2) idx++;
       }
-      // 指针贴近时间轨上下边时自动滚动，轨道多时能拖到看不见的位置
+      // Auto-scroll when the pointer nears the timeline's top/bottom edges so tracks can be dragged to off-screen slots
       const sc = scrollerRef.current;
       if (sc) {
         const r = sc.getBoundingClientRect();
@@ -93,13 +93,13 @@ export const Timeline: React.FC = () => {
     const onUp = () => {
       window.removeEventListener("pointermove", onMove);
       setTrackDrag(null);
-      if (dragging) moveTrack(trackId, to); // 原位落下时 store 内部忽略
+      if (dragging) moveTrack(trackId, to); // store ignores same-position drops
     };
     window.addEventListener("pointermove", onMove);
     window.addEventListener("pointerup", onUp, { once: true });
   };
 
-  /** 插入线在 tl-content 内的 top；落回原位时不画 */
+  /** Insertion line's top inside tl-content; not drawn when dropping back in place */
   const dropLineTop = (): number | null => {
     if (!trackDrag) return null;
     const tracks = project.tracks;
@@ -120,38 +120,38 @@ export const Timeline: React.FC = () => {
         <button
           className="btn"
           disabled={!selectedClipId}
-          title="在播放头处分割选中片段（S）"
+          title="Split the selected clip at the playhead (S)"
           onClick={() =>
             selectedClipId && splitClip(selectedClipId, useStore.getState().playhead)
           }
         >
-          ✂ 分割
+          ✂ Split
         </button>
         <button
           className="btn"
           disabled={!selectedClipId}
-          title="复制选中片段（⌘D）"
+          title="Duplicate the selected clip (⌘D)"
           onClick={() => selectedClipId && duplicateClip(selectedClipId)}
         >
-          ⧉ 复制
+          ⧉ Duplicate
         </button>
         <button
           className="btn"
           disabled={!selectedClipId}
-          title="删除选中片段（Delete）"
+          title="Delete the selected clip (Delete)"
           onClick={() => selectedClipId && removeClip(selectedClipId)}
         >
-          🗑 删除
+          🗑 Delete
         </button>
         <span className="tl-sep" />
-        <button className="btn" onClick={addTrack} title="新增一条轨道（加在最上层）">
-          ＋ 轨道
+        <button className="btn" onClick={addTrack} title="Add a track (placed on top)">
+          ＋ Track
         </button>
         <span style={{ marginLeft: "auto" }} />
-        <button className="btn" onClick={fit} title="缩放到适配全部内容">
-          ⤢ 适配
+        <button className="btn" onClick={fit} title="Zoom to fit all content">
+          ⤢ Fit
         </button>
-        <span className="dim">缩放</span>
+        <span className="dim">Zoom</span>
         <input
           type="range"
           min={0.3}
@@ -182,7 +182,7 @@ export const Timeline: React.FC = () => {
               <div
                 className="tl-track-head"
                 style={{ width: HEADER_W }}
-                title="按住上下拖动调整轨道层序（上层盖住下层）"
+                title="Drag up/down to reorder tracks (upper covers lower)"
                 onPointerDown={onTrackHeadDown(track.id)}
               >
                 <span className="track-grip" aria-hidden>
@@ -194,18 +194,18 @@ export const Timeline: React.FC = () => {
                 <span className="track-actions">
                   <button
                     className="mini"
-                    title={track.hidden ? "显示轨道" : "隐藏轨道"}
+                    title={track.hidden ? "Show Track" : "Hide Track"}
                     onClick={() => toggleTrackHidden(track.id)}
                   >
                     {track.hidden ? "🚫" : "👁"}
                   </button>
                   <button
                     className="mini"
-                    title="删除轨道"
+                    title="Delete Track"
                     onClick={() => {
                       if (
                         track.clips.length === 0 ||
-                        window.confirm(`删除轨道「${track.name}」及其 ${track.clips.length} 个片段？`)
+                        window.confirm(`Delete track "${track.name}" and its ${track.clips.length} clips?`)
                       )
                         removeTrack(track.id);
                     }}

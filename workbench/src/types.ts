@@ -1,26 +1,26 @@
-/** 工程数据模型：Project → Track → Clip。所有时间量以时间轴帧为单位（默认 30fps）。 */
+/** Project data model: Project → Track → Clip. All time quantities are in timeline frames (default 30fps). */
 
 export interface ClipData {
   id: string;
   cardId: string;
-  /** 时间轴上的起点（帧） */
+  /** Start position on the timeline (frames) */
   start: number;
-  /** 时间轴上占据的长度（帧）——可短于/长于卡片原始时长（裁剪/定格延长） */
+  /** Length on the timeline (frames) — shorter or longer than the card's original duration (trim / freeze-extend) */
   duration: number;
-  /** 裁入点：从卡片素材的第几帧开始播（源帧），控制动效的进场时机 */
+  /** Trim-in: which source frame of the card asset to start playing from (source frames), controls when the animation enters */
   inOffset: number;
-  /** 变速倍率：每走 1 时间轴帧，源时间前进 speed 帧 */
+  /** Speed multiplier: each timeline frame advances source time by speed frames */
   speed: number;
-  /** 图层不透明度 0–1 */
+  /** Layer opacity 0–1 */
   opacity: number;
-  /** 图层整体缩放 */
+  /** Layer uniform scale */
   scale: number;
-  /** 图层位移（px，合成坐标系） */
+  /** Layer offset (px, composition coordinates) */
   x: number;
   y: number;
-  /** 卡片专属属性覆盖（缺省值来自卡片 schema） */
+  /** Card-specific prop overrides (defaults come from the card schema) */
   props: Record<string, unknown>;
-  /** 时间轨上显示的自定义标签（缺省显示卡片名）——导入成片时的镜头/音效用它标注 */
+  /** Custom label shown on the timeline (defaults to the card name) — imported promo shots/SFX use it */
   label?: string;
 }
 
@@ -36,9 +36,9 @@ export interface ProjectData {
   fps: number;
   width: number;
   height: number;
-  /** 舞台底色（成片工程 AbsoluteFill 的 background；缺省近黑） */
+  /** Stage background (the promo project AbsoluteFill background; near-black default) */
   background?: string;
-  /** 由哪个成片清单导入（清单 name + total）——`?import=project` 用它判断是否需要重新导入 */
+  /** Which promo manifest this was imported from (manifest name + total) — `?import=project` uses it to decide whether to re-import */
   source?: string;
   tracks: TrackData[];
 }
@@ -47,7 +47,7 @@ let seq = 0;
 export const uid = (prefix: string) =>
   `${prefix}_${Date.now().toString(36)}${(seq++).toString(36)}`;
 
-/** 内容精确结束帧（最晚 clip 结束；导出成片用，不带余量） */
+/** Exact content end frame (latest clip end; used for promo export, no padding) */
 export const projectEndFrame = (project: ProjectData): number => {
   let end = 0;
   for (const t of project.tracks)
@@ -55,6 +55,6 @@ export const projectEndFrame = (project: ProjectData): number => {
   return end;
 };
 
-/** 工程总时长（帧）：最晚 clip 结束 + 1s 余量，最短 5s（编辑预览用；按工程 fps 换算） */
+/** Project total duration (frames): latest clip end + 1s padding, minimum 5s (for edit preview; converted at project fps) */
 export const projectDuration = (project: ProjectData): number =>
   Math.max(5 * project.fps, projectEndFrame(project) + project.fps);

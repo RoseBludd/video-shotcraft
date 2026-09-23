@@ -12,17 +12,17 @@ import { PROJ_DIR, PROJ_HAS_MANIFEST, PROJ_LINKED } from "../projMeta";
 import { setDragPayload } from "../dnd";
 
 const TABS = [
-  { id: "media", label: "素材" },
-  { id: "cards", label: "动效库" },
-  { id: "sfx", label: "音效" },
+  { id: "media", label: "Media" },
+  { id: "cards", label: "Motion Library" },
+  { id: "sfx", label: "SFX" },
 ] as const;
 type TabId = (typeof TABS)[number]["id"];
 
-/** 不进动效库的分类：成片单元只在素材 tab；媒体走素材 / 音效 tab；预设幕底卡不进素材库
- *  （已有工程里的幕底 clip 仍由注册表渲染） */
-const NON_MOTION_CATS = new Set(["成片单元", "音频", "素材", "背景"]);
+/** Categories excluded from the motion library: project units appear only on the Media tab; media goes to Media / SFX tabs; preset background cards stay out of the library
+ *  (backdrop clips already in a project still render via the registry) */
+const NON_MOTION_CATS = new Set(["Project Units", "Audio", "Media", "Backgrounds"]);
 
-/** 进入视口才挂载重内容（预览视频 / 实时 Player） */
+/** Heavy content (preview videos / live Player) mounts only when in view */
 const useVisible = () => {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
@@ -38,7 +38,7 @@ const useVisible = () => {
   return { ref, visible };
 };
 
-/** 进入视口才加载并循环播放的预览视频 */
+/** Preview video that loads and loops only once in view */
 const LazyLoopVideo: React.FC<{ src: string }> = ({ src }) => {
   const ref = useRef<HTMLVideoElement>(null);
   const [visible, setVisible] = useState(false);
@@ -75,9 +75,9 @@ const LazyLoopVideo: React.FC<{ src: string }> = ({ src }) => {
   );
 };
 
-/** 没有预渲染视频的卡：可见时用实时 Player 当缩略图——**静止在 45% 处的定妆帧**，鼠标悬停才循环播放。
- *  曾经默认自动循环：十几个 1080p 场景同时跑、闪白转场卡每 0.3s 白一次、字卡每 1.8s 淡出重来，
- *  首屏像在闪光灯下；大图反复解码还刷出一串 EncodingError。 */
+/** Cards without a pre-rendered video: a live Player acts as the thumbnail when visible — **frozen at the 45% beauty frame**, looping only on hover.
+ *  Auto-loop used to be the default: a dozen 1080p scenes ran at once, the flash-cut card strobed every 0.3s, title cards faded out and restarted every 1.8s,
+ *  the first paint looked like a strobe light; large images re-decoding also spewed a stack of EncodingErrors. */
 const LazyCardLoop: React.FC<{ card: CardDef }> = ({ card }) => {
   const { ref, visible } = useVisible();
   const { width, height } = cardSize(card);
@@ -85,7 +85,7 @@ const LazyCardLoop: React.FC<{ card: CardDef }> = ({ card }) => {
   const [hover, setHover] = useState(false);
   const total = Math.max(2, card.durationInFrames);
   const poster = Math.min(total - 1, Math.round(total * 0.45));
-  // .lib-thumb 本身 pointer-events:none（让拖拽落到 .lib-cell 上），悬停监听挂到所属 cell
+  // .lib-thumb itself is pointer-events:none (so drags land on .lib-cell); hover listeners attach to the owning cell
   useEffect(() => {
     const cell = ref.current?.closest(".lib-cell");
     if (!cell) return;
@@ -147,7 +147,7 @@ const groupBy = <T,>(items: T[], key: (t: T) => string) => {
 export const LibraryPanel: React.FC = () => {
   const setPreview = useStore((s) => s.setPreview);
   const [tab, setTab] = useState<TabId>(PROJ_LINKED ? "media" : "cards");
-  // 折叠分组默认收起，点击标题展开
+  // Collapsed groups start closed, click the heading to expand
   const [openCats, setOpenCats] = useState<Set<string>>(new Set());
   const toggleCat = (cat: string) =>
     setOpenCats((prev) => {
@@ -157,7 +157,7 @@ export const LibraryPanel: React.FC = () => {
       return next;
     });
 
-  /** 网格单元通用外壳：点击=中屏预览，拖拽=上轨 */
+  /** Common shell for grid cells: click = stage preview, drag = onto a track */
   const Cell: React.FC<{
     name: string;
     meta?: string;
@@ -171,7 +171,7 @@ export const LibraryPanel: React.FC = () => {
       draggable
       onDragStart={(e) => setDragPayload(e, payload)}
       onClick={onClick}
-      title={`${name}${title ? `\n${title}` : ""}\n点击预览，拖到时间轨添加`}
+      title={`${name}${title ? `\n${title}` : ""}\nClick to preview, drag onto a track to add`}
     >
       {children}
       <div className="lib-cell-name">{name}</div>
@@ -179,11 +179,11 @@ export const LibraryPanel: React.FC = () => {
     </div>
   );
 
-  /** 动效卡网格单元 */
+  /** Motion-card grid cell */
   const CardCell: React.FC<{ card: CardDef }> = ({ card }) => (
     <Cell
       name={card.name}
-      meta={`${(card.durationInFrames / cardFps(card)).toFixed(1)}s${card.schema.length > 0 ? " · 可调参" : ""}`}
+      meta={`${(card.durationInFrames / cardFps(card)).toFixed(1)}s${card.schema.length > 0 ? " · Tunable" : ""}`}
       title={card.summary}
       onClick={() => setPreview({ kind: "card", cardId: card.id })}
       payload={{ cardId: card.id, label: card.name }}
@@ -192,7 +192,7 @@ export const LibraryPanel: React.FC = () => {
     </Cell>
   );
 
-  /** 音效等无画面素材的列表行 */
+  /** List rows for SFX and other non-visual items */
   const Row: React.FC<{
     dot: string;
     name: string;
@@ -205,7 +205,7 @@ export const LibraryPanel: React.FC = () => {
       draggable
       onDragStart={(e) => setDragPayload(e, payload)}
       onClick={onClick}
-      title={`${name} · 点击预览，拖到时间轨添加`}
+      title={`${name} · Click to preview, drag onto a track to add`}
     >
       <span className="lib-dot" style={{ background: dot }} />
       <span className="lib-name">{name}</span>
@@ -213,7 +213,7 @@ export const LibraryPanel: React.FC = () => {
     </div>
   );
 
-  /** 可折叠分组标题 */
+  /** Collapsible group heading */
   const Group: React.FC<{ id: string; label: string; count: number; children: React.ReactNode; defaultOpen?: boolean }> =
     ({ id, label, count, children, defaultOpen }) => {
       const open = defaultOpen ? !openCats.has(id) : openCats.has(id);
@@ -230,13 +230,13 @@ export const LibraryPanel: React.FC = () => {
     };
 
   const motionCards = CARD_LIST.filter((c) => !NON_MOTION_CATS.has(c.category));
-  const projectCards = CARD_LIST.filter((c) => c.category === "成片单元");
+  const projectCards = CARD_LIST.filter((c) => c.category === "Project Units");
   const usage = sfxUsage(MANIFEST);
   const projectAudio = MEDIA_ITEMS.filter((m) => m.kind === "audio");
   const projectVisual = MEDIA_ITEMS.filter((m) => m.kind !== "audio");
 
-  // 动效库：工作台原生卡靳前，然后按画廊分类
-  const motionGroups = ["工作台", ...DEMO_CATEGORIES]
+  // Motion library: workbench-native cards first, then gallery categories
+  const motionGroups = ["Workbench", ...DEMO_CATEGORIES]
     .map((cat) => ({ cat, cards: motionCards.filter((c) => c.category === cat) }))
     .filter((g) => g.cards.length > 0);
 
@@ -263,28 +263,28 @@ export const LibraryPanel: React.FC = () => {
             {MANIFEST ? (
               <button
                 className="btn wide"
-                title={`把成片按 src/workbench.ts 清单拆成镜头 / 转场 / 字幕 / 叠加层 / 音效 / 音乐的多轨工程（可撤销）\n${PROJ_DIR}`}
+                title={`Split the linked promo into a multi-track project (shots / transitions / captions / overlays / SFX / music) from its src/workbench.ts manifest (undoable)\n${PROJ_DIR}`}
                 onClick={() => importProject()}
               >
-                ⇣ 导入成片：{MANIFEST.name}
+                ⇣ Import Promo: {MANIFEST.name}
               </button>
             ) : (
               <div className="lib-cat" style={{ whiteSpace: "normal", lineHeight: 1.5 }}>
                 {PROJ_LINKED
-                  ? `已链接 ${PROJ_DIR}，但工程没有 src/workbench.ts 清单，无法拆解导入（写法见 references/workbench.md）`
-                  : "未接入成片工程。在 workbench/ 目录运行：node scripts/open.mjs <成片工程目录>"}
+                  ? `Linked to ${PROJ_DIR}, but the project has no src/workbench.ts manifest, so split-import is unavailable (see references/workbench.md)`
+                  : "No promo project linked. In workbench/, run: node scripts/open.mjs <promo project dir>"}
               </div>
             )}
 
             {projectCards.length > 0 && (
               <>
-                <div className="lib-cat">成片单元（可再加一份）</div>
+                <div className="lib-cat">Project Units (add another copy)</div>
                 <div className="lib-grid">
                   {projectCards.map((card) => (
                     <Cell
                       key={card.id}
                       name={card.name}
-                      meta={`${(card.durationInFrames / cardFps(card)).toFixed(1)}s${card.schema.length ? " · 可调参" : ""}`}
+                      meta={`${(card.durationInFrames / cardFps(card)).toFixed(1)}s${card.schema.length ? " · Tunable" : ""}`}
                       onClick={() => setPreview({ kind: "card", cardId: card.id })}
                       payload={{ cardId: card.id, label: card.name }}
                     >
@@ -295,7 +295,7 @@ export const LibraryPanel: React.FC = () => {
               </>
             )}
 
-            {projectVisual.length > 0 && <div className="lib-cat">素材文件（工程 public/）</div>}
+            {projectVisual.length > 0 && <div className="lib-cat">Media Files (project public/)</div>}
             {groupBy(projectVisual, (m) => m.dir || "/").map(([dir, items]) => (
               <Group key={dir} id={`media:${dir}`} label={dir} count={items.length} defaultOpen={items.length <= 12}>
                 <div className="lib-grid">
@@ -303,7 +303,7 @@ export const LibraryPanel: React.FC = () => {
                     <Cell
                       key={m.file}
                       name={m.name}
-                      meta={m.kind === "video" ? "视频" : "图片"}
+                      meta={m.kind === "video" ? "Video" : "Image"}
                       onClick={() => setPreview({ kind: m.kind, file: m.file, label: m.name })}
                       payload={
                         m.kind === "video"
@@ -326,7 +326,7 @@ export const LibraryPanel: React.FC = () => {
 
         {tab === "cards" &&
           motionGroups.map((g) => (
-            <Group key={g.cat} id={`cat:${g.cat}`} label={g.cat} count={g.cards.length} defaultOpen={g.cat === "工作台"}>
+            <Group key={g.cat} id={`cat:${g.cat}`} label={g.cat} count={g.cards.length} defaultOpen={g.cat === "Workbench"}>
               <div className="lib-grid">
                 {g.cards.map((card) => (
                   <CardCell key={card.id} card={card} />
@@ -338,13 +338,13 @@ export const LibraryPanel: React.FC = () => {
         {tab === "sfx" && (
           <>
             {projectAudio.length > 0 && (
-              <Group id="sfx:proj" label="本片音频（工程 public/）" count={projectAudio.length} defaultOpen>
+              <Group id="sfx:proj" label="Project Audio (project public/)" count={projectAudio.length} defaultOpen>
                 {projectAudio.map((m) => (
                   <Row
                     key={m.file}
                     dot="#ff9f0a"
                     name={m.name}
-                    meta={usage.has(m.file) ? `片中×${usage.get(m.file)}` : "未用"}
+                    meta={usage.has(m.file) ? `In film ×${usage.get(m.file)}` : "Unused"}
                     onClick={() => setPreview({ kind: "audio", file: m.file, label: m.name })}
                     payload={audioPayload(m.file, m.name.replace(/\.[^.]+$/, ""), 0.4, 90)}
                   />
@@ -352,7 +352,7 @@ export const LibraryPanel: React.FC = () => {
               </Group>
             )}
             {BGM_LIB.length > 0 && (
-              <Group id="sfx:bgm" label="BGM 备选（assets/audio/bgm）" count={BGM_LIB.length}>
+              <Group id="sfx:bgm" label="BGM Options (assets/audio/bgm)" count={BGM_LIB.length}>
                 {BGM_LIB.map((b) => (
                   <Row
                     key={b.file}
@@ -365,7 +365,7 @@ export const LibraryPanel: React.FC = () => {
               </Group>
             )}
             {groupBy(SFX_LIB, (s) => s.cat).map(([cat, items]) => (
-              <Group key={cat} id={`sfx:${cat}`} label={`音效库 · ${cat}`} count={items.length}>
+              <Group key={cat} id={`sfx:${cat}`} label={`SFX Library · ${cat}`} count={items.length}>
                 {items.map((s) => (
                   <Row
                     key={s.file}
@@ -382,11 +382,11 @@ export const LibraryPanel: React.FC = () => {
       </div>
 
       <div className="lib-foot dim">
-        动效 {motionCards.length} 卡（{motionCards.filter((c) => c.schema.length > 0).length} 张可调参）
-        · 音效库 {SFX_LIB.length}
-        {PROJ_LINKED && PROJ_HAS_MANIFEST ? ` · 成片单元 ${projectCards.length}` : ""}
+        Motion {motionCards.length} cards ({motionCards.filter((c) => c.schema.length > 0).length} tunable)
+        · SFX Library {SFX_LIB.length}
+        {PROJ_LINKED && PROJ_HAS_MANIFEST ? ` · Project Units ${projectCards.length}` : ""}
         <br />
-        点击预览 · 拖拽到时间轨添加
+        Click to preview · drag onto a track to add
       </div>
     </div>
   );

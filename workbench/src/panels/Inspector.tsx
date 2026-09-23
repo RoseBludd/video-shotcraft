@@ -4,7 +4,7 @@ import { cardFps, inOffsetFps, sourceLength } from "../cards/types";
 import { CARDS } from "../cards/registry";
 import { findClip, useStore } from "../store";
 
-/** 单个属性控件：按 schema 字段类型渲染 */
+/** A single inspector control: rendered by schema field type */
 const PropControl: React.FC<{
   field: PropField;
   value: unknown;
@@ -125,24 +125,24 @@ export const Inspector: React.FC = () => {
   const commit = useStore((s) => s.commit);
 
   const hit = selectedClipId ? findClip(project, selectedClipId) : null;
-  // 连续编辑合并为一步撤销：间隔 >800ms 才压新快照
+  // Consecutive edits merge into one undo step: only gaps >800ms push a new snapshot
   const lastBeginRef = useRef(0);
 
   if (!hit) {
     return (
       <div className="inspector">
-        <div className="panel-title">属性</div>
+        <div className="panel-title">Inspector</div>
         <div className="inspector-empty dim">
-          选中时间轨上的片段后，
+          Select a clip on the timeline, then adjust its
           <br />
-          在这里调整它的文字、颜色、
+          text, colors, animation timing,
           <br />
-          动画节奏、变速与图层属性。
+          speed and layer properties here.
           <br />
           <br />
-          快捷键：空格 播放 · S 分割
+          Shortcuts: Space Play · S Split
           <br />
-          Delete 删除 · ⌘Z 撤销 · ⌘D 复制
+          Delete Delete · ⌘Z Undo · ⌘D Duplicate
         </div>
       </div>
     );
@@ -151,12 +151,12 @@ export const Inspector: React.FC = () => {
   const { track, clip } = hit;
   const card = CARDS[clip.cardId];
   const fps = project.fps;
-  // 卡片编排帧率 ≠ 工程帧率（只有逐帧编排的卡需要提示；媒体卡按墙钟走无此问题）
+  // Card authoring fps ≠ project fps (only frame-authored cards need the notice; media cards run on wall-clock so they are immune)
   const srcFps = card ? cardFps(card) : fps;
   const fpsMismatch = !!card && card.timing !== "realtime" && srcFps !== fps;
-  // 裁入点按源帧计（见 inOffsetFps），秒数换算不能一律用工程 fps
+  // Trim-in is measured in source frames (see inOffsetFps); converting to seconds cannot always use project fps
   const inFps = inOffsetFps(card, fps);
-  // 每次编辑手势开始压一次撤销快照；短时间内的连续输入合并为一步
+  // Each edit gesture start pushes an undo snapshot; rapid consecutive inputs merge into one step
   const begin = () => {
     const now = Date.now();
     if (now - lastBeginRef.current > 800) commit();
@@ -175,7 +175,7 @@ export const Inspector: React.FC = () => {
       <div className="inspector-scroll">
         {card && card.schema.length > 0 && (
           <section>
-            <div className="sec-title">内容与样式</div>
+            <div className="sec-title">Content & Style</div>
             {card.schema.map((field) => (
               <Row key={field.key} label={field.label}>
                 <PropControl
@@ -190,8 +190,8 @@ export const Inspector: React.FC = () => {
         )}
 
         <section>
-          <div className="sec-title">时间与变速</div>
-          <Row label="起点">
+          <div className="sec-title">Timing & Speed</div>
+          <Row label="Start">
             <span className="ctl-row">
               <input
                 type="number"
@@ -206,7 +206,7 @@ export const Inspector: React.FC = () => {
               <span className="unit">s</span>
             </span>
           </Row>
-          <Row label="时长">
+          <Row label="Duration">
             <span className="ctl-row">
               <input
                 type="number"
@@ -223,7 +223,7 @@ export const Inspector: React.FC = () => {
               <span className="unit">s</span>
             </span>
           </Row>
-          <Row label="变速">
+          <Row label="Speed">
             <span className="ctl-row">
               <input
                 type="range"
@@ -253,7 +253,7 @@ export const Inspector: React.FC = () => {
               ))}
             </span>
           </Row>
-          <Row label="裁入点">
+          <Row label="Trim In">
             <span className="ctl-row">
               <input
                 type="number"
@@ -274,7 +274,7 @@ export const Inspector: React.FC = () => {
             <Row label="">
               <button
                 className="mini"
-                title="时长恢复为卡片原始时长（按当前变速换算）"
+                title="Restore duration to the card's original length (converted at the current speed)"
                 onClick={() => {
                   begin();
                   updateClip(clip.id, {
@@ -285,21 +285,21 @@ export const Inspector: React.FC = () => {
                   });
                 }}
               >
-                ↺ 恢复原始时长
+                ↺ Restore Original Duration
               </button>
             </Row>
           )}
           {fpsMismatch && (
             <div className="dim" style={{ fontSize: 11, lineHeight: 1.5, padding: "4px 0 2px" }}>
-              此卡按 {srcFps}fps 编排，工程 {fps}fps：上轨时已换算时长并以 {(srcFps / fps).toFixed(2)}× 变速保持节奏。
-              卡内若按 useVideoConfig().fps 计时（spring 等），节奏仍会偏 {(fps / srcFps).toFixed(2)}×。
+              This card is authored at {srcFps}fps, project runs at {fps}fps: its duration was converted on insert with a {(srcFps / fps).toFixed(2)}× speed factor to keep the rhythm.
+              If the card times things by useVideoConfig().fps (spring etc.), pacing still drifts by {(fps / srcFps).toFixed(2)}×.
             </div>
           )}
         </section>
 
         <section>
-          <div className="sec-title">图层</div>
-          <Row label="不透明度">
+          <div className="sec-title">Layer</div>
+          <Row label="Opacity">
             <span className="ctl-row">
               <input
                 type="range"
@@ -313,7 +313,7 @@ export const Inspector: React.FC = () => {
               <span className="slider-val">{Math.round(clip.opacity * 100)}%</span>
             </span>
           </Row>
-          <Row label="缩放">
+          <Row label="Scale">
             <span className="ctl-row">
               <input
                 type="range"
@@ -327,7 +327,7 @@ export const Inspector: React.FC = () => {
               <span className="slider-val">{clip.scale.toFixed(2)}</span>
             </span>
           </Row>
-          <Row label="位移 X">
+          <Row label="Offset X">
             <span className="ctl-row">
               <input
                 type="number"
@@ -339,7 +339,7 @@ export const Inspector: React.FC = () => {
               <span className="unit">px</span>
             </span>
           </Row>
-          <Row label="位移 Y">
+          <Row label="Offset Y">
             <span className="ctl-row">
               <input
                 type="number"
@@ -355,7 +355,7 @@ export const Inspector: React.FC = () => {
 
         <section>
           <button className="btn danger" onClick={() => removeClip(clip.id)}>
-            删除片段
+            Delete Clip
           </button>
         </section>
       </div>

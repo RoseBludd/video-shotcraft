@@ -8,7 +8,7 @@ const baseClip = (): Omit<ClipData, "id" | "cardId" | "start" | "duration"> => (
   inOffset: 0, speed: 1, opacity: 1, scale: 1, x: 0, y: 0, props: {},
 });
 
-/** 音效使用次数（素材库「本片音效」列的 ×N） */
+/** SFX usage count (the ×N in the library's "project SFX" column) */
 export const sfxUsage = (m: WorkbenchManifest | null): Map<string, number> => {
   const out = new Map<string, number>();
   for (const s of m?.sfx ?? []) out.set(s.src, (out.get(s.src) ?? 0) + 1);
@@ -17,12 +17,12 @@ export const sfxUsage = (m: WorkbenchManifest | null): Map<string, number> => {
 
 const shortName = (src: string) => src.split("/").pop()!.replace(/\.[^.]+$/, "");
 
-/** 音频 cue → clip，贪心装箱进若干互不重叠的轨（同轨不重叠，便于单独挪动） */
+/** Audio cues → clips, greedily packed into non-overlapping tracks (no overlaps within a track so they can be moved individually) */
 const packAudio = (cues: ManifestAudio[], trackName: string, defaultDuration: number, total: number): TrackData[] => {
   const lanes: { end: number; clips: ClipData[] }[] = [];
   for (const c of [...cues].sort((a, b) => a.from - b.from)) {
     const start = Math.max(0, Math.round(c.from));
-    // 原片里 <Sequence> 超出合成尾部的部分被合成时长截掉；导出按最晚 clip 结束算时长，所以这里也截到 total
+    // In the original film, <Sequence> portions beyond the composition tail are clipped by the composition duration; export sizes by the latest clip end, so we also clamp to total
     const duration = Math.max(2, Math.min(Math.round(c.duration ?? defaultDuration), total - start));
     let lane = lanes.find((l) => l.end <= start);
     if (!lane) {
@@ -47,9 +47,9 @@ const packAudio = (cues: ManifestAudio[], trackName: string, defaultDuration: nu
   }));
 };
 
-/** 把成片按清单拆成独立单元：字幕 / 转场 / 叠加层 / 镜头 / 音乐 / 音效。
- *  每个单元的 start/duration 与 Main.tsx 里的 <Sequence> 逐帧一致，导入后先不改任何东西
- *  渲出来就是原片。 */
+/** Split the promo into independent units from the manifest: captions / transitions / overlays / shots / music / SFX.
+ *  Each unit's start/duration matches the <Sequence> entries in Main.tsx frame for frame; right after import nothing is changed
+ *  Rendered as-is it reproduces the original film. */
 export const buildProjectFromManifest = (m: WorkbenchManifest = MANIFEST!): ProjectData => {
   const unitTrack = (kind: "shot" | "transition" | "caption" | "overlay", name: string): TrackData | null => {
     const units = unitsOf(m, kind);
@@ -70,17 +70,17 @@ export const buildProjectFromManifest = (m: WorkbenchManifest = MANIFEST!): Proj
   };
 
   const order = m.order ?? ["transitions", "captions", "overlays"];
-  const NAMES = { transitions: "转场", captions: "字幕", overlays: "叠加层" } as const;
+  const NAMES = { transitions: "Transitions", captions: "Captions", overlays: "Overlays" } as const;
   const upper = order
     .map((k) => unitTrack(k.slice(0, -1) as "transition" | "caption" | "overlay", NAMES[k]))
     .filter((t): t is TrackData => !!t);
 
   const tracks: TrackData[] = [
-    // tracks[0] 为最上层，对应原片 z 序：转场 > 字幕 > 叠加层 > 镜头（缺省序，清单 order 可改）
+    // tracks[0] is the topmost track, matching the original z order: transitions > captions > overlays > shots (default order; manifest order can override)
     ...upper,
-    unitTrack("shot", "镜头")!,
-    ...(m.bgm?.length ? packAudio(m.bgm, "音乐", m.total, m.total) : []),
-    ...(m.sfx?.length ? packAudio(m.sfx, "音效", 90, m.total) : []),
+    unitTrack("shot", "Shots")!,
+    ...(m.bgm?.length ? packAudio(m.bgm, "Music", m.total, m.total) : []),
+    ...(m.sfx?.length ? packAudio(m.sfx, "SFX", 90, m.total) : []),
   ];
 
   return {

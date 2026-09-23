@@ -1,7 +1,7 @@
-/** 外部成片工程源码（workbench/proj 符号链接 → <工程>/src，Vite/webpack 别名 @proj）。
- *  声明为 any 模块：成片工程不参与本工程的 tsc 严格检查——工程源码以它自己为准。 */
+/** External promo project sources (workbench/proj symlink → <project>/src, Vite/webpack alias @proj).
+ *  Declared as an any module: the promo project is not subject to this project's strict tsc — its own sources are authoritative. */
 declare module "@proj/*";
 
-/** 镜头卡 demo 源码（workbench/demosrc → ../demos，别名 @demos）。
- *  同样不参与 tsc 严格检查：demo 源码由仓库 CI 自己的 tsc 关卡守着。 */
+/** Shot-card demo sources (workbench/demosrc → ../demos, alias @demos).
+ *  Also exempt from strict tsc here: demo sources are guarded by the repo CI's own tsc gate. */
 declare module "@demos/*";

@@ -1,6 +1,6 @@
 import type React from "react";
 
-/** 属性面板控件描述——卡片用它声明自己有哪些可调属性 */
+/** Inspector control descriptor — cards use it to declare which props are tunable */
 export type PropField =
   | { type: "text"; key: string; label: string; default: string }
   | { type: "textarea"; key: string; label: string; default: string }
@@ -12,7 +12,7 @@ export type PropField =
       min?: number;
       max?: number;
       step?: number;
-      /** 展示单位，如 "s" / "px" */
+      /** Display unit, e.g. "s" / "px" */
       unit?: string;
     }
   | {
@@ -37,63 +37,63 @@ export type PropField =
 
 export interface CardDef {
   id: string;
-  /** 中文名（面板展示） */
+  /** Card name (shown in panels) */
   name: string;
   category: string;
-  /** "audio"/"video"：媒体卡——不包 TimeRemap（Freeze 会掐死原生播放），
-   *  裁入/变速经 props 传入，由卡内 trimBefore/playbackRate 实现；
-   *  video 保留图层包裹（透明度/缩放/位移），audio 无视觉 */
+  /** "audio"/"video": media card — no TimeRemap (Freeze kills native playback),
+   *  trim-in/speed arrive via props, implemented by trimBefore/playbackRate inside the card;
+   *  video keeps the layer wrapper (opacity/scale/offset), audio has no visuals */
   kind?: "visual" | "audio" | "video";
-  /** 卡片原始时长（帧，按 sourceFps 计）——新 clip 的默认时长 */
+  /** Card's original duration (frames, in sourceFps) — default duration for new clips */
   durationInFrames: number;
-  /** 卡片编排帧率：durationInFrames 与卡内时序都按它计。缺省 CARD_FPS（demo / 原生卡）；
-   *  成片单元卡 = 成片清单的 fps */
+  /** Card authoring fps: durationInFrames and in-card timing both use it. Defaults to CARD_FPS (demo / native cards);
+   *  project-unit cards use the promo manifest's fps */
   sourceFps?: number;
-  /** 时间语义（缺省 "frames"）：
-   *  - "frames"：组件按 sourceFps 逐帧编排，工程 fps 不同时换算 clip 时长并反向变速，播放速度不变
-   *  - "realtime"：媒体（视频 / 音频 / 静态图）按墙钟走，durationInFrames 只是 30fps 口径下的默认长度，
-   *    换算时长、不变速（inOffset / speed 直接是 trimBefore / playbackRate） */
+  /** Time semantics (default "frames"):
+   *  - "frames": components are authored frame-by-frame at sourceFps; when project fps differs, clip duration is converted and speed is inversely scaled so playback speed stays the same
+   *  - "realtime": media (video / audio / still image) runs on wall-clock; durationInFrames is only a default length in 30fps terms,
+   *    duration is converted but not sped (inOffset / speed map directly to trimBefore / playbackRate) */
   timing?: "frames" | "realtime";
-  /** 卡片设计画布（缺省 1920×1080；素材库/Studio 预览按它建合成） */
+  /** Card design canvas (default 1920×1080; library/Studio previews build compositions at this size) */
   width?: number;
   height?: number;
   component: React.ComponentType<Record<string, unknown>>;
   schema: PropField[];
-  /** 素材库色签 */
+  /** Library color swatch */
   accent?: string;
-  /** 把 clip 的源时长（帧）注入到该 prop——成片组件用 `duration`/`dur` 算出场淡出时，
-   *  clip 拉长/裁短后淡出跟着挪，而不是定格在原时长处 */
+  /** Inject the clip's source duration (frames) into this prop — when promo components compute exit fades from `duration`/`dur`,
+   *  the fade moves with clip stretch/trim instead of freezing at the original duration */
   durationProp?: string;
-  /** 素材库预览视频（public/ 下路径；缺省用 Player 实时循环） */
+  /** Library preview video (path under public/; falls back to a live looping Player) */
   preview?: string;
-  /** 一句话说明（素材库 tooltip） */
+  /** One-line description (library tooltip) */
   summary?: string;
 }
 
-/** 卡片库（demo / 原生卡）统一按 30fps 编排：durationInFrames 与内部时序都以它为准。
- *  工程 fps 不同时，store.addClip 按 clipDefaultsFor 换算 clip 时长并反向变速，播放速度不变 */
+/** The card library (demo / native cards) is uniformly authored at 30fps: durationInFrames and internal timing both follow it.
+ *  When project fps differs, store.addClip converts clip duration via clipDefaultsFor and inversely scales speed, keeping playback speed unchanged */
 export const CARD_FPS = 30;
 
-/** 卡片编排帧率（缺省 CARD_FPS） */
+/** Card authoring fps (defaults to CARD_FPS) */
 export const cardFps = (card: CardDef) => card.sourceFps ?? CARD_FPS;
 
-/** 卡片在工程 fps 下的源长度（帧）：realtime 卡把 30fps 口径的默认长度换成工程帧数；
- *  frames 卡的源帧就是它自己的帧（变速由 speed 表达） */
+/** The card's source length in project fps (frames): realtime cards convert the 30fps default length into project frames;
+ *  frames cards' source frames are their own frames (speed is expressed via the speed factor) */
 export const sourceLength = (card: CardDef, projectFps: number) =>
   card.timing === "realtime"
     ? Math.max(2, Math.round((card.durationInFrames * projectFps) / cardFps(card)))
     : card.durationInFrames;
 
-/** clip.inOffset 的计量帧率：frames 卡的裁入点是**卡片源帧**（Freeze frame = inOffset + f×speed，
- *  时间轨左拖 / 分割也按 speed 换算成源帧），realtime 媒体卡的裁入点直接是 trimBefore（工程帧）。
- *  属性面板 / 时间轨徽标把它换成秒时必须除以这个帧率，否则卡片帧率≠工程帧率时显示与录入都会错 */
+/** The fps that clip.inOffset is measured in: frames cards' trim-in is in card source frames (Freeze frame = inOffset + f×speed,
+ *  and timeline left-drag / split convert through speed into source frames), while realtime media cards' trim-in is trimBefore directly (project frames).
+ *  When the inspector / timeline badge converts it to seconds they must divide by this fps, otherwise display and input break whenever card fps ≠ project fps */
 export const inOffsetFps = (card: CardDef | undefined, projectFps: number) =>
   !card || card.timing === "realtime" ? projectFps : cardFps(card);
 
-/** 新 clip 的默认时长 / 变速：`sourceFrames`（缺省卡片原始时长）按卡片帧率计。
- *  frames 卡：时长 × (工程fps / 卡片fps)、speed = 卡片fps / 工程fps，卡内逐帧动画的墙钟节奏不变
- *  （注意 Freeze 不改 useVideoConfig().fps，卡内若用 spring({fps}) 等按秒计时，节奏仍会随工程 fps 偏移，
- *  属性面板会提示）；realtime 卡：时长换算、speed 恒为 1 */
+/** Default duration / speed for a new clip: `sourceFrames` (defaults to the card's original duration) is measured in card fps.
+ *  frames cards: duration × (project fps / card fps), speed = card fps / project fps, so in-card per-frame animation keeps its wall-clock rhythm
+ *  (note Freeze does not change useVideoConfig().fps, so if the card times by seconds via spring({fps}) etc. the rhythm still shifts with project fps,
+ *  the inspector warns about it); realtime cards: duration is converted, speed stays 1 */
 export const clipDefaultsFor = (card: CardDef, projectFps: number, sourceFrames = card.durationInFrames) => {
   const scale = projectFps / cardFps(card);
   const realtime = card.timing === "realtime";

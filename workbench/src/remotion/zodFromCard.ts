@@ -2,7 +2,7 @@ import { z } from "zod";
 import { zColor } from "@remotion/zod-types";
 import type { CardDef, PropField } from "../cards/types";
 
-/** 把工作台的 PropField schema 转成 Zod schema——Studio Inspector 据此渲染表单控件 */
+/** Convert the workbench's PropField schema into a Zod schema — the Studio Inspector renders form controls from it */
 const fieldToZod = (f: PropField): z.ZodTypeAny => {
   switch (f.type) {
     case "text":
