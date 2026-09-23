@@ -164,7 +164,7 @@ const renderExportPlugin = (): Plugin => {
 export default defineConfig({
   plugins: [react(), renderExportPlugin()],
   // 5198：与 video-talkcraft 的工作台（5199）错开，两边可同时开
-  server: { port: 5198, strictPort: true },
+  server: { port: 5198, strictPort: true, allowedHosts: ["shotcraft.geniuzs.com"] },
   resolve: {
     preserveSymlinks: true,
     alias: { "@proj": path.join(root, proj), "@demos": path.join(root, "demosrc") },
