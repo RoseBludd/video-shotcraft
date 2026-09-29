@@ -1,1706 +1,1706 @@
-// Auto-generated, do not hand-edit: node scripts/gen-index.mjs
-// demo component name → display name / shot card / gallery category / preview video (when gallery/media is fetched locally) / one-line summary
+// 自动生成，勿手改：node scripts/gen-index.mjs
+// demo 组件名 → 中文名 / 所属镜头卡 / 画廊分类 / 预览视频（gallery/media 本地已拉取时）/ 一句话
 export type DemoMeta = { name: string; card: string; category: string; categoryKey: string; styleKey?: string; preview?: string; summary?: string };
 export const DEMO_META: Record<string, DemoMeta> = {
   "Basic3DScene": {
-    "name": "Spatial Step Demo",
-    "card": "Spatial Step Demo",
-    "category": "Camera & Space",
+    "name": "空间步进演示",
+    "card": "空间步进演示",
+    "category": "运镜与空间",
     "categoryKey": "camera",
     "styleKey": "basic-3d-scene",
-    "summary": "impress.js-style spatial demo: cards scatter through 3D space at different positions/rotations/scales; the camera flies to the inverse of each step's pose in sequence, then pulls out to the OVERVIEW on the last step"
+    "summary": "impress.js 式空间演示：卡片以不同位置/旋转/缩放散布 3D 空间，相机取各步姿态之逆依次飞行对齐，末步拉到 OVERVIEW 总览"
   },
   "CrashImpactReal": {
-    "name": "Crash Zoom · CrashImpactReal",
-    "card": "Crash Zoom",
-    "category": "Camera & Space",
+    "name": "冲撞变焦 · CrashImpactReal",
+    "card": "冲撞变焦",
+    "category": "运镜与空间",
     "categoryKey": "camera",
-    "summary": "One-beat crash push from wide shot to target close-up (6f); landing is either overshoot rebound (elastic) or crash-stop with screen shake (weight)"
+    "summary": "全景一拍急推到目标特写（6f），落位二选一——过冲回弹（弹性）或撞停震屏（重量）"
   },
   "CrashZoomReal": {
-    "name": "Crash Zoom · CrashZoomReal",
-    "card": "Crash Zoom",
-    "category": "Camera & Space",
+    "name": "冲撞变焦 · CrashZoomReal",
+    "card": "冲撞变焦",
+    "category": "运镜与空间",
     "categoryKey": "camera",
-    "summary": "One-beat crash push from wide shot to target close-up (6f); landing is either overshoot rebound (elastic) or crash-stop with screen shake (weight)"
+    "summary": "全景一拍急推到目标特写（6f），落位二选一——过冲回弹（弹性）或撞停震屏（重量）"
   },
   "CursorFlyover": {
-    "name": "Four-Corner Cursor Tour",
-    "card": "Four-Corner Cursor Tour",
-    "category": "Camera & Space",
+    "name": "四角巡览指点",
+    "card": "四角巡览指点",
+    "category": "运镜与空间",
     "categoryKey": "camera",
     "styleKey": "cursor-flyover",
-    "summary": "After a top-down fade-in, the camera flies to each of the four corners for zoom-in close-ups; an SVG cursor follows along, points on arrival, and leaves click ripples"
+    "summary": "整页俯瞰淡入后，相机依次飞到四个角落 zoom-in 特写，SVG 光标同步跟到位指点并留下点击涟漪"
   },
   "DollyZoomReal": {
-    "name": "Depth-Layer Moves · DollyZoomReal",
-    "card": "Depth-Layer Camera Moves",
-    "category": "Camera & Space",
+    "name": "分层深度运镜 · DollyZoomReal",
+    "card": "分层深度运镜",
+    "category": "运镜与空间",
     "categoryKey": "camera",
-    "summary": "Two depth-layer moves — multiplane parallax slide (3 layers at graded speeds sliding laterally out of depth) and pseudo dolly-zoom (subject pinned, background swelling in)"
+    "summary": "分层深度两款运镜——多层视差滑轨（3 层速度梯度横移出纵深）与伪 dolly-zoom（主体钉死、背景膨胀压来）"
   },
   "MultiplaneReal": {
-    "name": "Depth-Layer Moves · MultiplaneReal",
-    "card": "Depth-Layer Camera Moves",
-    "category": "Camera & Space",
+    "name": "分层深度运镜 · MultiplaneReal",
+    "card": "分层深度运镜",
+    "category": "运镜与空间",
     "categoryKey": "camera",
-    "summary": "Two depth-layer moves — multiplane parallax slide (3 layers at graded speeds sliding laterally out of depth) and pseudo dolly-zoom (subject pinned, background swelling in)"
+    "summary": "分层深度两款运镜——多层视差滑轨（3 层速度梯度横移出纵深）与伪 dolly-zoom（主体钉死、背景膨胀压来）"
   },
   "GrazeFaceTour": {
-    "name": "Graze-Face Glide",
-    "card": "Graze-Face Glide",
-    "category": "Camera & Space",
+    "name": "贴面游走",
+    "card": "贴面游走",
+    "category": "运镜与空间",
     "categoryKey": "camera",
     "styleKey": "graze-face-tour",
-    "summary": "Steep-angle graze-face close-up — the camera skims low over the UI surface (sidebar tree / top bar / lists as terrain); page text starts floating above the interface with matching soft shadows, then accelerates down onto the surface in sequence as the camera passes"
+    "summary": "大倾角贴面游走特写——镜头贴着 UI 表面低飞掠过（侧栏树/顶栏/列表当地形），页面文字初始悬浮在界面上空带同形软影，随镜头行进先后加速贴落回界面"
   },
   "OverheadTabletopDrop": {
-    "name": "Overhead Tabletop Drop",
-    "card": "Overhead Camera Moves",
-    "category": "Camera & Space",
+    "name": "俯视桌面扎落",
+    "card": "俯视运镜",
+    "category": "运镜与空间",
     "categoryKey": "camera",
     "styleKey": "overhead-tabletop-drop",
-    "summary": "Card array lying flat at rotateX 62°; the pan segment only slides translateX across, the drop segment runs angle/scale/offset together to plunge into the layout"
+    "summary": "卡阵平躺 rotateX 62°，pan 段只动 translateX 横滑掠过，drop 段角度/缩放/位移三通道同跑扎入落版"
   },
   "TiltReveal": {
-    "name": "Tilt Reveal",
-    "card": "Overhead Camera Moves",
-    "category": "Camera & Space",
+    "name": "俯仰揭示",
+    "card": "俯视运镜",
+    "category": "运镜与空间",
     "categoryKey": "camera",
     "styleKey": "tilt-reveal",
-    "summary": "Whole page lies flat at rotateX -80° inside a perspective container and rights itself over ~43f; rotateX/scale/translateY share one out-cubic with a slight end overshoot"
+    "summary": "perspective 容器内整页 rotateX -80° 平躺，~43f 抬正，rotateX/scale/translateY 共用 out-cubic，末端轻过冲"
   },
   "DroneDiveLanding": {
-    "name": "Drone Dive Landing",
-    "card": "Space Camera Moves",
-    "category": "Camera & Space",
+    "name": "无人机俯冲落点",
+    "card": "空间运镜",
+    "category": "运镜与空间",
     "categoryKey": "camera",
     "styleKey": "drone-dive-landing",
-    "summary": "Near-vertical overhead hover → steep dive → cushion-braked stop on the hero card close-up"
+    "summary": "近垂直俯角悬停 → 猛扎俯冲 → 气垫减速停在 hero 卡特写"
   },
   "ExplodedView": {
-    "name": "Exploded View",
-    "card": "Space Camera Moves",
-    "category": "Camera & Space",
+    "name": "爆炸分层视图",
+    "card": "空间运镜",
+    "category": "运镜与空间",
     "categoryKey": "camera",
     "styleKey": "exploded-view",
-    "summary": "After tilting the page in 3D, components burst apart along Z in staggered order and hover; a beat later they reassemble in reverse with a screen shake to close"
+    "summary": "整页 3D 倾斜后构件沿 Z 轴错峰炸开悬停，一拍后逆序合体震屏收口"
   },
   "SteepTiltGlide": {
-    "name": "Steep Tilt Glide",
-    "card": "Steep Tilt Glide",
-    "category": "Camera & Space",
+    "name": "侧立透视滑行",
+    "card": "侧立透视滑行",
+    "category": "运镜与空间",
     "categoryKey": "camera",
     "styleKey": "steep-tilt-glide",
-    "summary": "Fixed camera; the upright page stands at a 60° strong-perspective tilt (near right, far left) and slides along its own 3D lateral axis past the lens (object moves, camera doesn't) — motion-trail ghosting on the slide, text components floating then settling, revealed from dark to light"
+    "summary": "固定镜头下直立页面以 60° 强透视侧立（右近左远），页面自身沿其 3D 横面方向滑移掠过镜头（物动镜不动），滑移带速度重影、文字组件悬空贴落、由暗揭亮"
   },
   "BulletTimeFreezeOrbit": {
-    "name": "Freeze Orbit",
-    "card": "Tension Camera Moves",
-    "category": "Camera & Space",
+    "name": "冻结环绕",
+    "card": "张力运镜",
+    "category": "运镜与空间",
     "categoryKey": "camera",
     "styleKey": "bullet-time-freeze-orbit",
-    "summary": "The chart freezes mid-growth; the camera orbits the suspended UI plane 55° on rotateY and back, then time resumes and it finishes growing"
+    "summary": "图表生长到一半全冻住，相机绕悬停的 UI 平面 rotateY 扫 55° 再回，时间恢复接着长完"
   },
   "DutchRollToLevel": {
-    "name": "Dutch Roll to Level",
-    "card": "Tension Camera Moves",
-    "category": "Camera & Space",
+    "name": "斜角滚正",
+    "card": "张力运镜",
+    "category": "运镜与空间",
     "categoryKey": "camera",
     "styleKey": "dutch-roll-to-level",
-    "summary": "The pain-point section holds a full-frame -10° dutch tilt (with slight drift); the solution beat rolls back to level with a single overshoot"
+    "summary": "痛点段整帧 -10° 斜角悬着（叠微漂移），解决方案一拍带单次过冲滚回水平"
   },
   "PullBackIsolation": {
-    "name": "Pull-Back Isolation",
-    "card": "Tension Camera Moves",
-    "category": "Camera & Space",
+    "name": "拉远孤立",
+    "card": "张力运镜",
+    "category": "运镜与空间",
     "categoryKey": "camera",
     "styleKey": "pull-back-isolation",
-    "summary": "Pull back from the glowing hero card close-up; sibling cards fade out staggered by distance, the background sinks to black, and the lone card hangs in the dark center"
+    "summary": "从发光主卡特写后拉，兄弟卡按距离错峰熄灭、背景沉黑，孤卡悬在暗场中央"
   },
   "SlowPushIn": {
-    "name": "Slow Push-In",
-    "card": "Tension Camera Moves",
-    "category": "Camera & Space",
+    "name": "慢推压迫",
+    "card": "张力运镜",
+    "category": "运镜与空间",
     "categoryKey": "camera",
     "styleKey": "slow-push-in",
-    "summary": "4s uniformly accelerating push-in 1.00→1.14 with a deepening vignette; at peak tension, a hard cut with no transition to the bright scene"
+    "summary": "4s 匀加速推近 1.00→1.14 + 暗角渐深，张力顶点无过渡硬切亮场"
   },
   "Terminal3D": {
-    "name": "Terminal 3D Flight",
-    "card": "Terminal 3D Flight",
-    "category": "Camera & Space",
+    "name": "终端空间飞行",
+    "card": "终端空间飞行",
+    "category": "运镜与空间",
     "categoryKey": "camera",
     "styleKey": "terminal-3d",
-    "summary": "Three terminal windows scattered in 3D space; the camera flies between them with a sinusoidal pull-back en route, typing out commands at each window while results slide in line by line — command execution as spatial storytelling"
+    "summary": "三个终端窗散布 3D 空间，相机窗间飞行、途中正弦拉远，每到一窗打字机敲命令、结果逐行滑出——命令执行的空间叙事流"
   },
   "AvatarGridRadialBuildColorize": {
-    "name": "Radial Build & Colorize",
-    "card": "Radial Build & Colorize",
-    "category": "Data & Metrics",
+    "name": "分环生长染色",
+    "card": "分环生长染色",
+    "category": "数据与指标",
     "categoryKey": "data",
     "styleKey": "avatar-grid-radial-build-colorize",
-    "summary": "An 8×7 grid of small cards grows outward from center ring by ring (content mixes initials/icons/image placeholders); ~15% of the cards then tint red at random moments to flag anomalies, with the title legend resident at center"
+    "summary": "8×7 小卡片网格由中心分环生长铺满（内容混合首字母/图标/图片占位），随后约 15% 的卡片随机时刻染红标异常，标题图例常驻中央"
   },
   "BeforeAfterSliderScrub": {
-    "name": "Before/After Slider",
-    "card": "Before/After Slider",
-    "category": "Data & Metrics",
+    "name": "前后对比拉杆",
+    "card": "前后对比拉杆",
+    "category": "数据与指标",
     "categoryKey": "data",
     "styleKey": "before-after-slider-scrub",
-    "summary": "Before/after slider — the \"before/after\" versions stacked; the divider first snaps then slow-scrubs, and the new version \"develops\" wherever the divider passes"
+    "summary": "前后对比拉杆——\"处理前/后\"两版叠放，分割杆先猛甩后慢扫，杆过处新版\"显影\"揭出"
   },
   "AxisRescaleShockV2": {
-    "name": "Living Charts · AxisRescaleShockV2",
-    "card": "Living Charts",
-    "category": "Data & Metrics",
+    "name": "活体图表 · AxisRescaleShockV2",
+    "card": "活体图表",
+    "category": "数据与指标",
     "categoryKey": "data",
-    "summary": "Three living-chart moves — oscilloscope-stream (curve writes in real time at its right edge + sudden spikes), unit-dot-swarm-regroup (dot swarm migrates in three acts into digits), axis-rescale-shock (a new value blasts past the frame and forces a y-axis rescale)"
+    "summary": "活体图表三式——oscilloscope-stream 示波流线（曲线右端实时写入+突发尖峰）、unit-dot-swarm-regroup 点阵重组（点群三幕迁徙聚成数字）、axis-rescale-shock 轴爆表重标（新值冲出画框逼 y 轴重标）"
   },
   "OscilloscopeStreamV2": {
-    "name": "Living Charts · OscilloscopeStreamV2",
-    "card": "Living Charts",
-    "category": "Data & Metrics",
+    "name": "活体图表 · OscilloscopeStreamV2",
+    "card": "活体图表",
+    "category": "数据与指标",
     "categoryKey": "data",
-    "summary": "Three living-chart moves — oscilloscope-stream (curve writes in real time at its right edge + sudden spikes), unit-dot-swarm-regroup (dot swarm migrates in three acts into digits), axis-rescale-shock (a new value blasts past the frame and forces a y-axis rescale)"
+    "summary": "活体图表三式——oscilloscope-stream 示波流线（曲线右端实时写入+突发尖峰）、unit-dot-swarm-regroup 点阵重组（点群三幕迁徙聚成数字）、axis-rescale-shock 轴爆表重标（新值冲出画框逼 y 轴重标）"
   },
   "UnitDotSwarmRegroupV2": {
-    "name": "Living Charts · UnitDotSwarmRegroupV2",
-    "card": "Living Charts",
-    "category": "Data & Metrics",
+    "name": "活体图表 · UnitDotSwarmRegroupV2",
+    "card": "活体图表",
+    "category": "数据与指标",
     "categoryKey": "data",
-    "summary": "Three living-chart moves — oscilloscope-stream (curve writes in real time at its right edge + sudden spikes), unit-dot-swarm-regroup (dot swarm migrates in three acts into digits), axis-rescale-shock (a new value blasts past the frame and forces a y-axis rescale)"
+    "summary": "活体图表三式——oscilloscope-stream 示波流线（曲线右端实时写入+突发尖峰）、unit-dot-swarm-regroup 点阵重组（点群三幕迁徙聚成数字）、axis-rescale-shock 轴爆表重标（新值冲出画框逼 y 轴重标）"
   },
   "CounterConfetti": {
-    "name": "Counter Confetti Sprint",
-    "card": "Counter Confetti Sprint",
-    "category": "Data & Metrics",
+    "name": "数字冲刺纸屑",
+    "card": "数字冲刺纸屑",
+    "category": "数据与指标",
     "categoryKey": "data",
     "styleKey": "counter-confetti",
-    "summary": "Big number sprint-counts on easeOutQuart with a scale overshoot; one beat before landing, 52 confetti pieces blast in on parabolic arcs from both sides; an impact ring spreads and label letter-spacing tightens to close"
+    "summary": "大数字 easeOutQuart 冲刺计数并带 scale 过冲，到位前一拍 52 片彩纸从两侧抛物线炸入，冲击环扩散、标签字距收紧收尾"
   },
   "CycleGlassNodeMorph": {
-    "name": "Glass Node Takeover Cycle",
-    "card": "Glass Node Takeover Cycle",
-    "category": "Data & Metrics",
+    "name": "循环玻璃节点接管",
+    "card": "循环玻璃节点接管",
+    "category": "数据与指标",
     "categoryKey": "data",
     "styleKey": "cycle-glass-node-morph",
-    "summary": "A single subject shrinks into a mechanism diagram during a diagonal wipe; three loop labels build in sequence along arcs, then on a continuous push-in three glass nodes rise from below and take over the original labels, ending with diagnostic markers pinning system status staggered"
+    "summary": "单一主体在对角擦除中缩入机制图，三段循环标签沿弧线依次建立，连续推近时三枚玻璃节点从下方托起并接管原标签，最后诊断标记错峰钉住系统状态"
   },
   "NeedleSweepSelftest": {
-    "name": "Full-Arc Needle Self-Test",
-    "card": "Gauge Readout Moves",
-    "category": "Data & Metrics",
+    "name": "满弧扫针自检",
+    "card": "仪表读数动效",
+    "category": "数据与指标",
     "categoryKey": "data",
     "styleKey": "needle-sweep-selftest",
-    "summary": "The needle swings a full arc out in ~12f on ease-out, returns over ~20f with a 5-8° overshoot before settling on the true value; multiple gauges staggered 3-5f; the value pops up beneath the dial on the settle frame"
+    "summary": "指针去程 ~12f ease-out 甩满弧，回程 ~20f 带 5-8° 过冲回摆落真值；多表错峰 3-5f；落定同帧盘下数值弹出"
   },
   "TapeScrollFixedPointer": {
-    "name": "Tape Scroll, Fixed Pointer",
-    "card": "Gauge Readout Moves",
-    "category": "Data & Metrics",
+    "name": "滚带定针",
+    "card": "仪表读数动效",
+    "category": "数据与指标",
     "categoryKey": "data",
     "styleKey": "tape-scroll-fixed-pointer",
-    "summary": "Long graduated tape moves by translate: slow crawl → 45px/f sprint for ~25f → spring brake with overshoot swing before stopping; the reading in the window refreshes in sync"
+    "summary": "长刻度带 translate：慢爬段→45px/f 冲刺 ~25f→spring 刹车过冲回摆停位；窗内读数同步刷新"
   },
   "HatchDepth": {
-    "name": "Hatch to Solid Bars",
-    "card": "Hatch to Solid Bars",
-    "category": "Data & Metrics",
+    "name": "斜纹变实柱",
+    "card": "斜纹变实柱",
+    "category": "数据与指标",
     "categoryKey": "data",
     "styleKey": "hatch-depth",
-    "summary": "Hatched placeholder bars wipe longer one by one; the hatching fades out, an accent-colored solid layer fades in and pops the value — the placeholder matures into a real bar chart"
+    "summary": "斜纹占位条逐条 wipe 伸长后，斜纹淡出、强调色实心层淡入并弹出数值，占位图蜕变为真数据条形图"
   },
   "OdometerDigitRoll": {
-    "name": "Odometer Digit Roll",
-    "card": "Odometer Digit Roll",
-    "category": "Data & Metrics",
+    "name": "里程表数字滚动",
+    "card": "里程表数字滚动",
+    "category": "数据与指标",
     "categoryKey": "data",
     "styleKey": "odometer-digit-roll",
-    "summary": "Odometer roll at poster scale — every digit of a full-screen giant metric spins vertically like a slot reel with ghosting; digits settle left to right each with overshoot, and the whole figure pulses darker the instant all lock"
+    "summary": "里程表数字滚动大字报——全屏巨号指标每个数位像老虎机滚轮独立纵向滚动带残影，从左到右逐位过冲停稳，全部锁定瞬间整体加深脉冲"
   },
   "ConfettiCrossfire": {
-    "name": "Dual-Side Confetti Salute",
-    "card": "Particle Celebrate Hits",
-    "category": "Data & Metrics",
+    "name": "双侧礼炮",
+    "card": "粒子庆祝打点",
+    "category": "数据与指标",
     "categoryKey": "data",
     "styleKey": "confetti-crossfire",
-    "summary": "Two cannons, 50 rectangular confetti each: muzzle velocity 90-150px/f (with decay 0.9 that's ~900-1500px of travel to cross the midline), 55° spread, 8-15° tumble per frame; conditional unmount after ~90f once everything is off-screen"
+    "summary": "双炮各 50 颗矩形彩屑：初速 90-150px/f（decay 0.9 下总程 ~900-1500px 才能交叉过中线）、spread 55°、每帧翻转 8-15°；~90f 全部落出画外后条件卸载"
   },
   "CounterTickSparks": {
-    "name": "Counter Tick Sparks",
-    "card": "Particle Celebrate Hits",
-    "category": "Data & Metrics",
+    "name": "数字跳动溅火",
+    "card": "粒子庆祝打点",
+    "category": "数据与指标",
     "categoryKey": "data",
     "styleKey": "counter-tick-sparks",
-    "summary": "Tick frames derive from the counter's own interpolate; each tick throws 6-10 2px sparks (initial upward velocity 4-6px/f, gravity snuffing them in 12-18f); at the final value it jumps to double — 20 sparks plus the number popping 1.1x"
+    "summary": "tick 帧由计数器同一 interpolate 派生；每 tick 6-10 颗 2px 火星（初速向上 4-6px/f、重力 12-18f 坠灭），终值跳翻倍 20 颗+数字弹 1.1x"
   },
   "ParticleSandFill": {
-    "name": "Particle Sand-Fill Bars",
-    "card": "Particle Sand-Fill Bars",
-    "category": "Data & Metrics",
+    "name": "粒子落砂成柱",
+    "card": "粒子落砂成柱",
+    "category": "数据与指标",
     "categoryKey": "data",
     "styleKey": "particle-sand-fill",
-    "summary": "Particles pour into bars — the bar chart doesn't grow, it \"rains into place\": square-dot particles fall one by one and pile into columns; once full they solidify and the value pops out"
+    "summary": "粒子落斗成柱——柱状图不长高而是\"下雨下出来\"：方点粒子逐颗坠落堆积成柱，堆满凝成实体+数值弹出"
   },
   "RingDiagramAnnotationReveal": {
-    "name": "Ring Diagram Annotation Reveal",
-    "card": "Ring Diagram Annotation",
-    "category": "Data & Metrics",
+    "name": "环图收束标注",
+    "card": "环图收束标注",
+    "category": "数据与指标",
     "categoryKey": "data",
     "styleKey": "ring-diagram-annotation-reveal",
-    "summary": "The full-screen subject is pulled into a concentric ring diagram through a circular window; segmented outer rings and 12 centripetal arrows establish the mechanism, then the whole group shifts left and shrinks to make room for four titles and two annotation tiers in the right column"
+    "summary": "全屏主体被圆形窗口收束成同心环图解，分段外环与 12 支向心箭头建立机制，整组随后左移缩小并为四块标题和两级注释让出右栏"
   },
   "BrakeReticleLock": {
-    "name": "Brake Reticle Lock",
-    "card": "Scroll Brake Moves",
-    "category": "Data & Metrics",
+    "name": "刹停准星锁定",
+    "card": "滚动刹停",
+    "category": "数据与指标",
     "categoryKey": "data",
     "styleKey": "brake-reticle-lock",
-    "summary": "Scroll in three phases: sin-in acceleration → violent cubic-out deceleration overshooting +30px → rebound to rest; blur = v×0.12 capped at 24px; corner brackets fly in from ±620/±320 off-screen on Easing.back(2.4) to lock, highlight completes within 6f and the label pops on back(2.6)"
+    "summary": "滚动三段：sin-in 加速→cubic-out 猛减速冲过头 +30px→回弹落定；blur=v×0.12 封顶 24px；角标从 ±620/±320 画外 Easing.back(2.4) 飞入咬合，高亮 6f 内完成、标签 back(2.6) 弹出"
   },
   "ChangelogScrollBrake": {
-    "name": "Changelog Scroll Brake",
-    "card": "Scroll Brake Moves",
-    "category": "Data & Metrics",
+    "name": "更新日志滚动刹停",
+    "card": "滚动刹停",
+    "category": "数据与指标",
     "categoryKey": "data",
     "styleKey": "changelog-scroll-brake",
-    "summary": "translateY sweep of ~2400px (~50f exponential decel); blur driven by frame-to-frame displacement deltas (0-6px, auto-zeroing); at the stop the row lifts on scale 1.03 with shadow + 3px outline while the rest fade to 0.38"
+    "summary": "translateY 扫 ~2400px（out exp 指数减速 ~50f），blur 由帧间位移差分驱动（0-6px 自动清零）；停点行 scale 1.03 抬升+阴影+3px 描边，其余 opacity 退 0.38"
   },
   "TimelineTravel": {
-    "name": "Timeline Travel",
-    "card": "Timeline Travel",
-    "category": "Data & Metrics",
+    "name": "时间线穿行",
+    "card": "时间线穿行",
+    "category": "数据与指标",
     "categoryKey": "data",
     "styleKey": "timeline-travel",
-    "summary": "Timeline lateral travel — the camera accelerates along the horizontal version scale; a card pops up for a brief pause at each tick, ending with a hard stop and push-in on the final mark"
+    "summary": "时间轴横移——镜头沿水平刻度轴加速掠过版本刻度，每过一格卡片弹立短停，末刻度急停推近"
   },
   "AssembleThenTypeFlyin": {
-    "name": "Assemble, Then Type Fly-In",
-    "card": "Assemble Then Type Fly-In",
-    "category": "Light & Emphasis",
+    "name": "骨架装配落字",
+    "card": "骨架装配落字",
+    "category": "光效与强调",
     "categoryKey": "effects",
     "styleKey": "assemble-then-type-flyin",
-    "summary": "On an empty dark grid, textless component skeletons fly in from all directions and dock; then copy flies in character by character from 3D space, rotating into place — headlines first, captions after — until the page takes shape"
+    "summary": "空的暗底网格上，无文字的组件骨架先从四面八方飞入贴合；随后各处文字逐字从 3D 空间旋转着飞来落位，先大标题后小标注，全部落位后页面成形"
   },
   "AuroraBloomBgFlip": {
-    "name": "Aurora Bloom, Flip to Dark",
-    "card": "Aurora Bloom BG Flip",
-    "category": "Light & Emphasis",
+    "name": "极光升腾反黑",
+    "card": "极光升腾反黑",
+    "category": "光效与强调",
     "categoryKey": "effects",
     "styleKey": "aurora-bloom-bg-flip",
-    "summary": "Purple-orange soft-focus blobs rise from the bottom of a light-gray base; the whole background then darkens to near-black in ~0.36s while the blobs compress to afterglow; copy swaps with blur-out/blur-in (a gap between lines, no cross-fade)"
+    "summary": "浅灰底从底部升起紫橙柔焦 blob，随后整个底色在约 0.36s 内压暗到近黑、blob 压成余晖；文案同步 blur-out 换句 blur-in，换句间留空档不 cross-fade"
   },
   "BrandFrameSnap": {
-    "name": "Brand Frame Snap",
-    "card": "Brand Frame Snap",
-    "category": "Light & Emphasis",
+    "name": "品牌画框硬切",
+    "card": "品牌画框硬切",
+    "category": "光效与强调",
     "categoryKey": "effects",
     "styleKey": "brand-frame-snap",
-    "summary": "Brand-frame grammar — a thick solid frame grows around the full screen ahead of the content and the screen-recording window lands inside it; on mode switch the frame hard-flips color on the same frame and the in-window layout swaps with it — one borderColor handles chapter navigation, status signaling, and brand presence"
+    "summary": "品牌色画框语法——一圈粗纯色画框先于内容长出包住全屏，录屏窗口落进框内；模式切换时整圈画框同帧硬翻色+窗内布局同帧换，一个 borderColor 干完章节导航/状态提示/品牌露出三件事"
   },
   "DashboardGlowHighlightPill": {
-    "name": "Golden Pill Guide",
-    "card": "Golden Pill Guide",
-    "category": "Light & Emphasis",
+    "name": "金色胶囊指引",
+    "card": "金色胶囊指引",
+    "category": "光效与强调",
     "categoryKey": "effects",
     "styleKey": "dashboard-glow-highlight-pill",
-    "summary": "Golden type hangs on a black field while a data dashboard rises in with perspective from below and keeps drifting in 3D; a golden glow tours from the right down to the bottom and stretches into a pill, then traces the popover's glowing outline from there"
+    "summary": "金字悬于黑场，数据仪表盘自底带透视升入并持续 3D 漂移；金色光斑从右侧巡游到底部拉成胶囊，再由它起笔描出弹窗的辉光轮廓"
   },
   "LineUnfoldPanel": {
-    "name": "Line Unfold Panel",
-    "card": "FUI HUD Moves",
-    "category": "Light & Emphasis",
+    "name": "线条展开面板",
+    "card": "科幻 HUD 动效",
+    "category": "光效与强调",
     "categoryKey": "effects",
     "styleKey": "line-unfold-panel",
-    "summary": "scaleX 0→1 (snapped out in 5f on out-poly4) then scaleY 3px→full height (9f out-cubic), with content fading in a beat early; exit mirrors the order in reverse"
+    "summary": "scaleX 0→1（out poly4 急抽 5f）接 scaleY 3px→满高（out cubic 9f），内容提前一拍淡入；退场镜像反序"
   },
   "ReticleLockOn": {
-    "name": "Reticle Lock-On",
-    "card": "FUI HUD Moves",
-    "category": "Light & Emphasis",
+    "name": "准星锁定",
+    "card": "科幻 HUD 动效",
+    "category": "光效与强调",
     "categoryKey": "effects",
     "styleKey": "reticle-lock-on",
-    "summary": "Four L corners = four mirrors of one rectangle pair; fly-in (10f out-cubic) and shrink (2.2×→0.94×→1 overshoot rebound) are decoupled; on the lock frame the target glints and the label pops on back()"
+    "summary": "四 L 角=同一对矩形四份镜像，飞入（10f out cubic）与收缩（2.2×→0.94×→1 超调回弹）解耦；咬合帧目标微亮+标签 back 弹出"
   },
   "FlylineArc": {
-    "name": "Flyline Arc",
-    "card": "Glow & Flyline",
-    "category": "Light & Emphasis",
+    "name": "飞线连接",
+    "card": "光斑与飞线",
+    "category": "光效与强调",
     "categoryKey": "effects",
     "styleKey": "flyline-arc",
-    "summary": "Hand-drawn bezier sampled into 100 segments growing over 22f out-cubic; the glowing head mounts conditionally to lead, segment opacity fading with distance from the head; stroke pulse at the landing point, ready to relay"
+    "summary": "手写 bezier 100 段采样，22f out-cubic 生长；光头条件挂载领跑，段 opacity 按离头距离渐隐；落点描边脉冲，可接力"
   },
   "GlowOrbAmbient": {
-    "name": "Glow Orb Ambient",
-    "card": "Glow & Flyline",
-    "category": "Light & Emphasis",
+    "name": "暗场光斑呼吸",
+    "card": "光斑与飞线",
+    "category": "光效与强调",
     "categoryKey": "effects",
     "styleKey": "glow-orb-ambient",
-    "summary": "Three 500-700px radial glow orbs with blur(100px) drifting on dual sines; card-edge glow driven by the max of distance-weighted [180,720]px→[1,0] falloffs"
+    "summary": "三团 500-700px radial 光斑 + blur(100px)，双正弦漂移；卡缘辉光按光斑距离 [180,720]px→[1,0] 加权取 max 驱动"
   },
   "OrbFlylineRelay": {
-    "name": "Orb Flyline Relay",
-    "card": "Glow & Flyline",
-    "category": "Light & Emphasis",
+    "name": "光斑飞线接力",
+    "card": "光斑与飞线",
+    "category": "光效与强调",
     "categoryKey": "effects",
     "styleKey": "orb-flyline-relay",
-    "summary": "A+B welded: the orb surge and card pulse share the landing frame, brightening 1+1.6×surge, rising in 5f and dissipating over 15f"
+    "summary": "A+B 焊接：光斑 surge 与卡脉冲共用落点帧，涨亮 1+1.6×surge、5f 起升 15f 消散"
   },
   "AttentionBounce": {
-    "name": "Attention Bounce",
-    "card": "Icon Performance Moves",
-    "category": "Light & Emphasis",
+    "name": "注意力弹跳",
+    "card": "图标表演动效",
+    "category": "光效与强调",
     "categoryKey": "effects",
     "styleKey": "attention-bounce",
-    "summary": "Bouncing translateY with easing build-up plus landing-frame scaleX/Y squash and dust particles; on the peak frame the camera pushes to 1.08, and settling triggers a panel card pop-out"
+    "summary": "translateY 弹跳缓动递增 + 落地帧 scaleX/Y 挤压 + 尘点，峰值帧镜头 scale 1.08 推近，落定触发面板卡弹出"
   },
   "PopBurstConfirm": {
-    "name": "Pop Burst Confirm",
-    "card": "Icon Performance Moves",
-    "category": "Light & Emphasis",
+    "name": "弹跳爆点确认",
+    "card": "图标表演动效",
+    "category": "光效与强调",
     "categoryKey": "effects",
     "styleKey": "pop-burst-confirm",
-    "summary": "Scale wind-up–overshoot–settle spring plus N radial lines on translate and a ring on scale/opacity, ~20f total, then the label pops out"
+    "summary": "scale 蓄力-过冲-落回 spring + N 条径向 line translate + 圆环 scale/opacity，全程 ~20f，随后标签弹出"
   },
   "AnimeImpact": {
-    "name": "Anime Impact Frame",
-    "card": "Impact Feedback",
-    "category": "Light & Emphasis",
+    "name": "动漫打击帧",
+    "card": "冲击反馈",
+    "category": "光效与强调",
     "categoryKey": "effects",
     "styleKey": "anime-impact",
-    "summary": "On the crash-zoom impact stop: 3f of full-frame negative invert + radial concentration lines + red/cyan chromatic split, all cleared on frame 4"
+    "summary": "crash-zoom 撞停的 3f 整幅负片反色 + 放射集中线 + 红青色散，第 4f 全撤"
   },
   "HitCounter": {
-    "name": "Hit Counter",
-    "card": "Impact Feedback",
-    "category": "Light & Emphasis",
+    "name": "连招计数",
+    "card": "冲击反馈",
+    "category": "光效与强调",
     "categoryKey": "effects",
     "styleKey": "hit-counter",
-    "summary": "Three cards slam in sequence; each hit = 2f hit-stop + damage number float-up + the ×N counter jumping higher each time"
+    "summary": "三卡接连砸入，每命中 = 顿帧 2f + 伤害数字上浮 + ×N 计数跳字逐次加码"
   },
   "HalationBloom": {
-    "name": "Halation Bloom",
-    "card": "Light Play",
-    "category": "Light & Emphasis",
+    "name": "光晕绽放",
+    "card": "光影动效",
+    "category": "光效与强调",
     "categoryKey": "effects",
     "styleKey": "halation-bloom",
-    "summary": "A copy of the text sits beneath as a blur+brightness halo layer; from the impact-stop frame it flares out one ring then settles into steady soft glow"
+    "summary": "文字复制底层 blur+brightness 当晕层，撞停帧起猛涨一圈回落成稳态柔光"
   },
   "SheenSweepRetry": {
-    "name": "Light Play · SheenSweepRetry",
-    "card": "Light Play",
-    "category": "Light & Emphasis",
+    "name": "光影动效 · SheenSweepRetry",
+    "card": "光影动效",
+    "category": "光效与强调",
     "categoryKey": "effects",
-    "summary": "Three light moves — spotlight-sweep (a spotlight sweeping the copy), sheen (single-point glint), halation-bloom (impact-stop halo bleed)"
+    "summary": "光效三式——spotlight-sweep 聚光扫字、sheen 单点扫光、halation-bloom 撞停晕染"
   },
   "SpotlightSweepReveal": {
-    "name": "Light Play · SpotlightSweepReveal",
-    "card": "Light Play",
-    "category": "Light & Emphasis",
+    "name": "光影动效 · SpotlightSweepReveal",
+    "card": "光影动效",
+    "category": "光效与强调",
     "categoryKey": "effects",
-    "summary": "Three light moves — spotlight-sweep (a spotlight sweeping the copy), sheen (single-point glint), halation-bloom (impact-stop halo bleed)"
+    "summary": "光效三式——spotlight-sweep 聚光扫字、sheen 单点扫光、halation-bloom 撞停晕染"
   },
   "LineBoil": {
-    "name": "Line Boil",
-    "card": "Line Boil",
-    "category": "Light & Emphasis",
+    "name": "线条沸腾",
+    "card": "线条沸腾",
+    "category": "光效与强调",
     "categoryKey": "effects",
     "styleKey": "line-boil",
-    "summary": "Line boil — during holds, text/stroke outlines twitch slightly every 3 frames like hand-inked redraws, keeping the still frame feeling alive"
+    "summary": "线条沸腾——hold 期间文字/描边轮廓每 3 帧轻微扭动一次，像手绘逐帧重描，静止画面保持\"活着\"的呼吸感"
   },
   "RadialRipplePhoneChips": {
-    "name": "Radial Ripple Phone Chips",
-    "card": "Radial Ripple Phone Chips",
-    "category": "Light & Emphasis",
+    "name": "同心波纹手机",
+    "card": "同心波纹手机",
+    "category": "光效与强调",
     "categoryKey": "effects",
     "styleKey": "radial-ripple-phone-chips",
-    "summary": "Four concentric rings breathe out of phase like water ripples on a light-gray base; inside the centered phone mockup the feed slow-scrolls on its own while white chips spring-pop in on both sides and float"
+    "summary": "浅灰底四层同心圆错相呼吸如水波，中央手机 mockup 屏内 feed 自动缓滚，两侧白色 chip 先后 spring pop 入场并悬浮"
   },
   "RisoBeatPump": {
-    "name": "Riso Print Hits · RisoBeatPump",
-    "card": "Riso Print Hits",
-    "category": "Light & Emphasis",
+    "name": "孔版印刷冲击 · RisoBeatPump",
+    "card": "孔版印刷冲击",
+    "category": "光效与强调",
     "categoryKey": "effects",
-    "summary": "Two misregistration moves — riso-misregistration-hit (single impact frame: on the crash-stop the two-color plates split and shake twice into register) and riso-beat-pump (beat pump: a size jump per beat with the misregistration escalating)"
+    "summary": "套印错位两式——riso-misregistration-hit 单发冲击帧（撞停裂双色版抖两下套准）与 riso-beat-pump 节拍泵（逐拍跳大+错版逐次加码）"
   },
   "RisoMisregistrationHit": {
-    "name": "Riso Print Hits · RisoMisregistrationHit",
-    "card": "Riso Print Hits",
-    "category": "Light & Emphasis",
+    "name": "孔版印刷冲击 · RisoMisregistrationHit",
+    "card": "孔版印刷冲击",
+    "category": "光效与强调",
     "categoryKey": "effects",
-    "summary": "Two misregistration moves — riso-misregistration-hit (single impact frame: on the crash-stop the two-color plates split and shake twice into register) and riso-beat-pump (beat pump: a size jump per beat with the misregistration escalating)"
+    "summary": "套印错位两式——riso-misregistration-hit 单发冲击帧（撞停裂双色版抖两下套准）与 riso-beat-pump 节拍泵（逐拍跳大+错版逐次加码）"
   },
   "ScanBracketSweep": {
-    "name": "Scan Bracket Sweep",
-    "card": "Scan Bracket Sweep",
-    "category": "Light & Emphasis",
+    "name": "取景括号扫描",
+    "card": "取景括号扫描",
+    "category": "光效与强调",
     "categoryKey": "effects",
     "styleKey": "scan-bracket-sweep",
-    "summary": "A skeleton document pops to center, L-shaped viewfinder brackets drop into the four corners, and a 2.5px solid line with a gradient tail sweeps the document 5 times — the document never moves; only the light reads it"
+    "summary": "骨架文档弹到中央，四角落下 L 形取景括号，一条 2.5px 实线带渐变拖尾在文档上往复扫 5 趟——文档全程静止，只有光在读它"
   },
   "ScanlineAnnotateFocus": {
-    "name": "Scanline Annotate Focus",
-    "card": "Scanline Annotate Focus",
-    "category": "Light & Emphasis",
+    "name": "扫描取景标注",
+    "card": "扫描取景标注",
+    "category": "光效与强调",
     "categoryKey": "effects",
     "styleKey": "scanline-annotate-focus",
-    "summary": "A bright scanline sweeps down the page; where it passes, camera viewfinder brackets pop in order (1.75× converge-to-focus + slight overshoot), then mono micro-captions type out beside them while the top status line counts 00/06→06/06 in sync"
+    "summary": "一条亮扫描线自上而下掠过页面，扫过之处按先后顺序弹出相机取景框（1.75 倍收拢对准 + 轻微过冲），随后旁侧打出等宽小字标注，顶部状态行同步计数 00/06→06/06"
   },
   "ScanlineAssembleFlyin": {
-    "name": "Scanline Assemble Fly-In",
-    "card": "Scanline Assemble Fly-In",
-    "category": "Light & Emphasis",
+    "name": "扫描装配飞入",
+    "card": "扫描装配飞入",
+    "category": "光效与强调",
     "categoryKey": "effects",
     "styleKey": "scanline-assemble-flyin",
-    "summary": "The page opens as an empty dark grid with a bright scanline sweeping down; at each block's landing spot its component flies in from off-screen to dock, with motion-blur ghosting and a settle flash — the scan ends exactly as the page finishes assembling"
+    "summary": "页面开场是空的暗底网格，一条亮扫描线自上而下掠过；扫到每个区块的落点，该处组件就从画外飞入贴合，带残影模糊与落位闪边——扫完整页恰好装配完成"
   },
   "ImpactBurstKit": {
-    "name": "Impact Burst Kit",
-    "card": "Slam Entrance Moves",
-    "category": "Light & Emphasis",
+    "name": "冲击爆点套件",
+    "card": "砸入式登场",
+    "category": "光效与强调",
     "categoryKey": "effects",
     "styleKey": "impact-burst-kit",
-    "summary": "B's three-piece kit plus a shockwave front that scans neighboring cards on precisely computed radius-distance frames; neighbors kick out 30px + rotate ±3° and spring back damped"
+    "summary": "B 三件套 + 冲击波前沿按半径-距离精算扫过邻卡帧，邻卡外推 30px + rotate ±3° 阻尼弹回"
   },
   "KanadaPerspectiveSnap": {
-    "name": "Kanada Perspective Snap",
-    "card": "Slam Entrance Moves",
-    "category": "Light & Emphasis",
+    "name": "金田式透视甩正",
+    "card": "砸入式登场",
+    "category": "光效与强调",
     "categoryKey": "effects",
     "styleKey": "kanada-perspective-snap",
-    "summary": "Slams in over 18f via perspective 300→1500px + rotate3d 58°→0 + scale 1.7→1; the last 4f overshoot +5° then flatten, the long diagonal shadow squaring off"
+    "summary": "perspective 300→1500px + rotate3d 58°→0 + scale 1.7→1 甩入 18f，末 4f 过冲 +5° 弹平，长斜影收正"
   },
   "ScoreSlam": {
-    "name": "Score Slam",
-    "card": "Slam Entrance Moves",
-    "category": "Light & Emphasis",
+    "name": "比分砸入",
+    "card": "砸入式登场",
+    "category": "光效与强调",
     "categoryKey": "effects",
     "styleKey": "score-slam",
-    "summary": "The card slams down from scale 2.5/rotate 5° over six frames on Easing.in(quad); on the landing frame a ring spreads, dust scatters, and the screen shakes — all in the same frame"
+    "summary": "卡从 scale 2.5/rotate 5° 六帧 Easing.in(quad) 砸落，落点帧圆环扩散+尘点飞散+震屏同帧"
   },
   "CornerSpotlightReveal": {
-    "name": "Corner Spotlight Develop",
-    "card": "Spotlight Sweep Moves",
-    "category": "Light & Emphasis",
+    "name": "角落匀速显影",
+    "card": "暗场聚光显影",
+    "category": "光效与强调",
     "categoryKey": "effects",
     "styleKey": "corner-spotlight-reveal",
-    "summary": "Corner constant-speed develop: a radial spotlight from the top-left expands at a strictly linear radius; what it touches develops, what it misses stays black, until the full screen lights up — light as the transition"
+    "summary": "角落匀速显影：左上角径向聚光半径严格 linear 扩张，照到显影照不到沉黑，最终全屏亮起——光即转场"
   },
   "GlowWakeSleepPanel": {
-    "name": "Wake/Sleep Glow Sweep",
-    "card": "Spotlight Sweep Moves",
-    "category": "Light & Emphasis",
+    "name": "醒睡扫过",
+    "card": "暗场聚光显影",
+    "category": "光效与强调",
     "categoryKey": "effects",
     "styleKey": "glow-wake-sleep-panel",
-    "summary": "Wake/sleep sweep: a radial develop mask tracks the light head left to right at constant speed with a three-layer purple edge glow hugging the top edge; it outlines the logo passing, lights a vertical afterglow at the right edge, and the panel sinks back into darkness in the tail"
+    "summary": "醒睡扫过：radial 显影罩跟随光头从左向右匀速移动，贴顶边紫色光线三层辉光同行，经过 logo 描光、到右缘点亮竖直残光，尾段面板沉回黑暗"
   },
   "SlideSpotlightPan": {
-    "name": "Edge Glow Pan",
-    "card": "Spotlight Sweep Moves",
-    "category": "Light & Emphasis",
+    "name": "贴边泛光横摇",
+    "card": "暗场聚光显影",
+    "category": "光效与强调",
     "categoryKey": "effects",
     "styleKey": "slide-spotlight-pan",
-    "summary": "Edge-glow pan: the light wraps the top-left vertical edge, turns the corner, then travels along the top edge with purple glow bleeding into the UI's upper inside; the spotlight head develops while moving right at constant speed + the panel slides left at constant speed = the feel of a camera pan right"
+    "summary": "贴边泛光横摇：光线先绕左上角竖缘、转角后沿顶边横走，紫光晕染渗入 UI 顶部内侧；聚光头匀速右移显影 + 面板匀速左滑＝相机右摇感"
   },
   "StreamResponse": {
-    "name": "AI Response Stream-In",
-    "card": "AI Response Stream-In",
-    "category": "Interaction & Feature Demos",
+    "name": "AI 响应汇入",
+    "card": "AI 响应汇入",
+    "category": "交互与功能演示",
     "categoryKey": "interaction",
     "styleKey": "ai-stream-response",
-    "summary": "The AI response panel first lands one readable summary line, then evidence rows with status icons stream in one by one, finally converging into a completed state"
+    "summary": "AI 响应面板先落一句可读摘要，再让带状态图标的证据行逐条汇入，最后统一收束成完成态"
   },
   "AutolayoutGapDial": {
-    "name": "Autolayout Gap Dial",
-    "card": "Autolayout Gap Dial",
-    "category": "Interaction & Feature Demos",
+    "name": "间距拨盘布局",
+    "card": "间距拨盘布局",
+    "category": "交互与功能演示",
     "categoryKey": "interaction",
     "styleKey": "autolayout-gap-dial",
-    "summary": "Gap dial drives the layout — a row of link blocks with selection outlines + gap annotations; badge digits tick per step, blocks get pushed apart live by the parameter and spring back into place — a visualization of \"parameter-driven layout\""
+    "summary": "间距拨盘驱动布局——一排链接块带框选描边+缝隙间距标注，徽章数字逐格跳动、块被参数实时推开再弹簧回弹归位；\"参数驱动布局\"的可视化"
   },
   "DiagramCascadeBuild": {
-    "name": "Canvas Materialize · DiagramCascadeBuild",
-    "card": "Canvas Materialize Moves",
-    "category": "Interaction & Feature Demos",
+    "name": "画布物化动效 · DiagramCascadeBuild",
+    "card": "画布物化动效",
+    "category": "交互与功能演示",
     "categoryKey": "interaction",
-    "summary": "Two \"materialize onto canvas\" moves — panel-to-canvas row-flip cards (table rows arc out of the panel and morph across containers into canvas cards) and diagram-cascade (after the prompt types, nodes pop in tier by tier with connectors growing ahead of the nodes)"
+    "summary": "内容\"物化上画布\"两式——panel-to-canvas 行倒卡（面板表格行沿弧线飞出、跨容器变形成画布卡片）与 diagram-cascade 级联生成树（prompt 打字后节点逐层弹出、连线先于节点生长）"
   },
   "PanelToCanvasMaterialize": {
-    "name": "Canvas Materialize · PanelToCanvasMaterialize",
-    "card": "Canvas Materialize Moves",
-    "category": "Interaction & Feature Demos",
+    "name": "画布物化动效 · PanelToCanvasMaterialize",
+    "card": "画布物化动效",
+    "category": "交互与功能演示",
     "categoryKey": "interaction",
-    "summary": "Two \"materialize onto canvas\" moves — panel-to-canvas row-flip cards (table rows arc out of the panel and morph across containers into canvas cards) and diagram-cascade (after the prompt types, nodes pop in tier by tier with connectors growing ahead of the nodes)"
+    "summary": "内容\"物化上画布\"两式——panel-to-canvas 行倒卡（面板表格行沿弧线飞出、跨容器变形成画布卡片）与 diagram-cascade 级联生成树（prompt 打字后节点逐层弹出、连线先于节点生长）"
   },
   "ChipGridSingleSelectBlackout": {
-    "name": "Chip Grid Blackout",
-    "card": "Chip Grid Blackout",
-    "category": "Interaction & Feature Demos",
+    "name": "灰闪单选反黑",
+    "card": "灰闪单选反黑",
+    "category": "交互与功能演示",
     "categoryKey": "interaction",
     "styleKey": "chip-grid-single-select-blackout",
-    "summary": "Five option chips fade in centered 3+2; on select, one frame of a gray pressed block inserts first, then within a few frames the fill goes pure black and the text white with a 1→1.04→1 micro-rebound while the rest fade to 18% but stay locked in place; remaining items then zero out, the black chip lifts and narrows, and a formula row surfaces beneath"
+    "summary": "五个选项 chip 以 3+2 居中排布逐个淡入；选中帧先插一帧灰色按压块，紧接数帧内底色变纯黑、文字变白并做 1→1.04→1 极轻回弹，其余 chip 淡到 18% 但位置锁死；随后余项归零，黑 chip 上移收窄，下方浮现算式行"
   },
   "ChipLiftToUserPill": {
-    "name": "Chip Lift to User Pill",
-    "card": "Chip Lift to User Pill",
-    "category": "Interaction & Feature Demos",
+    "name": "选中长成药丸",
+    "card": "选中长成药丸",
+    "category": "交互与功能演示",
     "categoryKey": "interaction",
     "styleKey": "chip-lift-to-user-pill",
-    "summary": "The target chip in the grid hard-inverts to black-on-white for 3f while the rest fade and shrink staggered by Manhattan distance; the black chip grows rightward into a pill anchored at its left edge, types the name character by character with a green dot lighting up, then stretches a 1px connector to a circular badge"
+    "summary": "网格里的目标 chip 先 3 帧硬切反色成黑底白字，其余 chip 按到它的曼哈顿距离交错淡出缩小；黑 chip 左缘锚定向右生长成药丸，内部逐字打出人名并点亮绿点，再拉一条 1px 连接线接到圆形徽标"
   },
   "CursorCastEnsemble": {
-    "name": "Collab Cursor Cast · CursorCastEnsemble",
-    "card": "Collab Cursor Moves",
-    "category": "Interaction & Feature Demos",
+    "name": "协作光标演出 · CursorCastEnsemble",
+    "card": "协作光标演出",
+    "category": "交互与功能演示",
     "categoryKey": "interaction",
-    "summary": "Two moves casting cursors as actors — dialogue-duet (two cursors duetting in the dark: approach, orbit, light handoff, swelling into the transition) and cast-ensemble (five cursors as an ensemble atmosphere layer: staggered fly-ins + sine drift + typing cameo + gathering to watch)"
+    "summary": "协作光标当演员的两式——dialogue-duet 双光标暗场对话双人舞（靠近/绕位/灯光交接/放大成转场），与 cast-ensemble 五光标群演氛围层（错峰飞入+正弦漂移+打字 cameo+聚拢围观）"
   },
   "CursorDialogueDuet": {
-    "name": "Collab Cursor Cast · CursorDialogueDuet",
-    "card": "Collab Cursor Moves",
-    "category": "Interaction & Feature Demos",
+    "name": "协作光标演出 · CursorDialogueDuet",
+    "card": "协作光标演出",
+    "category": "交互与功能演示",
     "categoryKey": "interaction",
-    "summary": "Two moves casting cursors as actors — dialogue-duet (two cursors duetting in the dark: approach, orbit, light handoff, swelling into the transition) and cast-ensemble (five cursors as an ensemble atmosphere layer: staggered fly-ins + sine drift + typing cameo + gathering to watch)"
+    "summary": "协作光标当演员的两式——dialogue-duet 双光标暗场对话双人舞（靠近/绕位/灯光交接/放大成转场），与 cast-ensemble 五光标群演氛围层（错峰飞入+正弦漂移+打字 cameo+聚拢围观）"
   },
   "CommandPaletteSummon": {
-    "name": "Command Palette Summon",
-    "card": "Command Palette Summon",
-    "category": "Interaction & Feature Demos",
+    "name": "命令面板召唤",
+    "card": "命令面板召唤",
+    "category": "交互与功能演示",
     "categoryKey": "interaction",
     "styleKey": "command-palette-summon",
-    "summary": "Command palette arrival — the whole screen dims and blurs, the ⌘K panel drops in with an overshoot bounce, candidate rows surface staggered, and the list narrows live as you type"
+    "summary": "命令面板降临——整屏压暗加模糊，⌘K 面板带过冲弹落，候选行错峰浮现，敲字列表实时收窄"
   },
   "GlassPillDictationTyping": {
-    "name": "Glass Pill Dictation",
-    "card": "Glass Pill Dictation",
-    "category": "Interaction & Feature Demos",
+    "name": "玻璃胶囊听写",
+    "card": "玻璃胶囊听写",
+    "category": "交互与功能演示",
     "categoryKey": "interaction",
     "styleKey": "glass-pill-dictation-typing",
-    "summary": "On pure black, a fixed-width glass pill pops in ~1.25× oversized and settles into place with an accent light laid from dim-left to bright-right inside; the cursor leads, a placeholder sentence types in, the light dims with typing progress, ending as a neutral dark glass strip"
+    "summary": "纯黑底上一条定宽玻璃胶囊以约 1.25 倍略大弹出后缓落到位，内部自左暗到右亮铺一层强调色光；光标先行、随后打字出现占位句，光随打字进度渐渐熄灭，收尾成中性深色玻璃条"
   },
   "HashtagToPillMaterialize": {
-    "name": "Hashtag to Pill",
-    "card": "Hashtag Materialize",
-    "category": "Interaction & Feature Demos",
+    "name": "话题词实体化",
+    "card": "话题词实体化",
+    "category": "交互与功能演示",
     "categoryKey": "interaction",
     "styleKey": "hashtag-to-pill-materialize",
-    "summary": "Hashtag types into matter — \"#word\" types out centered (solid red cursor constant), a 1-frame hard cut turns it into a wide pill tag; after a hold it shrinks and slides left into the page's tag slot, then another 1-frame hard cut reveals the finished page; a \"two hard cuts, one slide\" rhythm skeleton"
+    "summary": "话题词打字实体化——居中打出 \"#word\"（红实心光标恒亮），1 帧硬切变成宽大胶囊标签，hold 后缩小左移落到页面标签位，再 1 帧硬切揭示成品页；\"两次硬切一次滑动\"的节奏骨架"
   },
   "CursorPerformancePunchIn": {
-    "name": "Input Trigger Moves · CursorPerformancePunchIn",
-    "card": "Input Trigger Moves",
-    "category": "Interaction & Feature Demos",
+    "name": "输入触发动效 · CursorPerformancePunchIn",
+    "card": "输入触发动效",
+    "category": "交互与功能演示",
     "categoryKey": "interaction",
-    "summary": "Two input-trigger moves — cursor-performance (a performative cursor click with push-in) and keycap-smash-cut (a keycap fuse igniting into a violent cut)"
+    "summary": "输入触发两式——cursor-performance 光标表演点击推近、keycap-smash-cut 键帽引信引爆猛切"
   },
   "KeycapSmashCut": {
-    "name": "Keycap Smash Cut",
-    "card": "Input Trigger Moves",
-    "category": "Interaction & Feature Demos",
+    "name": "键帽砸屏硬切",
+    "card": "输入触发动效",
+    "category": "交互与功能演示",
     "categoryKey": "interaction",
     "styleKey": "keycap-smash-cut",
-    "summary": "Keycap bobs in a breathing hover → 3f flatten + bright-ring fuse + 30f of cards charging the lens from four sides in an accelerating roar + hard cut on the most violent frame to a still panorama with the keycap seated in the top bar"
+    "summary": "键帽呼吸悬浮→3f 压扁+亮环引信 + 30f 卡片四面冲镜持续加速轰鸣 + 动势最猛一帧硬切静止全景、键帽嵌顶栏"
   },
   "PickerCarouselFeatureCycle": {
-    "name": "Picker Carousel Snap",
-    "card": "Picker Carousel Snap",
-    "category": "Interaction & Feature Demos",
+    "name": "药丸吸附轮播",
+    "card": "药丸吸附轮播",
+    "category": "交互与功能演示",
     "categoryKey": "interaction",
     "styleKey": "picker-carousel-feature-cycle",
-    "summary": "Mobile-style vertical picker — the focus pill stays put while content passes through it; each item decelerates on a pronounced outQuint snap to a full stop, with opacity/size/gray layered by distance to center, and the pill does a barely-there scaleY breath on settle"
+    "summary": "移动端风竖向选择器——焦点药丸不动、内容穿过它，每项带明显 outQuint 减速吸附后完全静止，按到中心距离分层控制透明度/字号/灰度，落定时药丸做 scaleY 极轻呼吸"
   },
   "SegmentedThumbHero": {
-    "name": "Segmented Thumb Hero",
-    "card": "Segmented Thumb Hero",
-    "category": "Interaction & Feature Demos",
+    "name": "分段控件特写",
+    "card": "分段控件特写",
+    "category": "交互与功能演示",
     "categoryKey": "interaction",
     "styleKey": "segmented-thumb-hero",
-    "summary": "The segmented control's thumb slide as hero close-up — an oversized pill segmented control floats in on a spring, an outlined arrow cursor slides in from off-screen and presses, the white thumb glides 8f ease-out to the other segment, and on arrival the new icon spring-pops while the old one retracts"
+    "summary": "分段控件 thumb 位移当主角特写——超大胶囊 segmented control 弹簧浮入，描边箭头光标画外滑入按下，白 thumb 8f ease-out 滑到另一段，到位瞬间新图标 spring 弹出、旧图标收起"
   },
   "PaletteThemeRipple": {
-    "name": "Palette Theme Ripple",
-    "card": "Theme Switch Moves",
-    "category": "Interaction & Feature Demos",
+    "name": "调色板主题涟漪",
+    "card": "主题切换动效",
+    "category": "交互与功能演示",
     "categoryKey": "interaction",
     "styleKey": "palette-theme-ripple",
-    "summary": "Panel drops in on back(1.9) → types character by character → on Enter the panel ease-in collapses to 0 with a white highlight core pinning its spot → a circular clip ripples 12→1250px on cubic-out with a 5px white ring glowing both ways at the edge"
+    "summary": "面板 back(1.9) 弹落→逐字输入→回车面板 ease-in 收缩到 0 + 白色高光核钉住位置→圆形 clip 半径 12→1250px cubic-out 荡开，边缘 5px 白环双向辉光"
   },
   "ThemeSweepToggle": {
-    "name": "Theme Sweep Toggle",
-    "card": "Theme Switch Moves",
-    "category": "Interaction & Feature Demos",
+    "name": "主题斜扫切换",
+    "card": "主题切换动效",
+    "category": "交互与功能演示",
     "categoryKey": "interaction",
     "styleKey": "theme-sweep-toggle",
-    "summary": "Dark theme: a clip-path polygon with a 15° beveled edge sweeps the field (~38f out-poly3, fast then slow) with a 4px bright white edge + 18px glow, fading out 2f after the sweep; the dark version seats itself scale 1→0.995→1"
+    "summary": "深色版 clip-path polygon 15° 斜边扫场（out poly3 先快后缓 ~38f），边界 4px 白亮线+18px 辉光，扫完 2f 淡出；深版 scale 1→0.995→1 坐实"
   },
   "TypeAndFilter": {
-    "name": "Type & Filter",
-    "card": "Type & Filter",
-    "category": "Interaction & Feature Demos",
+    "name": "打字筛选",
+    "card": "打字筛选",
+    "category": "交互与功能演示",
     "categoryKey": "interaction",
     "styleKey": "type-and-filter",
-    "summary": "Type a search on the real UI, the grid folds itself into a single card, click through into the detail page"
+    "summary": "真实 UI 上打字搜索、网格自己收敛成一张卡、点击穿透进详情页"
   },
   "VoiceWaveformLive": {
-    "name": "Live Voice Waveform",
-    "card": "Live Voice Waveform",
-    "category": "Interaction & Feature Demos",
+    "name": "实时声纹",
+    "card": "实时声纹",
+    "category": "交互与功能演示",
     "categoryKey": "interaction",
     "styleKey": "voice-waveform-live",
-    "summary": "Live voiceprint in a record pill — 64 thin bars rise and fall with \"speech\", towering mid-band while talking and collapsing to a dotted line on pauses, the waveform rolling right-to-left; the full performance of speak → pause → speak → submit collapse"
+    "summary": "录音胶囊实时声纹——64 根细竖条随\"说话\"起伏，说话时中部高耸、停顿缩成点线，波形从右往左滚动；说→停→说→提交塌缩的完整表演"
   },
   "CraneRiseReveal": {
-    "name": "Crane Rise Reveal",
-    "card": "Crane Rise Reveal",
-    "category": "Openers & Brand",
+    "name": "吊臂升起揭示",
+    "card": "吊臂升起揭示",
+    "category": "开场与品牌",
     "categoryKey": "opening",
     "styleKey": "crane-rise-reveal",
-    "summary": "Crane-rise reveal — opens jammed on a close-up of one data row; the camera decelerates upward and back along Y as rows pour in until the whole dashboard fills the frame"
+    "summary": "升降臂拉升揭示——开场怼在一行数据特写，相机沿 Y 轴减速升起后拉，行行涌入直到整面 dashboard 铺满全幅"
   },
   "DatavizLandscapeOpen": {
-    "name": "Dataviz Landscape Open",
-    "card": "Dataviz Landscape Open",
-    "category": "Openers & Brand",
+    "name": "数据景观开场",
+    "card": "数据景观开场",
+    "category": "开场与品牌",
     "categoryKey": "opening",
     "styleKey": "dataviz-landscape-open",
-    "summary": "Dark-field tributary-stream landscape opener — multiple flow lines converge into a trunk, fictional ID labels float on the lines, and the camera flies over low and slow with deep focus"
+    "summary": "暗场支流线束地景开场——多条流线汇入主干、虚构 ID 标签浮在线上、相机重景深低速飞越"
   },
   "Fracture": {
-    "name": "Fracture Assemble & Scatter",
-    "card": "Fracture",
-    "category": "Openers & Brand",
+    "name": "碎片聚合飞散",
+    "card": "碎片聚合飞散",
+    "category": "开场与品牌",
     "categoryKey": "opening",
     "styleKey": "fracture",
-    "summary": "5×5 tiles assemble from 3D shard state into a full poster ring by ring from center; hold a beat on the headline, then every shard accelerates away spinning, outward from center, off-screen"
+    "summary": "5×5 瓦片从 3D 碎片态按中心波纹逐圈聚合成整面海报，停一拍亮字，随后全部碎片背离中心加速旋转飞出画面"
   },
   "IconFieldColorize": {
-    "name": "Icon Field Colorize",
-    "card": "Icon Field Colorize",
-    "category": "Openers & Brand",
+    "name": "图标点阵翻色",
+    "card": "图标点阵翻色",
+    "category": "开场与品牌",
     "categoryKey": "opening",
     "styleKey": "icon-field-colorize",
-    "summary": "A matrix of grayscale mini-icons surfaces staggered to fill the screen; after a beat, multiple brand-colored horizontal wave bands sweep down ultra-fast and flip the whole field — the \"show the full feature landscape first, ignite the brand in an instant\" opener/closer card"
+    "summary": "灰阶小图标点阵错峰浮现铺满全屏，停一拍后多道品牌色横带波纹极快向下扫翻全场——\"功能全景先摆满，品牌一瞬间点亮\"的开场/收束卡"
   },
   "LetterspaceMaterialize": {
-    "name": "Letterspace Crystallize",
-    "card": "Letterspace Materialize",
-    "category": "Openers & Brand",
+    "name": "字距结晶字标",
+    "card": "字距结晶字标",
+    "category": "开场与品牌",
     "categoryKey": "opening",
     "styleKey": "letterspace-materialize",
-    "summary": "Wide-tracked wordmark crystallizes via parallel continuous drawing — every letter starts its stroke on the same frame, strokes grow continuously like handwriting, and all close into the word on the same frame; the brand wordmark develops over an ambient backdrop"
+    "summary": "大字距字标全字符并行连续描画结晶——所有字母同帧起笔、笔画像手写一样连续生长、同帧齐收成词；氛围底景上的品牌字标显影"
   },
   "MagicianCardFlourish": {
-    "name": "Magician Card Flourish",
-    "card": "Magician Card Flourish",
-    "category": "Openers & Brand",
+    "name": "魔术卡弹射",
+    "card": "魔术卡弹射",
+    "category": "开场与品牌",
     "categoryKey": "opening",
     "styleKey": "magician-card-flourish",
-    "summary": "On pure black a blue star-flash ignites for 0.3s (X-shaped needle beams rotating 90° + a radial glow at center) and the card ejects from the flash point — an extreme-spin arc flying at the lens, spin decaying with proximity, snapping to a hard near-full-frame freeze, then a sheen sweep"
+    "summary": "纯黑场上蓝色星芒闪现 0.3s（X 形针状光束旋转 90°+中心辉光放射小光芒），卡片从闪光点弹射而出——极速自旋弧线飞向镜头、自旋随靠近衰减、瞬间硬定格近满幅、定格后 sheen 扫光"
   },
   "OrbitRingTitleOpen": {
-    "name": "Orbit Ring Title Open",
-    "card": "Orbit Ring Title Open",
-    "category": "Openers & Brand",
+    "name": "环形卡阵标题开场",
+    "card": "环形卡阵标题开场",
+    "category": "开场与品牌",
     "categoryKey": "opening",
     "styleKey": "orbit-ring-title-open",
-    "summary": "Eight 16:9 content cards orbit evenly (45° apart) on a 700×375 ellipse at constant speed (cards never tilt; depth comes only from sin θ giving ±9% scale and z-order); card contents hold their first frame while the ring expands, all eight start playing together after f24; the centered title un-blurs word by word and sinks into place, a yellow marker block sweeps across from the left the instant the keyword lands, a mono subline floats up after, and the closing segment defocuses the line out while the ring keeps spinning into the next shot"
+    "summary": "八张 16:9 内容卡按 45° 均布在 700×375 椭圆上匀速公转（卡身永不倾斜，纵深只由 sin θ 给出 ±9% 缩放与 z 序），环撑开期间卡内容冻结首帧、f24 之后八张一起开播；居中标题逐字解糊下沉落定，关键词到位那一刻黄色马克块自左横扫铺满，mono 副行随后浮出，末段整行失焦淡出、环继续转着交棒下一镜"
   },
   "SpotlightHeroCard": {
-    "name": "Spotlight Hero Card",
-    "card": "Spotlight Hero Card",
-    "category": "Openers & Brand",
+    "name": "聚光主角卡",
+    "card": "聚光主角卡",
+    "category": "开场与品牌",
     "categoryKey": "opening",
     "styleKey": "spotlight-hero-card",
-    "summary": "A spotlight sweeps the page and locks onto one card; after a 45° push-in the card pops up hovering, the beam traces its outline twice, then it settles back in place"
+    "summary": "聚光灯扫过页面锁定一张卡，斜 45° 推进后卡片弹起悬浮、光束沿轮廓两圈、贴回原位"
   },
   "StrokeSegmentBuild": {
-    "name": "Stroke Segment Build",
-    "card": "Stroke Segment Build",
-    "category": "Openers & Brand",
+    "name": "描边分段构建",
+    "card": "描边分段构建",
+    "category": "开场与品牌",
     "categoryKey": "opening",
     "styleKey": "stroke-segment-build",
-    "summary": "Broken strokes become the word — the title is split into a dozen-plus disconnected strokes that light up segment by segment out of order, unreadable for the first 70%; on the last segment's landing the meaning snaps into place"
+    "summary": "断笔成字——标题拆成十几段互不相连的笔画乱序逐段点亮，前 70% 不可读，末段落位瞬间语义\"啪\"地成立"
   },
   "TextAsMask": {
-    "name": "Text as Mask",
-    "card": "Text as Mask",
-    "category": "Openers & Brand",
+    "name": "文字蒙版",
+    "card": "文字蒙版",
+    "category": "开场与品牌",
     "categoryKey": "opening",
     "styleKey": "text-as-mask",
-    "summary": "Text as video mask — the inside of the ultra-bold headline glyphs reveals a slowly panning product shot; at the end the glyphs scale 26× and overflow as the inner footage takes over the full screen"
+    "summary": "文字视频遮罩——超粗大标题字内部透出缓慢平移的产品画面，结尾字形放大 26 倍溢出、内部画面接管全屏"
   },
   "LogoStingButton": {
-    "name": "Logo Sting Button",
-    "card": "Edit Hook Moves",
-    "category": "Outros",
+    "name": "字标彩蛋收尾",
+    "card": "剪辑钩子",
+    "category": "收尾",
     "categoryKey": "outro",
     "styleKey": "logo-sting-button",
-    "summary": "logo-sting-button end-hook — after the outro logo locks, a 12f easter egg abruptly inserts then retracts; the trailer \"button ending\""
+    "summary": "logo-sting-button 片尾钩子——片尾 logo 定住后突插 12f 彩蛋再收，预告片 button ending"
   },
   "GrainDissolve": {
-    "name": "Grain Dissolve",
-    "card": "Grain Dissolve",
-    "category": "Outros",
+    "name": "文字砂化凝聚",
+    "card": "文字砂化凝聚",
+    "category": "收尾",
     "categoryKey": "outro",
     "styleKey": "grain-dissolve",
-    "summary": "The whole line bursts into boiling grain noise with a hatched selection frame surfacing; the noise cloud rapidly condenses into a larger glowing short wordmark, displacement decaying to zero for the freeze"
+    "summary": "整行字爆裂成沸腾颗粒噪点并浮现斜纹选区框，噪点云急速凝聚成更大号发光短字标，位移衰减归零定格"
   },
   "LogoShrinkWordmarkLockup": {
-    "name": "Logo Shrink Lockup",
-    "card": "Logo Shrink Lockup",
-    "category": "Outros",
+    "name": "图标收束落位",
+    "card": "图标收束落位",
+    "category": "收尾",
     "categoryKey": "outro",
     "styleKey": "logo-shrink-wordmark-lockup",
-    "summary": "A large neon-slit ring rapidly contracts into a solid small white O at center with an overshoot brake; the icon slides left to yield, letters glide in one by one to complete the lockup, and an accent-colored tagline closes"
+    "summary": "霓虹切口大环快速收束成中央实心小白 O 并带过冲刹车，图标左移让位，字母逐个滑入完成 lockup，强调色标语收尾"
   },
   "NeonTripleMarquee": {
-    "name": "Neon Triple Marquee",
-    "card": "Neon Triple Marquee",
-    "category": "Outros",
+    "name": "三行霓虹跑马灯",
+    "card": "三行霓虹跑马灯",
+    "category": "收尾",
     "categoryKey": "outro",
     "styleKey": "neon-triple-marquee",
-    "summary": "Three opposing neon marquee rows recap — BETTER/FASTER/STRONGER as hollow outlined giant type stacked top/mid/bottom full-screen; odd/even rows scroll infinitely at constant speed in opposite directions, the three rows light up in 1/3-phase rotation, and the whole group fades at the end"
+    "summary": "三行对向霓虹跑马灯 recap——BETTER/FASTER/STRONGER 空心描边巨字上中下排满全屏，奇偶行反向匀速无限横滚，三行按 1/3 相位轮流亮起，结尾整组淡出"
   },
   "OutroGroupPhotoLaunch": {
-    "name": "Outro Group Photo Launch",
-    "card": "Outro Group Photo Launch",
-    "category": "Outros",
+    "name": "发布会合影收场",
+    "card": "发布会合影收场",
+    "category": "收尾",
     "categoryKey": "outro",
     "styleKey": "outro-group-photo-launch",
-    "summary": "Every element from across the piece flies in to surround the wordmark for a group photo; a crane-settle camera position + stage light + gold dust stage the launch-event close"
+    "summary": "全片元素从四面八方飞来围住字标合影，crane 落机位+舞台光+金尘做成发布会收场"
   },
   "UiStripAwayOutro": {
-    "name": "UI Strip-Away Outro",
-    "card": "UI Strip-Away Outro",
-    "category": "Outros",
+    "name": "减法收尾",
+    "card": "减法收尾",
+    "category": "收尾",
     "categoryKey": "outro",
     "styleKey": "ui-strip-away-outro",
-    "summary": "Subtractive outro — after clicking Publish, the entire editor UI evaporates layer by layer from the edges inward with staggered timing; on black only the button remains, sliding to center and enlarging, then fading out to hand off to the wordmark title card"
+    "summary": "减法式收尾——点击 Publish 后整个编辑器 UI 从外围到中心层层错峰蒸发，黑场上只剩那颗按钮滑到屏心放大，按钮再淡出交棒字标定版"
   },
   "IconFlipBloomLogo": {
-    "name": "UI to Brand · IconFlipBloomLogo",
-    "card": "UI to Brand Morph",
-    "category": "Outros",
+    "name": "UI 变品牌 · IconFlipBloomLogo",
+    "card": "UI 变品牌",
+    "category": "收尾",
     "categoryKey": "outro",
-    "summary": "Two UI-to-brand morphs — icon-flip-bloom (the icon flips flat on Y into a vertical line that blooms into a flower mark + the wordmark settling letter by letter) and input-morph-assemble (the input field contracts into a pill while three primitives drop and gather into the logo's single petal)"
+    "summary": "UI 变品牌两式——icon-flip-bloom 图标 Y 轴翻扁成竖线绽放成花形 mark + wordmark 逐字落定，与 input-morph-assemble 输入框收缩成胶囊、三粒图元落下集结成 logo 单瓣"
   },
   "InputMorphsIntoLogo": {
-    "name": "UI to Brand · InputMorphsIntoLogo",
-    "card": "UI to Brand Morph",
-    "category": "Outros",
+    "name": "UI 变品牌 · InputMorphsIntoLogo",
+    "card": "UI 变品牌",
+    "category": "收尾",
     "categoryKey": "outro",
-    "summary": "Two UI-to-brand morphs — icon-flip-bloom (the icon flips flat on Y into a vertical line that blooms into a flower mark + the wordmark settling letter by letter) and input-morph-assemble (the input field contracts into a pill while three primitives drop and gather into the logo's single petal)"
+    "summary": "UI 变品牌两式——icon-flip-bloom 图标 Y 轴翻扁成竖线绽放成花形 mark + wordmark 逐字落定，与 input-morph-assemble 输入框收缩成胶囊、三粒图元落下集结成 logo 单瓣"
   },
   "BeatCutAccelerando": {
-    "name": "Beat Cut Accelerando",
-    "card": "Beat Cut Moves",
-    "category": "Rhythm & Montage",
+    "name": "递进硬切串",
+    "card": "节拍硬切",
+    "category": "节奏与蒙太奇",
     "categoryKey": "rhythm",
     "styleKey": "beat-cut-accelerando",
-    "summary": "Six views hard-cut full-screen at halving intervals 16→12→8→6→4f, accelerating closer; the final cut freezes abruptly back to the main frame with a gentle push to close"
+    "summary": "六视图按 16→12→8→6→4f 间隔减半全屏硬切，加速逼近，末刀戛然定格回主画面轻推收住"
   },
   "PaparazziFlash": {
-    "name": "Paparazzi Flash",
-    "card": "Beat Cut Moves",
-    "category": "Rhythm & Montage",
+    "name": "连闪定格",
+    "card": "节拍硬切",
+    "category": "节奏与蒙太奇",
     "categoryKey": "rhythm",
     "styleKey": "paparazzi-flash",
-    "summary": "Three white flashes each hard-cut to a different crop of the same footage (wide → card close-up → digit close-up) with shutter afterglow settling; the third flash lands on the digit finishing"
+    "summary": "三次白闪各硬切同素材不同裁切（全景→卡片特写→数字特写），快门余韵沉降，第三闪停在数字收束"
   },
   "BeatStepListThemeCycle": {
-    "name": "Beat Step List Theme Cycle",
-    "card": "Beat Step List Cycle",
-    "category": "Rhythm & Montage",
+    "name": "节拍列表换色",
+    "card": "节拍列表换色",
+    "category": "节奏与蒙太奇",
     "categoryKey": "rhythm",
     "styleKey": "beat-step-list-theme-cycle",
-    "summary": "Three-channel metronome — on a dark field the adjective list steps up one row per beat, a fixed pill at viewport center \"catches\" the next word and changes color, and the whole field's background swaps on the same beat; row, color, and field channels locked to one beat"
+    "summary": "三通道节拍器——深色场形容词列表逐拍上移一行，视口中央固定胶囊\"接住\"下一个词并换色，整场底色同拍跟换；行、色、场三通道锁死同一拍点"
   },
   "DominoCascade": {
-    "name": "Domino Cascade",
-    "card": "Montage Rhythm",
-    "category": "Rhythm & Montage",
+    "name": "多米诺连锁入场",
+    "card": "蒙太奇节奏",
+    "category": "节奏与蒙太奇",
     "categoryKey": "rhythm",
     "styleKey": "domino-cascade",
-    "summary": "The title slams down → the shockwave pops up a row of cards → the last card crashes sideways into the sidebar entrance; momentum passes down the chain"
+    "summary": "标题砸落→震波弹起卡片列→末卡撞滑侧边栏进场，动量方向逐级传递"
   },
   "DropBlackoutSlam": {
-    "name": "Drop Blackout Slam",
-    "card": "Montage Rhythm",
-    "category": "Rhythm & Montage",
+    "name": "黑场蓄爆",
+    "card": "蒙太奇节奏",
+    "category": "节奏与蒙太奇",
     "categoryKey": "rhythm",
     "styleKey": "drop-blackout-slam",
-    "summary": "Mid-playback, one frame cuts to pure black silence for 12f, then the hero visual slams in with screen shake + a bright ring"
+    "summary": "正常播放中一帧切纯黑死寂 12f，然后主视觉带震屏+亮环砸入"
   },
   "WrightTripleCut": {
-    "name": "Wright Triple Cut",
-    "card": "Montage Rhythm",
-    "category": "Rhythm & Montage",
+    "name": "三连特写",
+    "card": "蒙太奇节奏",
+    "category": "节奏与蒙太奇",
     "categoryKey": "rhythm",
     "styleKey": "wright-triple-cut",
-    "summary": "Three 10f ultra-tight close-ups hard-cut in a run (each \"hold 4 – move 3 – hold 3\"); the third whips back to a wide revealing the result"
+    "summary": "三个 10f 超近特写硬切连打（各\"静4-动3-静3\"），第三声甩回全景亮结果"
   },
   "ComicPanelSplit": {
-    "name": "Comic Panel Split",
-    "card": "Panel Grid Moves",
-    "category": "Rhythm & Montage",
+    "name": "漫画分镜切屏",
+    "card": "面板网格动效",
+    "category": "节奏与蒙太奇",
     "categoryKey": "rhythm",
     "styleKey": "comic-panel-split",
-    "summary": "Three panels, each a full-page clip-path 12° bevel crop + translate/scale camera setups (1x/1.9x/2.6x), popping in 2f apart; hold 18f with a slow push per panel to stay alive, the last panel's bevel expanding 12f out-cubic to swallow the screen"
+    "summary": "三格各一份整页 clip-path 12° 斜边裁切 + translate/scale 摆机位（1x/1.9x/2.6x），逐格 2f 间隔弹入；定格 18f 各格缓推保活，末格斜边 12f out-cubic 扩张吃屏"
   },
   "FlipGridReflow": {
-    "name": "Flip Grid Reflow",
-    "card": "Panel Grid Moves",
-    "category": "Rhythm & Montage",
+    "name": "翻转网格重排",
+    "card": "面板网格动效",
+    "category": "节奏与蒙太奇",
     "categoryKey": "rhythm",
     "styleKey": "flip-grid-reflow",
-    "summary": "Two precomputed coordinate tables (row / 3×2 grid); each card flies 16f inOut-cubic with delay=i×1.5f and scale 1→1.28 with a 1.02 overshoot; after landing a 6f brightness 0.78 pulse washes the whole frame"
+    "summary": "预写两套坐标表（横排/3×2 网格），每卡 delay=i×1.5f、16f inOut cubic 直线飞行 + scale 1→1.28 带 1.02 过冲；落定后 6f brightness 0.78 全画面脉冲"
   },
   "GridFlashMosaic": {
-    "name": "Grid Flash Mosaic",
-    "card": "Panel Grid Moves",
-    "category": "Rhythm & Montage",
+    "name": "网格闪切马赛克",
+    "card": "面板网格动效",
+    "category": "节奏与蒙太奇",
     "categoryKey": "rhythm",
     "styleKey": "grid-flash-mosaic",
-    "summary": "A 3×3 grid hard-mounts one cell every 2f in h(i) shuffled order (each cell enters 3f scale 1.18→1 + a 2f darkening pulse); the full wall breathes a beat, then the center cell swallows the screen at 3.28× over 14f on Easing.in(cubic)"
+    "summary": "3×3 格每 2f 一格按 h(i) 乱序条件挂载硬入（入格 3f scale 1.18→1 + 2f 加深脉冲），满墙呼吸一拍，中心格 14f Easing.in(cubic) 放大 3.28x 吞屏"
   },
   "QuadSplitParallelScenes": {
-    "name": "Quad Split Parallel Scenes",
-    "card": "Quad Split Scenes",
-    "category": "Rhythm & Montage",
+    "name": "四宫并行蒙太奇",
+    "card": "四宫并行蒙太奇",
+    "category": "节奏与蒙太奇",
     "categoryKey": "rhythm",
     "styleKey": "quad-split-parallel-scenes",
-    "summary": "The frame hard-cuts to a 2×2 quad grid with four quadrants running their own micro-scenes in parallel (typing, crash push, word-by-word, interaction chain), key beats offset 3-6 frames for information bombardment"
+    "summary": "画面硬切 2×2 四宫格，四个象限并行跑各自的微场景（打字、急推、逐词、交互链），关键节拍错开 3–6 帧制造信息轰炸"
   },
   "JumpCutPunchIn": {
-    "name": "Jump Cut Punch-In",
-    "card": "Rhythm Interrupt Moves",
-    "category": "Rhythm & Montage",
+    "name": "跳切递进推近",
+    "card": "节奏中断动效",
+    "category": "节奏与蒙太奇",
     "categoryKey": "rhythm",
     "styleKey": "jump-cut-punch-in",
-    "summary": "transform-origin pinned to the target center; a three-step scale ladder jumps (zero tweening), each jump paired with a 2f darkening pulse as the tick"
+    "summary": "transform-origin 钉目标中心，三档 scale 阶梯跳变（零补间），每跳 2f 加深脉冲当 tick"
   },
   "StrobeBlackFrames": {
-    "name": "Strobe Black Frames",
-    "card": "Rhythm Interrupt Moves",
-    "category": "Rhythm & Montage",
+    "name": "黑帧频闪倒数",
+    "card": "节奏中断动效",
+    "category": "节奏与蒙太奇",
     "categoryKey": "rhythm",
     "styleKey": "strobe-black-frames",
-    "summary": "Full-screen black frames strobe per a hard-coded frame table (2f each, interval converging 8f→3f); the final flash lifts straight into a hard-cut zoom that lands"
+    "summary": "全屏黑帧按写死帧号表闪现（每次 2f，间隔 8f→3f 收敛），末闪掀开即硬切放大落定"
   },
   "SakugaTimingShift": {
-    "name": "Sakuga Timing Shift",
-    "card": "Sakuga Timing Shift",
-    "category": "Rhythm & Montage",
+    "name": "作画式节奏变拍",
+    "card": "作画式节奏变拍",
+    "category": "节奏与蒙太奇",
     "categoryKey": "rhythm",
     "styleKey": "sakuga-timing-shift",
-    "summary": "Three-on-one-off beat — the element first moves in flipbook steps of 3 frames each, then at the climax snaps into per-frame silky sprint; the frame-rate quantization shift is itself the spectacle"
+    "summary": "一拍三转一拍一——元素先以每 3 帧一步的手翻书顿挫移动，高潮瞬间切成逐帧丝滑冲刺，帧率量化的突变本身就是看点"
   },
   "SmearMultiples": {
-    "name": "Smear Multiples",
-    "card": "Smear Multiples",
-    "category": "Rhythm & Montage",
+    "name": "拖影分身",
+    "card": "拖影分身",
+    "category": "节奏与蒙太奇",
     "categoryKey": "rhythm",
     "styleKey": "smear-multiples",
-    "summary": "Afterimage multiples — while the card moves at speed it drags 4 clearly countable translucent copies that merge into one on landing; an animation-style stand-in for motion blur"
+    "summary": "残像分身——卡片高速横移时拖 4 个清晰可数的半透明分身副本，落位瞬间收拢合一；motion blur 的动画式平替"
   },
   "SpectrumMorphUi": {
-    "name": "Spectrum Morph UI",
-    "card": "Spectrum Morph UI",
-    "category": "Rhythm & Montage",
+    "name": "频谱变形界面",
+    "card": "频谱变形界面",
+    "category": "节奏与蒙太奇",
     "categoryKey": "rhythm",
     "styleKey": "spectrum-morph-ui",
-    "summary": "Spectrum-morphed UI — the title's underline splits into a row of bars bouncing to the spectrum for two bars of music, then folds back into a straight line; music visualization growing on the UI"
+    "summary": "频谱化 UI——标题下划线裂成一排竖条按频谱跳动两小节，再收拢还原成直线；音乐可视化长在 UI 上"
   },
   "FreezeAnnotateReal": {
-    "name": "Speed Ramp & Freeze · FreezeAnnotateReal",
-    "card": "Speed Ramp & Freeze",
-    "category": "Rhythm & Montage",
+    "name": "变速与定格 · FreezeAnnotateReal",
+    "card": "变速与定格",
+    "category": "节奏与蒙太奇",
     "categoryKey": "rhythm",
-    "summary": "Two rhythm techniques on non-linear frame remapping — speed ramp (fast → 0.2x stare → fast) and freeze-annotate (flow → freeze with a circling annotation → unfreeze)"
+    "summary": "帧号非线性 remap 的两款节奏手法——变速（快→0.2x 凝视→快）与定格标注（流动→定格圈注→解冻）"
   },
   "SpeedRampReal": {
-    "name": "Speed Ramp & Freeze · SpeedRampReal",
-    "card": "Speed Ramp & Freeze",
-    "category": "Rhythm & Montage",
+    "name": "变速与定格 · SpeedRampReal",
+    "card": "变速与定格",
+    "category": "节奏与蒙太奇",
     "categoryKey": "rhythm",
-    "summary": "Two rhythm techniques on non-linear frame remapping — speed ramp (fast → 0.2x stare → fast) and freeze-annotate (flow → freeze with a circling annotation → unfreeze)"
+    "summary": "帧号非线性 remap 的两款节奏手法——变速（快→0.2x 凝视→快）与定格标注（流动→定格圈注→解冻）"
   },
   "CardFootageCadence": {
-    "name": "Card Footage Cadence",
-    "card": "Trailer Grammar",
-    "category": "Rhythm & Montage",
+    "name": "卡片与画面节奏交替",
+    "card": "预告片剪辑语法",
+    "category": "节奏与蒙太奇",
     "categoryKey": "rhythm",
     "styleKey": "card-footage-cadence",
-    "summary": "Seven conditionally mounted segments (cut points 14/22/34/42/52/62): UI segments carry micro-motion (slow push / crop pan), title-card segments set black-background white type settling 1.05→1 with a micro-shrink"
+    "summary": "七段条件挂载分段（14/22/34/42/52/62 切点）：UI 段带微动（缓推/裁切横移），字卡段黑底白字 1.05→1 落定微缩"
   },
   "SmashCut": {
-    "name": "Smash Cut",
-    "card": "Trailer Grammar",
-    "category": "Rhythm & Montage",
+    "name": "冲脸硬切",
+    "card": "预告片剪辑语法",
+    "category": "节奏与蒙太奇",
     "categoryKey": "rhythm",
     "styleKey": "smash-cut",
-    "summary": "The roar section runs all Easing.in(quad): background push-in 1→1.55 + rotate 1.8°, five flying cards accelerating toward the lens staggered + velocity-gated blur; at 42f one frame hard-cuts to a still panorama with no animated properties"
+    "summary": "轰鸣段全 Easing.in(quad)：背景推近 1→1.55 + rotate 1.8°、5 张飞卡错峰加速冲脸 + 速度门控模糊；42f 一帧硬切无动画属性的静止全景"
   },
   "TrailerBumper": {
-    "name": "Trailer Bumper",
-    "card": "Trailer Grammar",
-    "category": "Rhythm & Montage",
+    "name": "预告片冷开场",
+    "card": "预告片剪辑语法",
+    "category": "节奏与蒙太奇",
     "categoryKey": "rhythm",
     "styleKey": "trailer-bumper",
-    "summary": "Three shots hard-cut at equal 9f lengths (0/9/18), each with an internal 1→1.04 micro-push to stay alive; 27-33f pure black silence, then from 33f the title fades in over 16f with a 44px out-cubic lift"
+    "summary": "三镜头各 9f 等长硬切（0/9/18），每镜内部 scale 1→1.04 微推保活；27-33f 纯黑静默，33f 起标题 16f 淡入 + 44px out-cubic 微升"
   },
   "BottomPushStackWipe": {
-    "name": "Bottom Push Stack Wipe",
-    "card": "Bottom Push Wipe",
-    "category": "Transitions",
+    "name": "底推换章",
+    "card": "底推换章",
+    "category": "转场",
     "categoryKey": "transition",
     "styleKey": "bottom-push-stack-wipe",
-    "summary": "Bottom push chapter change — the new scene pushes up from the bottom edge with its full backdrop, physically shoving the old scene off-screen; several chapters push in a row, each with its own saturated base color, content pinned in its color-field coordinate system riding the backdrop"
+    "summary": "底边上推换章——新场景连底色整屏从底边向上推入，把旧场景物理顶出画外，连推数章各配一种饱和底色，内容钉死在各自色底坐标系里随底色走"
   },
   "BubbleSwarmTakeover": {
-    "name": "Bubble Swarm Takeover",
-    "card": "Bubble Swarm Curtain",
-    "category": "Transitions",
+    "name": "气泡群幕布",
+    "card": "气泡群幕布",
+    "category": "转场",
     "categoryKey": "transition",
     "styleKey": "bubble-swarm-takeover",
-    "summary": "Pearlescent bubble-swarm curtain transition — bubbles of mixed sizes drift in from off-screen swelling until they blanket the frame while the page \"washes out\" in sync; the cut hides at peak occlusion, and when the bubbles disperse outward the new scene is already there; an i18n text-pill variant can be mixed in"
+    "summary": "珠光气泡群幕布转场——大小不一的气泡从画外飘入越涨越大遮满整屏，页面同步\"洗白\"，遮蔽峰值处藏切换，气泡向外散开后已是新场景；可混入 i18n 文字胶囊变体"
   },
   "CardFlipReveal": {
-    "name": "Card Flip Reveal",
-    "card": "Card Flip Reveal",
-    "category": "Transitions",
+    "name": "卡片翻面揭示",
+    "card": "卡片翻面揭示",
+    "category": "转场",
     "categoryKey": "transition",
     "styleKey": "card-flip-reveal",
-    "summary": "Feature card 3D flip reveal — cards flip 180° on the Y axis; as the front UI passes the thinnest edge point a highlight band glints across tracking the angle, the back reveals a large conclusion number, and the sweep runs across the row staggered"
+    "summary": "功能卡 3D 翻面揭示——卡片沿 Y 轴翻 180°，正面 UI 翻到侧棱最薄处闪过一道随角度移动的高光带，背面揭出大号结论数字，逐张错峰扫过整排"
   },
   "CardFlockTumble": {
-    "name": "Card Flock Tumble",
-    "card": "Card Flock Tumble",
-    "category": "Transitions",
+    "name": "卡片翻飞收束",
+    "card": "卡片翻飞收束",
+    "category": "转场",
     "categoryKey": "transition",
     "styleKey": "card-flock-tumble",
-    "summary": "Three UI page cards tumble in from their thin side edges into a 3D stepped formation (crisp throughout, continuous silky splines); after settling they keep a slow rotation, then rapidly converge and get sucked into center, bursting a single turbulent smoke ring that spreads as giant type crosses to close"
+    "summary": "三张 UI 页卡从侧棱薄边 3D 翻飞成阶梯站定（全程清晰、样条连续丝滑），站定后保持慢转不停，快速收束吸入中心，炸出单个湍流烟雾环扩散，巨字横贯收场"
   },
   "CircleMatchIris": {
-    "name": "Circle Match Iris",
-    "card": "Circle Match Iris",
-    "category": "Transitions",
+    "name": "圆心匹配光圈切",
+    "card": "圆心匹配光圈切",
+    "category": "转场",
     "categoryKey": "transition",
     "styleKey": "circle-match-iris",
-    "summary": "Center-matched iris cut — the iris blasts open from the center of a circular element on the page, and the new page's circular chart connects on that same circle; the match cut gives the iris a semantic anchor"
+    "summary": "圆心匹配光圈切——光圈从页面上圆形元素的圆心炸开，圈内新页的圆形图表接在同一个圆上；匹配剪辑给光圈一个语义锚点"
   },
   "ColorBlockStepWipe": {
-    "name": "Color Block Step Wipe",
-    "card": "Color Block Step Wipe",
-    "category": "Transitions",
+    "name": "色块阶跃吞屏",
+    "card": "色块阶跃吞屏",
+    "category": "转场",
     "categoryKey": "transition",
     "styleKey": "color-block-step-wipe",
-    "summary": "Two discrete color-block step wipes — A: a small center strip hard-jumps 3-5 steps into full screen (the badge pops in two jumps after takeover); B: a block eats the screen diagonally from a corner in 3 steps, carrying a page card that advances each jump"
+    "summary": "离散阶跃色块吞屏两式——A 中央小条按 3–5 步硬跳阶跃扩成全屏（接管后徽章两跳弹出），B 色块从角落斜向 3 步吃屏并携带一张页面卡逐跳前进"
   },
   "CubeNavigation": {
-    "name": "Cube Navigation",
-    "card": "Cube Navigation",
-    "category": "Transitions",
+    "name": "立方体逐面导航",
+    "card": "立方体逐面导航",
+    "category": "转场",
     "categoryKey": "transition",
     "styleKey": "cube-navigation",
-    "summary": "Content wrapped across a 3D cube's six faces; the camera alternates front close-up → pull back to isometric to read the edges → turn a face and push in, stepping through, with per-face shading computed live from normal orientation"
+    "summary": "内容贴满 3D 立方体六面，相机正面特写→拉远等轴看棱角→转面推近交替步进，每面按法线朝向实时算明暗"
   },
   "GradientTransition": {
-    "name": "Gradient Transition",
-    "card": "Gradient Transition",
-    "category": "Transitions",
+    "name": "渐变参数变奏",
+    "card": "渐变参数变奏",
+    "category": "转场",
     "categoryKey": "transition",
     "styleKey": "gradient-transition",
-    "summary": "The background morphs smoothly across linear/radial/conic CSS gradients — angle, stops, center, and radius interpolated parameter by parameter, with cross-fades between segments to change type"
+    "summary": "背景在 linear、radial、conic 三类 CSS 渐变间平滑过渡——角度、色标、中心、半径逐参数插值，段间交叉淡化换类型"
   },
   "LineCarryTransition": {
-    "name": "Line Carry Transition",
-    "card": "Line Carry Transition",
-    "category": "Transitions",
+    "name": "线条接力转场",
+    "card": "线条接力转场",
+    "category": "转场",
     "categoryKey": "transition",
     "styleKey": "line-carry-transition",
-    "summary": "Line-carry lateral transition — scene A's progress bar extends off-frame, the camera tracks the line sideways, and the line corners mid-move to outline scene B's card frame, cut-free throughout"
+    "summary": "线条接力横移转场——场景 A 的进度条延伸出画，镜头跟线横移，线在移动中拐角围出场景 B 的卡框，全程无剪切"
   },
   "MosaicReframe": {
-    "name": "Mosaic Reframe",
-    "card": "Mosaic Reframe",
-    "category": "Transitions",
+    "name": "三段布局重排",
+    "card": "三段布局重排",
+    "category": "转场",
     "categoryKey": "transition",
     "styleKey": "mosaic-reframe",
-    "summary": "12 tiles morph continuously across three layouts (regular grid / feature mosaic / diagonal waterfall chain), position and size interpolated independently with per-tile micro-stagger and holds between segments"
+    "summary": "12 张瓦片在规则网格、feature mosaic、对角瀑布串三种排版间连续变形，位置宽高各自插值、逐片微错峰，段间留 hold"
   },
   "BarnDoorSplit": {
-    "name": "Barn Door Split",
-    "card": "Page Turn Transitions",
-    "category": "Transitions",
+    "name": "双门裂开",
+    "card": "翻页转场",
+    "category": "转场",
     "categoryKey": "transition",
     "styleKey": "barn-door-split",
-    "summary": "The old page's two 960px overflow containers fitted edge to edge slide outward off-screen together on Easing.in(cubic); a bright line + shadow inside the seam while the new page beneath meets them on scale 1.06→1"
+    "summary": "旧页两个 960px overflow 容器对位拼合，同时向外 Easing.in(cubic) 滑出画外；裂缝内边缘亮线+投影，新页底层 scale 1.06→1 迎上"
   },
   "CubeRotate": {
-    "name": "Cube Rotate",
-    "card": "Page Turn Transitions",
-    "category": "Transitions",
+    "name": "立方体旋页",
+    "card": "翻页转场",
+    "category": "转场",
     "categoryKey": "transition",
     "styleKey": "cube-rotate",
-    "summary": "Two pages mounted on adjacent cube faces (rotateY 0/90° + translateZ W/2) with the scene layer turning -90°; the old face darkens as it turns out, the new brightens as it turns in, and at 45° the two faces pinch a dark ridge"
+    "summary": "两页贴立方体相邻面（rotateY 0/90° + translateZ W/2），场景层转 -90°；旧面转出压暗、新面转进变亮，45° 时两面夹一条暗棱"
   },
   "PaperPlaneMessenger": {
-    "name": "Paper Plane Messenger",
-    "card": "Paper Plane Messenger",
-    "category": "Transitions",
+    "name": "纸飞机信使",
+    "card": "纸飞机信使",
+    "category": "转场",
     "categoryKey": "transition",
     "styleKey": "paper-plane-messenger",
-    "summary": "Paper-plane messenger transition — after clicking \"send\", the camera pulls away from window A as a folded paper plane arcs out along a bezier (pitch following the tangent), the camera escorting it through multi-layer parallax props until it lands at window B's door and B scales up to take the screen"
+    "summary": "纸飞机信使转场——点击\"发送\"后镜头拉远脱离窗口 A，折纸飞机沿贝塞尔弧线飞出（俯仰跟随切线），镜头伴飞穿过多层视差道具，飞抵窗口 B 门前落定，B 放大接管全屏"
   },
   "InkBleedReveal": {
-    "name": "Ink Bleed Reveal",
-    "card": "Print Texture Transitions",
-    "category": "Transitions",
+    "name": "墨渗揭示",
+    "card": "印刷质感转场",
+    "category": "转场",
     "categoryKey": "transition",
     "styleKey": "ink-bleed-reveal",
-    "summary": "Print-texture transition — ink-bleed-reveal (filamented bleed edges soaking across to eat the old scene)"
+    "summary": "印刷质感转场——ink-bleed-reveal 墨渗揭示（须状渗边洇开吃掉旧景）"
   },
   "BlackCardTransition": {
-    "name": "Shot Handoff · BlackCardTransition",
-    "card": "Shot Handoff Transitions",
-    "category": "Transitions",
+    "name": "镜头交棒转场 · BlackCardTransition",
+    "card": "镜头交棒转场",
+    "category": "转场",
     "categoryKey": "transition",
-    "summary": "Six shot-handoff moves — push-to-white, straight flight through black, focus handoff, black title card, whip-pan, and mask-wipe through a window (depth version included), selected by the energy gap"
+    "summary": "镜头交棒六式——推进流白、穿暗场直航、虚焦接力、黑场字卡、whip-pan 甩镜、mask-wipe 穿窗（含纵深款），按能量落差选型"
   },
   "DarkTunnelTransition": {
-    "name": "Shot Handoff · DarkTunnelTransition",
-    "card": "Shot Handoff Transitions",
-    "category": "Transitions",
+    "name": "镜头交棒转场 · DarkTunnelTransition",
+    "card": "镜头交棒转场",
+    "category": "转场",
     "categoryKey": "transition",
-    "summary": "Six shot-handoff moves — push-to-white, straight flight through black, focus handoff, black title card, whip-pan, and mask-wipe through a window (depth version included), selected by the energy gap"
+    "summary": "镜头交棒六式——推进流白、穿暗场直航、虚焦接力、黑场字卡、whip-pan 甩镜、mask-wipe 穿窗（含纵深款），按能量落差选型"
   },
   "FocusHandoffTransition": {
-    "name": "Shot Handoff · FocusHandoffTransition",
-    "card": "Shot Handoff Transitions",
-    "category": "Transitions",
+    "name": "镜头交棒转场 · FocusHandoffTransition",
+    "card": "镜头交棒转场",
+    "category": "转场",
     "categoryKey": "transition",
-    "summary": "Six shot-handoff moves — push-to-white, straight flight through black, focus handoff, black title card, whip-pan, and mask-wipe through a window (depth version included), selected by the energy gap"
+    "summary": "镜头交棒六式——推进流白、穿暗场直航、虚焦接力、黑场字卡、whip-pan 甩镜、mask-wipe 穿窗（含纵深款），按能量落差选型"
   },
   "MaskWipeReal": {
-    "name": "Shot Handoff · MaskWipeReal",
-    "card": "Shot Handoff Transitions",
-    "category": "Transitions",
+    "name": "镜头交棒转场 · MaskWipeReal",
+    "card": "镜头交棒转场",
+    "category": "转场",
     "categoryKey": "transition",
-    "summary": "Six shot-handoff moves — push-to-white, straight flight through black, focus handoff, black title card, whip-pan, and mask-wipe through a window (depth version included), selected by the energy gap"
+    "summary": "镜头交棒六式——推进流白、穿暗场直航、虚焦接力、黑场字卡、whip-pan 甩镜、mask-wipe 穿窗（含纵深款），按能量落差选型"
   },
   "PortalWipeV2": {
-    "name": "Shot Handoff · PortalWipeV2",
-    "card": "Shot Handoff Transitions",
-    "category": "Transitions",
+    "name": "镜头交棒转场 · PortalWipeV2",
+    "card": "镜头交棒转场",
+    "category": "转场",
     "categoryKey": "transition",
-    "summary": "Six shot-handoff moves — push-to-white, straight flight through black, focus handoff, black title card, whip-pan, and mask-wipe through a window (depth version included), selected by the energy gap"
+    "summary": "镜头交棒六式——推进流白、穿暗场直航、虚焦接力、黑场字卡、whip-pan 甩镜、mask-wipe 穿窗（含纵深款），按能量落差选型"
   },
   "WhipBrakeReal": {
-    "name": "Shot Handoff · WhipBrakeReal",
-    "card": "Shot Handoff Transitions",
-    "category": "Transitions",
+    "name": "镜头交棒转场 · WhipBrakeReal",
+    "card": "镜头交棒转场",
+    "category": "转场",
     "categoryKey": "transition",
-    "summary": "Six shot-handoff moves — push-to-white, straight flight through black, focus handoff, black title card, whip-pan, and mask-wipe through a window (depth version included), selected by the energy gap"
+    "summary": "镜头交棒六式——推进流白、穿暗场直航、虚焦接力、黑场字卡、whip-pan 甩镜、mask-wipe 穿窗（含纵深款），按能量落差选型"
   },
   "WhipPanReal": {
-    "name": "Shot Handoff · WhipPanReal",
-    "card": "Shot Handoff Transitions",
-    "category": "Transitions",
+    "name": "镜头交棒转场 · WhipPanReal",
+    "card": "镜头交棒转场",
+    "category": "转场",
     "categoryKey": "transition",
-    "summary": "Six shot-handoff moves — push-to-white, straight flight through black, focus handoff, black title card, whip-pan, and mask-wipe through a window (depth version included), selected by the energy gap"
+    "summary": "镜头交棒六式——推进流白、穿暗场直航、虚焦接力、黑场字卡、whip-pan 甩镜、mask-wipe 穿窗（含纵深款），按能量落差选型"
   },
   "GlitchDisplace": {
-    "name": "Glitch Displace",
-    "card": "Tear Streak Transitions",
-    "category": "Transitions",
+    "name": "故障条带错位",
+    "card": "撕裂拖影转场",
+    "category": "转场",
     "categoryKey": "transition",
     "styleKey": "glitch-displace",
-    "summary": "Tear transition — glitch-displace noise tearing (hard cut amid 16 horizontally displaced jittering strips); strip-level tearing with digital-glitch semantics"
+    "summary": "撕裂转场——glitch-displace 噪声撕裂（16 横条错位抖动中硬切），数字故障语义的条带级撕裂"
   },
   "InvisibleCut": {
-    "name": "Invisible Cut",
-    "card": "Hidden Cut Transitions",
-    "category": "Transitions",
+    "name": "前景遮挡隐形切",
+    "card": "隐藏切点转场",
+    "category": "转场",
     "categoryKey": "transition",
     "styleKey": "invisible-cut",
-    "summary": "An ultra-widescreen card with heavy motion blur sweeps right past the lens; during the blur-packed occlusion frame the background hard-cuts A→B and the card flies out — the audience believes it was one shot"
+    "summary": "一张超画幅卡片带重运动模糊贴脸横扫，糊满全屏的遮挡帧内背景 A→B 硬切，卡片飞出观众以为还是同一镜"
   },
   "LightLeakBurn": {
-    "name": "Light Leak Burn",
-    "card": "Hidden Cut Transitions",
-    "category": "Transitions",
+    "name": "琥珀漏光烧切",
+    "card": "隐藏切点转场",
+    "category": "转场",
     "categoryKey": "transition",
     "styleKey": "light-leak-burn",
-    "summary": "Three amber soft glows sweep diagonally; on the peak frame the light swallows ~70% of the old page, the cut lands, and by the time the light dissipates the new page is already in place"
+    "summary": "三团琥珀柔光沿对角线斜扫，光峰帧吞掉旧页约七成时硬切新页，光退散时新页已就位"
   },
   "VersusSlam": {
-    "name": "Versus Slam",
-    "card": "Hidden Cut Transitions",
-    "category": "Transitions",
+    "name": "对撞开屏",
+    "card": "隐藏切点转场",
+    "category": "转场",
     "categoryKey": "transition",
     "styleKey": "versus-slam",
-    "summary": "Two half-screens with beveled edges accelerate in from off-screen and collide; on the impact frame: white flash + screen shake + a VS stamp — the cut point is the collision itself"
+    "summary": "左右两半屏带斜切边从画外加速对冲撞合，撞击帧白闪+震屏+VS 盖章，切点就是撞击本身"
   },
   "LetterformZoom": {
-    "name": "Letterform Zoom",
-    "card": "Travel-Through Transitions",
-    "category": "Transitions",
+    "name": "字腔穿越",
+    "card": "穿行式转场",
+    "category": "转场",
     "categoryKey": "transition",
     "styleKey": "letterform-zoom",
-    "summary": "The giant headline's counter (an SVG-mask cutout) reveals the new page; an exponential push threads the hole, and the instant it fills the frame the new page takes over while leftover strokes fling off-screen"
+    "summary": "巨型标题字腔（SVG mask 挖洞）透出新页，指数推进穿洞，洞撑满瞬间接管、残余笔画甩出画外"
   },
   "SharedElementMorph": {
-    "name": "Shared Element Morph",
-    "card": "Travel-Through Transitions",
-    "category": "Transitions",
+    "name": "共享元素归位",
+    "card": "穿行式转场",
+    "category": "转场",
     "categoryKey": "transition",
     "styleKey": "shared-element-morph",
-    "summary": "The full-screen close-up card shrinks + moves + grows rounded corners, flying seamlessly into its slot in the dashboard grid with a 3% overshoot landing"
+    "summary": "全屏特写卡收缩+位移+长出圆角，严丝合缝飞落进 dashboard 网格所属槽位，3% 过冲落座"
   },
   "WhiteFlashLogoSimplifyCut": {
-    "name": "White Flash Simplify Cut",
-    "card": "White Flash Simplify Cut",
-    "category": "Transitions",
+    "name": "冲白降维切换",
+    "card": "冲白降维切换",
+    "category": "转场",
     "categoryKey": "transition",
     "styleKey": "white-flash-logo-simplify-cut",
-    "summary": "A liquid gradient wordmark rests with flowing light; one beat of white-out overexposure and the flat wordmark fades in on white and freezes — texture stripped in a single white flash"
+    "summary": "彩色液态渐变字标静置流光，画面一拍冲白过曝，白底上扁平版字标淡入定格——一次闪白完成质感降维"
   },
   "BlindsSlice": {
-    "name": "Blinds Slice",
-    "card": "Geometric Wipe Transitions",
-    "category": "Transitions",
+    "name": "百叶窗切条",
+    "card": "几何擦除转场",
+    "category": "转场",
     "categoryKey": "transition",
     "styleKey": "blinds-slice",
-    "summary": "12 160px columns with overflow hidden + the inner full page aligned by negative margins; within each column A contracts scaleX(1-p) from the left edge and B expands scaleX(p) from the right, staggered delays forming a wave with a bright seam line sweeping along it"
+    "summary": "12 根 160px 竖条 overflow hidden + 内层整页负 margin 对位；条内 A scaleX(1-p) 左缘收缩、B scaleX(p) 右缘展开，错峰 delay 成波，缝上亮线随波扫"
   },
   "ClockWipe": {
-    "name": "Clock Wipe",
-    "card": "Geometric Wipe Transitions",
-    "category": "Transitions",
+    "name": "时钟扫描擦除",
+    "card": "几何擦除转场",
+    "category": "转场",
     "categoryKey": "transition",
     "styleKey": "clock-wipe",
-    "summary": "A fan-shaped clip-path polygon overlays page B; the hand sweeps clockwise 360° at constant speed from 12 o'clock at screen center, revealing B as it passes, with multi-layer bright lines along the sweep"
+    "summary": "B 页上层套扇形 clip-path polygon，指针从屏心 12 点顺时针匀速扫 360°，扫过处露 B；扫描沿带多层亮线"
   },
   "BlurSlide": {
-    "name": "Blur Slide",
-    "card": "Blur Slide",
-    "category": "Type & Title Cards",
+    "name": "逐词模糊入场",
+    "card": "逐词模糊入场",
+    "category": "文字与字卡",
     "categoryKey": "typography",
     "styleKey": "blur-slide",
-    "summary": "The title enters word by word: y 40→0 + blur 10→0 + opacity 0→1 on one shared outCubic converging in sync, words ~3.5f apart; the subtitle follows staggered before the title finishes"
+    "summary": "标题逐词入场，y 40→0 + blur 10→0 + opacity 0→1 三通道走同一条 outCubic 同步收敛，词间隔约 3.5f；副标题在标题收完前就错峰跟进"
   },
   "BraceExpand": {
-    "name": "Brace Expand",
-    "card": "Brace Expand",
-    "category": "Type & Title Cards",
+    "name": "括号拉幕",
+    "card": "括号拉幕",
+    "category": "文字与字卡",
     "categoryKey": "typography",
     "styleKey": "brace-expand",
-    "summary": "A pair of braces first appears small at center, then slides out to ±148px with overshoot and scales up to title size; the text's clip width binds strictly to the brace gap, revealing like a curtain being drawn, with letter-spacing relaxing subtly after settling"
+    "summary": "一对花括号先小字号出现在正中，随即带过冲向左右滑到 ±148px 并放大到标题级，文字 clip 宽度严格绑括号间距、像被拉开幕布般揭示，落定后字距再细微松弛"
   },
   "BrandInkOpen": {
-    "name": "Brand Ink Open",
-    "card": "Brand Ink Open",
-    "category": "Openers & Brand",
+    "name": "品牌墨印开场",
+    "card": "品牌墨印开场",
+    "category": "开场与品牌",
     "categoryKey": "opening",
     "styleKey": "brand-ink-open",
-    "summary": "An ink crosshair draws → the wordmark stamps in letter by letter → typewriter subtitle → a full second of stillness, then it floats up and dissipates"
+    "summary": "墨线十字准星描画→字标逐字压印→打字机副标→满一秒静止再上浮消散"
   },
   "CelFlashStomp": {
-    "name": "Cel Flash Stomp",
-    "card": "Cel Flash Stomp",
-    "category": "Type & Title Cards",
+    "name": "底色闪砸字",
+    "card": "底色闪砸字",
+    "category": "文字与字卡",
     "categoryKey": "typography",
     "styleKey": "cel-flash-stomp",
-    "summary": "Background-flash word-stomp — big words stamp in askew one per beat; at each word's landing the background layer strobes between two solids for a few frames while the text doesn't move a pixel; the anime special-move title card translated to UI"
+    "summary": "底色闪砸字——大词逐拍像图章歪着砸满屏，每词落定瞬间背景层在两个纯色间频闪数帧而文字纹丝不动；动漫必杀技字卡的 UI 翻译"
   },
   "CountdownArcScatter": {
-    "name": "Countdown Arc Scatter",
-    "card": "Countdown Arc",
-    "category": "Type & Title Cards",
+    "name": "表盘数字扫过",
+    "card": "表盘数字扫过",
+    "category": "文字与字卡",
     "categoryKey": "typography",
     "styleKey": "countdown-arc-scatter",
-    "summary": "A white dial with 9 equal digits laid tangent along a large arc; the whole dial sweeps 96° and decelerates to a hard stop, \"5\" parking at the apex then translating into place as the title's first character while the rest scatter in place with blur; the title fades in word by word with the last word turning accent-colored"
+    "summary": "白底表盘 9 个等大数字沿大弧切向排布，整盘扫过 96° 后减速急停，\"5\" 停在弧顶随即平移落位成标题首字符，其余数字带 blur 原地散去，标题逐词模糊淡入、末词转强调色"
   },
   "FlyingWords": {
-    "name": "Flying Words",
-    "card": "Flying Words",
-    "category": "Type & Title Cards",
+    "name": "词语纵深隧道",
+    "card": "词语纵深隧道",
+    "category": "文字与字卡",
     "categoryKey": "typography",
     "styleKey": "flying-words",
-    "summary": "22 keywords laid on a flattened elliptical cross-section at golden angles, flying along z from -1750px to 800px in front of the camera and brushing past; opacity runs a [0,1,0.5,0.2,0] life curve over exactly 2 seamless revolutions"
+    "summary": "22 个关键词按黄金角铺在扁椭圆截面上，沿 z 轴从 -1750px 飞到相机前 800px 擦身而过，透明度走 [0,1,0.5,0.2,0] 生命曲线，跑满 2 整圈首尾无缝"
   },
   "GlitchCycle": {
-    "name": "Glitch Cycle",
-    "card": "Glitch Cycle",
-    "category": "Type & Title Cards",
+    "name": "乱码轮播",
+    "card": "乱码轮播",
+    "category": "文字与字卡",
     "categoryKey": "typography",
     "styleKey": "glitch-cycle",
-    "summary": "Four status phrases cycle through the same row of mono slots; each enters/exits fully scrambled on probability keyframes [1,0,0,0.1,0,0,1] with occasional single-character jitters mid-run, cuts layered with RGB split and whole-line offset; the last phrase's probability closes to 0 for a clean ending"
+    "summary": "同一行等宽槽位循环轮播 4 条状态短语，每条头尾按概率关键帧 [1,0,0,0.1,0,0,1] 全乱码、中段偶发单字抖动，切换瞬间叠 RGB 分离与整行位移；末条概率收 0 保证收尾干净"
   },
   "GradientWordSweep": {
-    "name": "Gradient Word Sweep",
-    "card": "Gradient Word Sweep",
-    "category": "Type & Title Cards",
+    "name": "渐变充能词",
+    "card": "渐变充能词",
+    "category": "文字与字卡",
     "categoryKey": "typography",
     "styleKey": "gradient-word-sweep",
-    "summary": "In a black slogan, keywords get \"charged\" by gradient light sweeping left to right — the wavefront characters glow strongest, decaying behind; once full, thin magenta lightning links the characters and the whole word breathes in steady glow"
+    "summary": "黑底标语里关键词被渐变彩光从左到右快速扫过\"充能\"——波前字符辉光最强向后衰减，填满后字符间勾连细紫红闪电、整词稳态泛光呼吸"
   },
   "LeadWordZoomAssemble": {
-    "name": "Lead Word Zoom Assemble",
-    "card": "Lead Word Zoom",
-    "category": "Type & Title Cards",
+    "name": "首词推近组句",
+    "card": "首词推近组句",
+    "category": "文字与字卡",
     "categoryKey": "typography",
     "styleKey": "lead-word-zoom-assemble",
-    "summary": "The lead word opens at 2.3× size center-frame, pushing in another 6% during the hold; one curve then both shrinks it back to final size and slides the whole line left into place while later words get pushed in from 0.5em right of their slots; the pivot pins horizontally to the lead word's center and vertically to the baseline (measured on mount), the subline floats out in the same window as the line rises, and after a beat the whole scene crash-zooms in and defocuses to hand off"
+    "summary": "首词以 2.3 倍字号占据画面中央、hold 期间继续推近 6%，随后一条曲线同时完成「缩回终字号」与「整行左滑归位」，后续词各自从槽位右侧 0.5em 被推进来；支点横向钉首词中心、纵向钉基线（挂载时实测），整行上移的同一时窗副行浮出，停一拍后整幕 crash-zoom 推近失焦交棒"
   },
   "MarkerUnderlineTitle": {
-    "name": "Marker Underline Title",
-    "card": "Marker Underline",
-    "category": "Type & Title Cards",
+    "name": "马克笔下划线",
+    "card": "马克笔下划线",
+    "category": "文字与字卡",
     "categoryKey": "typography",
     "styleKey": "marker-underline-title",
-    "summary": "After the headline lands, a marker underline draws fast left-to-right beneath the keyword — variable-width stroke, rough edges, a slight upward slope following the italic slant, hugging the letter bottoms"
+    "summary": "大标题落定后，关键词下方马克笔下划线从左到右快速描画——变宽笔形、毛糙边缘、微上斜跟随斜体字势，贴着字底"
   },
   "OutlineWordFill": {
-    "name": "Outline Word Fill",
-    "card": "Outline Word Fill",
-    "category": "Type & Title Cards",
+    "name": "空心字点亮",
+    "card": "空心字点亮",
+    "category": "文字与字卡",
     "categoryKey": "typography",
     "styleKey": "outline-word-fill",
-    "summary": "A hollow word (1px gray stroke, weight 500) contracts from 3.2× into place; a large dashed circle then closes in from 2.8× around the word and slowly rotates while horizontal dashed lines reach in from the frame edges; the stroke brightens slightly first, the solid white ignites within 0.6 of a frame, and one flash of glow freezes it"
+    "summary": "空心词（1px 灰描边、500 字重）从 3.2 倍急缓收缩落位，虚线大圆随后从 2.8 倍收到字周围并缓慢自转，左右水平虚线从画框边缘内伸；描边先微微增亮，实心白在 0.6 帧内瞬间点亮，一闪辉光即定格"
   },
   "PaperTitleCard": {
-    "name": "Paper Title Card",
-    "card": "Paper Title Card",
-    "category": "Type & Title Cards",
+    "name": "纸张标题卡",
+    "card": "纸张标题卡",
+    "category": "文字与字卡",
     "categoryKey": "typography",
     "styleKey": "paper-title-card",
-    "summary": "One sentence presses onto paper word by word, one word accented in colored italic, closing on a dash"
+    "summary": "一句话逐词压印上纸、一个词标强调色斜体、短划线收束"
   },
   "PillChipSlotCycleHandled": {
-    "name": "Pill Chip Slot Cycle",
-    "card": "Pill Slot Squeeze",
-    "category": "Type & Title Cards",
+    "name": "胶囊滚轮挤开",
+    "card": "胶囊滚轮挤开",
+    "category": "文字与字卡",
     "categoryKey": "typography",
     "styleKey": "pill-chip-slot-cycle-handled",
-    "summary": "In the white \"Your `chip` Handled\" pattern, the word inside the dark pill rolls vertically; the pill's width interpolates smoothly from pre-measured text widths, squeezing the flanking text naturally, with 13%-opacity gray ghost items peeking above and below"
+    "summary": "白底句式 \"Your `chip` Handled\" 里深色胶囊内词竖向滚轮轮换，胶囊宽度按预量文本宽插值平滑伸缩、两侧文字被自然挤开收拢，胶囊上下露出 13% 透明度的灰色幽灵项"
   },
   "PillSlotCycle": {
-    "name": "Pill Slot Cycle",
-    "card": "Pill Slot Cycle",
-    "category": "Type & Title Cards",
+    "name": "词槽轮换",
+    "card": "词槽轮换",
+    "category": "文字与字卡",
     "categoryKey": "typography",
     "styleKey": "pill-slot-cycle",
-    "summary": "In-sentence slot cycle — the fixed stem stays pinned while the trailing pill badge slot-rolls every ~0.7s (the old word exits upward accelerating, the new one slides in from below with blur); after N feature words it settles into the complete sentence"
+    "summary": "句中词槽轮换——固定句干钉死不动，句尾 pill 徽章每 ~0.7s 老虎机滚一格（旧的上飞加速淡出、新的从下带模糊滑入），连换 N 个功能词后落成完整句子收束"
   },
   "Scramble": {
-    "name": "Scramble Lock",
-    "card": "Scramble Lock",
-    "category": "Type & Title Cards",
+    "name": "乱码锁定",
+    "card": "乱码锁定",
+    "category": "文字与字卡",
     "categoryKey": "typography",
     "styleKey": "scramble",
-    "summary": "The whole mono line first high-speed scrambles every 2 frames, then locks into real characters left to right, each lock flashing a blue-white highlight — seeded, reproducible decryption feel"
+    "summary": "等宽整行字符先每 2 帧高速跳乱码，再从左到右逐个锁定为真字，锁定瞬间蓝白高光闪一下——种子驱动可复现的解密感"
   },
   "SplitFlapFlip": {
-    "name": "Split Flap Title",
-    "card": "Split Flap Title",
-    "category": "Type & Title Cards",
+    "name": "翻牌屏标题",
+    "card": "翻牌屏标题",
+    "category": "文字与字卡",
     "categoryKey": "typography",
     "styleKey": "split-flap-title",
-    "summary": "Airport split-flap title — each character is a two-half mechanical flap cell flipping through 2 scrambles before clicking onto its target letter, cascading left to right in a wave"
+    "summary": "机场翻牌屏字标题——每字符上下两半机械翻牌格，翻过 2 个乱码咔哒停在目标字，左→右级联成波"
   },
   "TextColumnConverge": {
-    "name": "Two-Word Converge",
-    "card": "Two-Word Converge",
-    "category": "Type & Title Cards",
+    "name": "双词合拢",
+    "card": "双词合拢",
+    "category": "文字与字卡",
     "categoryKey": "typography",
     "styleKey": "text-column-converge",
-    "summary": "Two words face off and converge — left \"NEW\" and a right feature word pinned at equal screen margins hard-cutting through rotations with zero shrink throughout; only on the last word do they make the single ease-in-out slide to center and bite into a phrase, with micro-copy surfacing near-instantly below; a reveal-style closer card"
+    "summary": "双词对峙合拢——左\"NEW\"右特性词钉死在等屏边距两侧硬切轮换、全程零收缩，换到最后一词才唯一一次 ease-in-out 滑到居中咬合成短语，下方小字近乎硬切浮现；收尾揭晓型文字卡"
   },
   "TitleDemoteToLabel": {
-    "name": "Title to Label",
-    "card": "Title Demote to Label",
-    "category": "Type & Title Cards",
+    "name": "标题降格标签",
+    "card": "标题降格标签",
+    "category": "文字与字卡",
     "categoryKey": "typography",
     "styleKey": "title-demote-to-label",
-    "summary": "Two headline-demotion moves — A: the centered headline develops, holds a beat, then continuously shrinks 0.3× and translates to the top-left to become the section label as the content area grows beneath; B: the same routine but entering with a text-selection highlight block that sweeps in and is removed"
+    "summary": "大标题降格为节标签两式——A 大标题居中显影站稳一拍后连续缩小 0.3x 平移到左上角落成小节标签、内容区在其下生长；B 同套路但登场时带文本选中态高亮块扫入再撤掉"
   },
   "LetterformDriftAssembly": {
-    "name": "Type Assembly · LetterformDriftAssembly",
-    "card": "Type Assembly",
-    "category": "Type & Title Cards",
+    "name": "文字集结 · LetterformDriftAssembly",
+    "card": "文字集结",
+    "category": "文字与字卡",
     "categoryKey": "typography",
-    "summary": "Four type-assembly moves — split-text-stagger (per-letter split-rise), letterform-drift-assembly (drift converge), tracking-expand-reveal (tracking breath), text-on-path (flow along a line)"
+    "summary": "文字集结四式——split-text-stagger 逐字裂升、letterform-drift-assembly 漂移合拢、tracking-expand-reveal 字距呼吸、text-on-path 沿线流入"
   },
   "SplitTextStagger": {
-    "name": "Split Text Stagger",
-    "card": "Type Assembly",
-    "category": "Type & Title Cards",
+    "name": "逐字裂升",
+    "card": "文字集结",
+    "category": "文字与字卡",
     "categoryKey": "typography",
     "styleKey": "split-text-stagger",
-    "summary": "Each letter rises inside an overflow box translateY(115%→0) with a 10% overshoot, delay i×2f, baseline growing in sync"
+    "summary": "每字 overflow 盒内 translateY(115%→0) 带 10% 过冲，delay i×2f，基线同步生长"
   },
   "TextOnPath": {
-    "name": "Text on Path",
-    "card": "Type Assembly",
-    "category": "Type & Title Cards",
+    "name": "沿线流入",
+    "card": "文字集结",
+    "category": "文字与字卡",
     "categoryKey": "typography",
     "styleKey": "text-on-path",
-    "summary": "Characters file in along a bezier curve (rotated to the tangent angle), squaring level within 12f on arrival"
+    "summary": "字符沿贝塞尔曲线鱼贯滑入（切线角旋转），到达后 12f 摆正水平"
   },
   "TrackingExpandReveal": {
-    "name": "Type Assembly · TrackingExpandReveal",
-    "card": "Type Assembly",
-    "category": "Type & Title Cards",
+    "name": "文字集结 · TrackingExpandReveal",
+    "card": "文字集结",
+    "category": "文字与字卡",
     "categoryKey": "typography",
-    "summary": "Four type-assembly moves — split-text-stagger (per-letter split-rise), letterform-drift-assembly (drift converge), tracking-expand-reveal (tracking breath), text-on-path (flow along a line)"
+    "summary": "文字集结四式——split-text-stagger 逐字裂升、letterform-drift-assembly 漂移合拢、tracking-expand-reveal 字距呼吸、text-on-path 沿线流入"
   },
   "LetterDropPhysics": {
-    "name": "Letter Drop Physics",
-    "card": "Type Entrance",
-    "category": "Type & Title Cards",
+    "name": "字符坠落",
+    "card": "文字入场",
+    "category": "文字与字卡",
     "categoryKey": "typography",
     "styleKey": "letter-drop-physics",
-    "summary": "Characters crash down staggered from above with gravity acceleration + two decaying bounces + tilted standing; on the final beat everyone squares up together"
+    "summary": "字符错峰从顶砸落，重力加速+两次衰减弹跳+落地歪斜站定，最后一拍全体齐整回正"
   },
   "ScrambleDecode": {
-    "name": "Scramble Decode",
-    "card": "Type Entrance",
-    "category": "Type & Title Cards",
+    "name": "乱码解码",
+    "card": "文字入场",
+    "category": "文字与字卡",
     "categoryKey": "typography",
     "styleKey": "scramble-decode",
-    "summary": "All characters hold in a high-speed scramble, then lock into real ones left to right, each lock flashing a 2f invert while the bottom progress bar advances in sync"
+    "summary": "全员字符高速跳乱码 hold，随后从左到右逐个锁定真字符，锁定瞬间反色闪 2f，底部进度条同步推进"
   },
   "FontWeightPump": {
-    "name": "Font Weight Pump",
-    "card": "Type Rhythm Sync",
-    "category": "Type & Title Cards",
+    "name": "字重脉冲",
+    "card": "文字节奏同步",
+    "category": "文字与字卡",
     "categoryKey": "typography",
     "styleKey": "font-weight-pump",
-    "summary": "On the hit frame the strokes instantly thicken (stroke + weight jump), springing back over ~10f; stressed beats stretch an extra 8% wider"
+    "summary": "命中帧笔画瞬间变粗（stroke+字重跳变），~10f 衰减弹回；重音拍额外撑宽 8%"
   },
   "KaraokeFillSync": {
-    "name": "Karaoke Fill Sync",
-    "card": "Type Rhythm Sync",
-    "category": "Type & Title Cards",
+    "name": "填色随读",
+    "card": "文字节奏同步",
+    "category": "文字与字卡",
     "categoryKey": "typography",
     "styleKey": "karaoke-fill-sync",
-    "summary": "Each word fills bright left-to-right at reading pace and holds once read; the active word carries a follow-along underline"
+    "summary": "每词深色从左到右填亮，进度跟语速，读完保持；活跃词下带读指下划线"
   },
   "TerminalTypewriter": {
-    "name": "Terminal Typewriter",
-    "card": "Typewriter Moves",
-    "category": "Type & Title Cards",
+    "name": "终端打字引爆",
+    "card": "打字机动效",
+    "category": "文字与字卡",
     "categoryKey": "typography",
     "styleKey": "terminal-typewriter",
-    "summary": "The command types at 2f/char with the cursor blinking as an f%12<6 square wave; on Enter the whole scene crash-pushes 6f scale 1→3.2 (origin locked to the command line's center) + 2f of 10px blur, hard-cutting to the dashboard settling 1.06→1"
+    "summary": "2f/字符敲出命令，光标 f%12<6 方波闪；回车帧整场景 6f 急推 scale 1→3.2（origin 锁命令行中心）+ 末 2f blur 10px，硬切 dashboard 1.06→1 回稳"
   },
   "TypewriterErrorRetype": {
-    "name": "Typewriter Moves · TypewriterErrorRetype",
-    "card": "Typewriter Moves",
-    "category": "Type & Title Cards",
+    "name": "打字机动效 · TypewriterErrorRetype",
+    "card": "打字机动效",
+    "category": "文字与字卡",
     "categoryKey": "typography",
-    "summary": "Two typewriter moves — terminal-typewriter (the finished command detonates the scene change) and error-retype (a \"took it back\" three-act of deleting and retyping)"
+    "summary": "打字机两式——terminal-typewriter 终端命令敲完即引爆场景切换、error-retype 误删重打的\"改口\"三幕剧"
   },
   "TypingCodeBlock": {
-    "name": "Typing Code Block",
-    "card": "Typing Code Block",
-    "category": "Type & Title Cards",
+    "name": "代码块揭示",
+    "card": "代码块揭示",
+    "category": "文字与字卡",
     "categoryKey": "typography",
     "styleKey": "typing-code-block",
-    "summary": "The same syntax-highlighted code shown two ways side by side — left: line-level stagger 4f fade-in rising 8px; right: per-character typing with characters keeping their token colors, the current character backed by a #3a4468 block cursor"
+    "summary": "同一段语法高亮代码左右并置两种 reveal——左侧行级 stagger 4f 淡入上浮 8px，右侧逐字符打字但字符保持原 token 色，当前字符垫一块 #3a4468 方块光标"
   },
   "VerticalWordRollBlurCycle": {
-    "name": "Vertical Word Roll",
-    "card": "Vertical Word Roll",
-    "category": "Type & Title Cards",
+    "name": "竖向词条滚轮",
+    "card": "竖向词条滚轮",
+    "category": "文字与字卡",
     "categoryKey": "typography",
     "styleKey": "vertical-word-roll-blur-cycle",
-    "summary": "The sentence-final word becomes a vertical roller: 3 swaps at 0.55s each (70% outQuint + 30% outBack — fast then ultra-slow with a micro overshoot); adjacent rows take vertical blur and desaturation by distance, and the centered word tints from gray to accent the instant it lands"
+    "summary": "句尾词换成竖向滚轮，3 次换词各 0.55s（outQuint 七成 + outBack 三成，前快后极慢带微过冲），相邻行按距离上垂直 blur 与灰度，中心词落定瞬间从灰染成强调色"
   },
   "WordRelayFilmstrip": {
-    "name": "Word Relay Filmstrip",
-    "card": "Word Relay Filmstrip",
-    "category": "Type & Title Cards",
+    "name": "胶片词接力",
+    "card": "胶片词接力",
+    "category": "文字与字卡",
     "categoryKey": "typography",
     "styleKey": "word-relay-filmstrip",
-    "summary": "A left column of equal-height alternating black/white page cards steps-scrolls while a serif headline word relays in place (noun constant + verb rotating) — the column advances one step only at the word switch, with the word block's vertical center precisely aligned to the current page card's midpoint"
+    "summary": "左列黑白相间等高页面卡步进滚动、右侧衬线大词原位接力（名词恒定+动词轮换）——切词瞬间才滚动一格，词块垂直中心与当前页面卡中点精确对齐"
   },
   "WordRelayGeometry": {
-    "name": "Word Relay Geometry",
-    "card": "Word Relay Geometry",
-    "category": "Type & Title Cards",
+    "name": "利益词接力",
+    "card": "利益词接力",
+    "category": "文字与字卡",
     "categoryKey": "typography",
     "styleKey": "word-relay-geometry",
-    "summary": "Three benefit words each carry a dedicated geometry relay — a dashed circle spins and contracts → three solid circles trim in sequence (0.06 phase offset) → a metallic sheen sweeps and a beat later it collapses to pure white; the old word shrinks to 0.86 and fades as the new word reveals stroke→fill"
+    "summary": "三个利益词各带一套专属几何接力——虚线大圆自转收缩 → 三实线圆 trim 依次生长（相位差 0.06）→ 金属 sheen 扫过后一拍收成纯白；旧词缩到 0.86 淡出，新词描边→填充揭示"
   },
   "AvatarBracketCarousel": {
-    "name": "Avatar Bracket Carousel",
-    "card": "Avatar Bracket Carousel",
-    "category": "UI Entrances & Showcases",
+    "name": "对焦框轮换",
+    "card": "对焦框轮换",
+    "category": "界面登场与陈列",
     "categoryKey": "ui-entrance",
     "styleKey": "avatar-bracket-carousel",
-    "summary": "\"Your ___ teammates\" fill-in typesetting: the four-corner focus bracket stays pinned in the sentence while the avatar queue spring-rotates vertically three times inside it — entering magnified and crisp, exiting scaled down, faded, and blurred by distance, with role labels swapping in sync and the bracket breathing 7% at each switch"
+    "summary": "\"Your ___ teammates\" 填空排版，四角对焦框钉在句中不动，头像队列在框内垂直 spring 轮换三次，入框放大清晰、出框按距离缩小淡化模糊，角色标签同步更换，切换瞬间对焦框呼吸 7%"
   },
   "BezierSourceConvergeMerge": {
-    "name": "Bezier Converge Merge",
-    "card": "Bezier Converge Merge",
-    "category": "UI Entrances & Showcases",
+    "name": "曲线汇流吞并",
+    "card": "曲线汇流吞并",
+    "category": "界面登场与陈列",
     "categoryKey": "ui-entrance",
     "styleKey": "bezier-source-converge-merge",
-    "summary": "Four source nodes on the left each connect by a thin bezier to one convergence point on the right; the curves draw on left-to-right staggered first, nodes slide along their own curves toward the point accelerating in three stages to vanish, an accent-colored packet rides the path throughout, and after the merge the curves erase backward from the left leaving only the circular badge"
+    "summary": "左侧四个来源节点各有一条细贝塞尔曲线连向右侧同一汇聚点，曲线先错峰由左向右 draw-on，节点沿自己的曲线滑向汇聚点并三段式加速缩小到消失，强调色数据包全程沿路径滑行，吞并完成后曲线从左端反向擦除只留圆形徽标"
   },
   "CardStack": {
-    "name": "Card Stack Fan",
-    "card": "Card Stack Fan",
-    "category": "UI Entrances & Showcases",
+    "name": "牌堆扇展",
+    "card": "牌堆扇展",
+    "category": "界面登场与陈列",
     "categoryKey": "ui-entrance",
     "styleKey": "card-stack",
-    "summary": "8 cards spring in one by one from below the screen into a stack; once all land, the whole stack fans out into a 3D arc in one move — each rotated 8° by index, shifted 34px, and pushed back one z layer"
+    "summary": "8 张卡从屏幕下方逐张 spring 弹入叠成一摞，全员落位后整摞一次性展成 3D 扇面——每张按序号偏转 8°、横移 34px、向后退一层 z"
   },
   "Carousel3D": {
-    "name": "Carousel 3D",
-    "card": "Carousel 3D",
-    "category": "UI Entrances & Showcases",
+    "name": "环形画廊",
+    "card": "环形画廊",
+    "category": "界面登场与陈列",
     "categoryKey": "ui-entrance",
     "styleKey": "carousel-3d",
-    "summary": "8 cards arrange by sin/cos into a 190px-radius ring rotating one full circle at constant speed; each card only revolves around Y while billboard-facing outward, with front/back layers textured in matching orientation + backface-visibility:hidden so cards stay upright at all times; the camera stays pinned in a shallow high-angle close shot"
+    "summary": "8 张卡按 sin/cos 排成半径 190px 的圆环并匀速整环自转一圈，每卡只绕 Y 公转、自身 billboard 朝外，正反两层同向贴图配 backface-visibility:hidden 保证任何时刻都正立不倒置，相机全程钉在浅俯角近景"
   },
   "ClonerDepthEcho": {
-    "name": "Cloner Depth Echo",
-    "card": "Cloner Depth Echo",
-    "category": "UI Entrances & Showcases",
+    "name": "克隆纵深回响",
+    "card": "克隆纵深回响",
+    "category": "界面登场与陈列",
     "categoryKey": "ui-entrance",
     "styleKey": "cloner-depth-echo",
-    "summary": "Cloner depth echo — the hero card instantly \"photocopies\" 7 translucent clones into a diagonal depth line; after a beat the whole column accelerates back into the original, merging + bouncing"
+    "summary": "克隆纵队——主卡瞬间\"复印\"出 7 个半透明分身沿斜向纵深排开成队，停一拍后全体加速吸回本体合一+弹跳"
   },
   "DeckDealFlyin": {
-    "name": "Deck Deal Fly-In",
-    "card": "Deck Deal Fly-In",
-    "category": "UI Entrances & Showcases",
+    "name": "发牌飞入",
+    "card": "发牌飞入",
+    "category": "界面登场与陈列",
     "categoryKey": "ui-entrance",
     "styleKey": "deck-deal-flyin",
-    "summary": "Opens orbiting a physical deck close-up against a dark metallic backdrop; after pulling back to the page, a stack of cards slings into the grid like a dealer's throw with hard acceleration, the camera chasing the scroll and holding half a second once the board fills"
+    "summary": "暗场金属背景里的实体牌堆特写环绕开局，拉远交给页面后一摞卡像发牌一样硬加速甩进网格，相机追着滚动、满板停半秒"
   },
   "DocParkLeftPillDeal": {
-    "name": "Doc Park, Pills Dealt",
-    "card": "Doc Park Pill Deal",
-    "category": "UI Entrances & Showcases",
+    "name": "文档驻留发牌",
+    "card": "文档驻留发牌",
+    "category": "界面登场与陈列",
     "categoryKey": "ui-entrance",
     "styleKey": "doc-park-left-pill-deal",
-    "summary": "The document doesn't fade — it slides left leaving ~35% width and shrinks to 0.92; on the right, three white outlined pills deal slowly at narration pace (outBack pop-in), each settling as its caption darkens word by word and the whole line fades before the next arrives, while the left document auto-scrolls imperceptibly to keep \"being read\""
+    "summary": "文档不淡出而是向左滑出只露约 35% 宽并微缩到 0.92，右侧按旁白节奏慢速发牌三张白底描边药丸（outBack 弹入），每张落定后其下方字幕逐词加深、下一张到来前整句淡出，左侧文档全程极缓慢自动滚动保持\"正在被读\""
   },
   "DocumentTypewriterReveal": {
-    "name": "Document Typewriter Reveal",
-    "card": "Document Typewriter",
-    "category": "Type & Title Cards",
+    "name": "文档打字揭示",
+    "card": "文档打字揭示",
+    "category": "文字与字卡",
     "categoryKey": "typography",
     "styleKey": "document-typewriter-reveal",
-    "summary": "A fully typeset document \"writes\" itself behind the cursor, the sidebar keeps pace, and history entries drop into their tracks one by one"
+    "summary": "整页真排版文档在光标后自己\"写\"出来、侧栏跟进、历史条目逐个落入轨道"
   },
   "DrawSvgTrace": {
-    "name": "SVG Draw Trace",
-    "card": "SVG Draw Trace",
-    "category": "UI Entrances & Showcases",
+    "name": "SVG 描线追踪",
+    "card": "SVG 描线追踪",
+    "category": "界面登场与陈列",
     "categoryKey": "ui-entrance",
     "styleKey": "draw-svg-trace",
-    "summary": "Stroke-grow annotation — an ink line with a nib runs the element's outline to \"draw\" it, flashing black at the moment of closure to hand off as content fades in; the same routine can underline a title"
+    "summary": "描边生长圈注——一条带笔头的墨线沿元素轮廓跑一圈把它\"画\"出来，闭合瞬间闪黑交棒、内容淡入；同套路可给标题画下划线"
   },
   "AxialStretch": {
-    "name": "Axial Stretch",
-    "card": "Element Body Moves",
-    "category": "UI Entrances & Showcases",
+    "name": "轴向拉伸",
+    "card": "元素形变",
+    "category": "界面登场与陈列",
     "categoryKey": "ui-entrance",
     "styleKey": "axial-stretch",
-    "summary": "Velocity-differential-driven axial stretch — the faster it flies the longer it stretches (full stretch scaleX 2.2/scaleY 0.72), squashing back over 8f at the landing"
+    "summary": "速度差分驱动轴向拉伸——飞得越快拉得越长（满拉伸 scaleX 2.2/scaleY 0.72），落点 8f 压扁回弹"
   },
   "ContactShadowLift": {
-    "name": "Contact Shadow Lift",
-    "card": "Element Body Moves",
-    "category": "UI Entrances & Showcases",
+    "name": "接触阴影抬升",
+    "card": "元素形变",
+    "category": "界面登场与陈列",
     "categoryKey": "ui-entrance",
     "styleKey": "contact-shadow-lift",
-    "summary": "Lift over 10f out-cubic: card translateY(−28px)+scale(1.08) while the detached ellipse shadow runs scale 1→1.72 / opacity 0.55→0.18 inversely on the same progress; set down 8f in-cubic + a 2f micro-press of the card shell"
+    "summary": "抬起 10f out-cubic：卡 translateY(−28px)+scale(1.08)，独立椭圆阴影 scale 1→1.72 / opacity 0.55→0.18 同进度反向；落回 8f in-cubic + 2f 微压卡壳"
   },
   "FloatingGlossyLabelPills": {
-    "name": "Floating Glossy Pills",
-    "card": "Glossy Label Pills",
-    "category": "UI Entrances & Showcases",
+    "name": "高光胶囊横滑",
+    "card": "高光胶囊横滑",
+    "category": "界面登场与陈列",
     "categoryKey": "ui-entrance",
     "styleKey": "floating-glossy-label-pills",
-    "summary": "Four light-gray dashboard wireframe panels each topped by a glossy pill label queuing horizontally; the track shifts right over three beats (slow start → mid rush → soft settle, the first beat slower with a long tail); the centered one enlarges crisp while the sides shrink to 0.62 and sink, fade, and blur slightly for a corridor feel; in the final segment a black white-outlined cursor glides diagonally from top-right to rest at the last pill's right end"
+    "summary": "四块浅灰 dashboard wireframe 面板各顶一枚高光胶囊标签横向排队，轨道三拍向右换位（缓起→中段冲→缓收，首拍更慢带长尾），居中者放大清晰、两侧缩到 0.62 并下沉变淡微模糊形成走廊感，末段黑色描白边光标从右上斜滑到末位胶囊右端静止"
   },
   "IntegrationHubMap": {
-    "name": "Integration Hub Map",
-    "card": "Integration Hub Map",
-    "category": "UI Entrances & Showcases",
+    "name": "集成星图",
+    "card": "集成星图",
+    "category": "界面登场与陈列",
     "categoryKey": "ui-entrance",
     "styleKey": "integration-hub-map",
-    "summary": "The old page flips a full 180° in one go (a bright flash on the side edge) landing as the new hub page; five integration app icons pop in the same frame, then five rainbow light tubes connect in the same frame with delivery pulses streaming inside — \"turn a new page, the whole ecosystem plugs in\""
+    "summary": "旧页面一次性快翻 180°（侧棱瞬间亮闪）落成新中枢页，五个集成 app 图标同帧弹现、随即五条彩虹光管同帧齐连，光管内输送脉冲持续流动——\"翻开新一页，生态一齐接入\""
   },
   "ListReveal": {
-    "name": "List Reveal",
-    "card": "List Reveal",
-    "category": "UI Entrances & Showcases",
+    "name": "逐项找位",
+    "card": "逐项找位",
+    "category": "界面登场与陈列",
     "categoryKey": "ui-entrance",
     "styleKey": "list-reveal",
-    "summary": "Six vertical menu items find their scale one by one at 0.09 intervals with a slight outBack overshoot landing, while the whole list container drifts linearly up 32px throughout — per-item entry and overall drift are two unrelated motions"
+    "summary": "垂直菜单 6 项按 0.09 的间隔依次 scale 找位、outBack 轻微过冲落定，同时整个列表容器全程线性上移 32px——逐项入场与整体漂移是两层不相干的运动"
   },
   "ListStackPress": {
-    "name": "List Stack Press",
-    "card": "List Stack Press",
-    "category": "UI Entrances & Showcases",
+    "name": "列表堆叠压弹",
+    "card": "列表堆叠压弹",
+    "category": "界面登场与陈列",
     "categoryKey": "ui-entrance",
     "styleKey": "list-stack-press",
-    "summary": "List cards fly up from the bottom of the frame stacking one by one; each landing presses the whole stack with a bounce while the counter ticks one step in sync"
+    "summary": "列表卡从画面底部逐张飞上摞起，每张落地压弹整摞、计数器同步跳一格"
   },
   "MorphFromPrimitive": {
-    "name": "Morph from Primitive",
-    "card": "Morph from Primitive",
-    "category": "UI Entrances & Showcases",
+    "name": "原型变形",
+    "card": "原型变形",
+    "category": "界面登场与陈列",
     "categoryKey": "ui-entrance",
     "styleKey": "morph-from-primitive",
-    "summary": "Morph from primitive — after a circle breathes a beat (anticipation), an SVG path interpolation grows it into a rounded card outline over 24f as content fades in"
+    "summary": "原型变形——正圆呼吸一拍（anticipation）后 SVG path 插值 24f 长成圆角卡轮廓，内容淡入"
   },
   "NeonFrameForerun": {
-    "name": "Neon Frame Forerun",
-    "card": "Neon Frame Forerun",
-    "category": "UI Entrances & Showcases",
+    "name": "霓虹框先行",
+    "card": "霓虹框先行",
+    "category": "界面登场与陈列",
     "categoryKey": "ui-entrance",
     "styleKey": "neon-frame-forerun",
-    "summary": "A strong-perspective rectangular neon frame races in from both ends of the left edge to form first; the page brightens inside the frame while its components/copy descend from 3D overhead with matching soft shadows, docking staggered in sync with the page lighting up, and the background neon-tube cluster goes dark at the end to yield the stage"
+    "summary": "强透视直角霓虹框自左缘两头奔画先行成型，页面在框内由暗转亮，同时框内组件/文字从 3D 上空带同形软影错峰贴落、随页面点亮同步完成贴合，背景霓虹管群终段熄灭让位"
   },
   "NeonFrameForerunOrbit": {
-    "name": "Neon Frame Orbit Drop",
-    "card": "Neon Frame Orbit",
-    "category": "UI Entrances & Showcases",
+    "name": "霓虹框环绕齐落",
+    "card": "霓虹框环绕齐落",
+    "category": "界面登场与陈列",
     "categoryKey": "ui-entrance",
     "styleKey": "neon-frame-orbit-drop",
-    "summary": "After the neon frame draws first, the camera arcs around the page left→right while every component/character docks from overhead **in the same frame** (matching soft shadows converging in sync) — ensemble-entrance seating inside the frame"
+    "summary": "霓虹框先行描框后，镜头绕页面左→右弧线旋转，页面全部组件/文字**同帧**从空中往下贴合（同形软影同步收敛）——整体登场式的框内安放"
   },
   "PageWaterfallWall": {
-    "name": "Page Waterfall Wall",
-    "card": "Page Waterfall Wall",
-    "category": "UI Entrances & Showcases",
+    "name": "页面瀑布墙",
+    "card": "页面瀑布墙",
+    "category": "界面登场与陈列",
     "categoryKey": "ui-entrance",
     "styleKey": "page-waterfall-wall",
-    "summary": "Page waterfall wall — real page screenshots sliced into 3-4 columns scrolling infinitely in opposite directions at differential speeds across a 3D reclined wall; parallax + a slow camera push sell the \"more content than can stream past\" overview"
+    "summary": "页面瀑布墙——真实页面截图切成 3–4 列在 3D 后仰墙面上差速反向无限滚动，视差 + 镜头缓推做\"内容多到流不完\"的一览"
   },
   "MaskingTapeSlap": {
-    "name": "Masking Tape Slap",
-    "card": "Paper Craft Moves",
-    "category": "UI Entrances & Showcases",
+    "name": "胶带拍贴",
+    "card": "纸艺动效",
+    "category": "界面登场与陈列",
     "categoryKey": "ui-entrance",
     "styleKey": "masking-tape-slap",
-    "summary": "Wobble = amplitude envelope × sine (rot ±1.5°/bob ±5px); the tape slaps in over 6f: scale 1.45→1 + rotate from a 16° undershoot → 7° overshoot → level + a one-frame scaleY 0.72 squash on landing; a 14-point clipPath zigzag torn edge"
+    "summary": "晃动=幅度包络×正弦（rot ±1.5°/bob ±5px）；胶带扑入 6f：scale 1.45→1 + rotate 欠 16°→过冲 7°→回正 + 落帧 scaleY 0.72 一帧压扁；撕边 14 点 clipPath 锯齿"
   },
   "PopupBookRise": {
-    "name": "Popup Book Rise",
-    "card": "Paper Craft Moves",
-    "category": "UI Entrances & Showcases",
+    "name": "立体书升起",
+    "card": "纸艺动效",
+    "category": "界面登场与陈列",
     "categoryKey": "ui-entrance",
     "styleKey": "popup-book-rise",
-    "summary": "Two-layer 3D: the scene at rotateX 75° overhead (persp 2600), each card rotating rotateX 0→-90° on a spring (damping 11, overshoot to -95°) with origin at the bottom edge and preserve-3d throughout; far rows lead near rows staggered 7f"
+    "summary": "双层 3D：场景 rotateX 75° 俯视（persp 2600），每卡 rotateX 0→-90° spring（damping 11 过冲 -95°），origin 底边，preserve-3d 贯通；远排先近排后错峰 7f"
   },
   "PlatformHingeRise": {
-    "name": "Platform Hinge Rise",
-    "card": "Platform Hinge Rise",
-    "category": "UI Entrances & Showcases",
+    "name": "平台铰接升起",
+    "card": "平台铰接升起",
+    "category": "界面登场与陈列",
     "categoryKey": "ui-entrance",
     "styleKey": "platform-hinge-rise",
-    "summary": "The support platform establishes laterally first; two main blocks flip up in opposite directions from adjacent bottom hinges with one restrained damped swing, and finally the conclusion deck rises in from off-screen — a three-stage \"stage → evidence → conclusion\" reveal"
+    "summary": "承托平台先横向建立，两块主体从相邻底部铰点反向翻起并做一次克制阻尼回摆，最后结论台从画外升入，形成“舞台→证据→结论”的三段式揭示"
   },
   "ProductCardProgressiveAssemble": {
-    "name": "Progressive Card Assemble",
-    "card": "Progressive Card Assemble",
-    "category": "UI Entrances & Showcases",
+    "name": "字段逐个落位",
+    "card": "字段逐个落位",
+    "category": "界面登场与陈列",
     "categoryKey": "ui-entrance",
     "styleKey": "product-card-progressive-assemble",
-    "summary": "The detail card assembles as if fetched field by field — image → title → breadcrumb pill popping in order; the old price appears then gets struck through as the accent-colored new price spring-jumps out; body copy reveals line by line with a highlight block brushing left to right; color swatches light up — all while the whole card pushes in on an ultra-slow scale"
+    "summary": "详情卡像被逐字段抓取般自建——图→标题→breadcrumb pill 依次 pop→原价出现后被划线降级、强调色新价 spring 跳出→正文逐行揭示且高亮块由左向右刷过→色卡点亮，整卡全程极慢 scale 前推"
   },
   "RadialWave": {
-    "name": "Radial Wave",
-    "card": "Radial Wave",
-    "category": "UI Entrances & Showcases",
+    "name": "点阵涟漪",
+    "card": "点阵涟漪",
+    "category": "界面登场与陈列",
     "categoryKey": "ui-entrance",
     "styleKey": "radial-wave",
-    "summary": "A 17×9 dot matrix lights up staggered by Euclidean distance to the wave source, each dot's scale overshooting to 1.5 before settling lit; after the first wave sweeps, a second bright-blue pulse gathers back toward center from the outer ring"
+    "summary": "17×9 圆点阵列按到波源的欧氏距离错峰点亮，每点 scale 过冲到 1.5 再落回常亮，第一道波扫完后第二道亮蓝脉冲从外圈反向收拢回中心"
   },
   "ResearchCardStackScroll": {
-    "name": "Research Card Stack",
-    "card": "Research Card Stack",
-    "category": "UI Entrances & Showcases",
+    "name": "论文卡叠压",
+    "card": "论文卡叠压",
+    "category": "界面登场与陈列",
     "categoryKey": "ui-entrance",
     "styleKey": "research-card-stack-scroll",
-    "summary": "Dark paper cards fly in one every 12 frames along the lower-right axis, stacking at center with a 1-frame compression on landing; only the top card renders fully crisp (title+author+abstract) while cards below blur and darken by stack depth showing just title bars, with a horizontal grid in the background descending in sync as a speed reference"
+    "summary": "深色论文卡每 12 帧一张沿右下轴线飞入中心叠压，落位带 1 帧压缩，只有最上一张全清晰渲染标题+作者+摘要，下方卡按堆积深度递增模糊变暗只露标题条，背景横向 grid 同步下移做速度参照"
   },
   "RowEmbed": {
-    "name": "Row Embed",
-    "card": "Row Embed",
-    "category": "UI Entrances & Showcases",
+    "name": "行元素嵌入",
+    "card": "行元素嵌入",
+    "category": "界面登场与陈列",
     "categoryKey": "ui-entrance",
     "styleKey": "row-embed",
-    "summary": "A content row descends like a card, levels out on rotateX, and at the embed instant a seam of accent light flashes along its bottom edge"
+    "summary": "内容行像卡片一样从空中降下、rotateX 收平、嵌入瞬间底边亮一道强调色的缝"
   },
   "RunwayGroundSkim": {
-    "name": "Runway Ground Skim",
-    "card": "Runway Ground Skim",
-    "category": "UI Entrances & Showcases",
+    "name": "跑道掠地贴落",
+    "card": "跑道掠地贴落",
+    "category": "界面登场与陈列",
     "categoryKey": "ui-entrance",
     "styleKey": "runway-ground-skim",
-    "summary": "From a low ground-skim camera position, a flock of UI cards slaps down from the sky like a sudden downpour (slightly offset starts, heavily overlapping parallel falls, dead-stop landings with zero rebound); once all land the page stands up and the view levels out to close"
+    "summary": "低角度掠地机位下 UI 卡片群从空中一阵急雨式快速贴落（起点微错、下落大量重叠并行、着地即停零回弹），落齐后整页立起、视角转正收尾"
   },
   "SkeletonReveal": {
-    "name": "Skeleton Reveal",
-    "card": "Skeleton Reveal",
-    "category": "UI Entrances & Showcases",
+    "name": "骨架显影",
+    "card": "骨架显影",
+    "category": "界面登场与陈列",
     "categoryKey": "ui-entrance",
     "styleKey": "skeleton-reveal",
-    "summary": "Draft → skeleton → content three-stage develop — hand-scribbled placeholder doodles (with boil jitter) are replaced in a beat by gray-bar skeleton windows; the skeleton list scrolls in, the camera pushes in, and gray bars develop row by row into avatars + word-by-word copy, the last word landing a half-beat late"
+    "summary": "草稿→骨架→内容三级显影——手绘涂鸦占位（煮沸抖动）一拍被灰条骨架窗口替换，骨架列表滚入后镜头推近、灰条逐行显影成头像+逐词文字，末词晚半拍落地"
   },
   "SvgShapeMorph": {
-    "name": "SVG Shape Morph",
-    "card": "SVG Shape Morph",
-    "category": "UI Entrances & Showcases",
+    "name": "轮廓变形",
+    "card": "轮廓变形",
+    "category": "界面登场与陈列",
     "categoryKey": "ui-entrance",
     "styleKey": "svg-shape-morph",
-    "summary": "A 140-point closed outline smoothly morphs into another shape and back; both shapes are resampled in polar coordinates to equal point counts with per-point radius interpolation + inOutCubic, the mid-morph layered with a slight scale breath, slow rotation, and hue drifting from 185° to 305°"
+    "summary": "一条 140 点闭合轮廓平滑变形为另一条再变回，两形状先在极坐标下重采样到相同点数、逐点半径插值 + inOutCubic，变形中段叠轻微 scale 呼吸、缓慢自转与色相从 185° 漂到 305°"
   },
   "ValueStaggerGradient": {
-    "name": "Value Stagger Gradient",
-    "card": "Value Stagger Gradient",
-    "category": "UI Entrances & Showcases",
+    "name": "数值梯度铺开",
+    "card": "数值梯度铺开",
+    "category": "界面登场与陈列",
     "categoryKey": "ui-entrance",
     "styleKey": "value-stagger-gradient",
-    "summary": "16 bars enter with delays as the time stagger while height/hue/offset/blur each lay down a first-to-last numeric gradient; on the second beat the stagger origin shifts to the center, re-spreading the pulse with maximum amplitude at the middle"
+    "summary": "16 根柱入场时 delay 是时间错峰，同时高度/色相/位移/模糊四个属性各自铺成从首到末的数值梯度；第二拍把错峰原点换成中心，脉冲幅度以中心为最大重新铺开"
   },
   "BentoLightUp": {
-    "name": "Bento Light-Up",
-    "card": "Wall Reveal Moves",
-    "category": "UI Entrances & Showcases",
+    "name": "逐格点亮",
+    "card": "整墙揭示",
+    "category": "界面登场与陈列",
     "categoryKey": "ui-entrance",
     "styleKey": "bento-light-up",
-    "summary": "A dark 3×2 bento wall waits dimmed; amber flowing light traces each cell's outline one by one with content brightening and rising after, and once fully lit the camera pushes in slowly to close"
+    "summary": "暗场 3×2 bento 墙压暗待命，琥珀流光逐格描边一圈、内容随即提亮上浮，全亮后镜头缓推收住"
   },
   "GridWaveFlip": {
-    "name": "Grid Wave Flip",
-    "card": "Wall Reveal Moves",
-    "category": "UI Entrances & Showcases",
+    "name": "波浪翻面",
+    "card": "整墙揭示",
+    "category": "界面登场与陈列",
     "categoryKey": "ui-entrance",
     "styleKey": "grid-wave-flip",
-    "summary": "A 3×3 wall of gray-backed cards flips 180° in place via rotateX following the diagonal wavefront, revealing front content, with the last card overshooting and rebounding"
+    "summary": "3×3 灰背卡墙沿对角线波前依次 rotateX 原位翻转 180°，翻出正面内容，尾张过冲回弹"
   },
   "WireframeDrawOn": {
-    "name": "Wireframe Draw-On",
-    "card": "Wall Reveal Moves",
-    "category": "UI Entrances & Showcases",
+    "name": "蓝图描线成形",
+    "card": "整墙揭示",
+    "category": "界面登场与陈列",
     "categoryKey": "ui-entrance",
     "styleKey": "wireframe-draw-on",
-    "summary": "The UI first draws in as grouped SVG thin-line blueprints, then an amber glowing vertical line sweeps left→right, materializing the wireframes into the real interface wherever it passes"
+    "summary": "界面先以 SVG 细线蓝图分组描画，再一条琥珀发光竖线左→右扫过，扫过处线框实体化成真实界面"
   }
 };
 
-/** Gallery categories (in gallery order); only categories that have demos */
-export const DEMO_CATEGORIES: string[] = ["Openers & Brand", "Type & Title Cards", "UI Entrances & Showcases", "Camera & Space", "Data & Metrics", "Interaction & Feature Demos", "Transitions", "Rhythm & Montage", "Light & Emphasis", "Outros"];
+/** 画廊分类（中文，按画廊顺序），只含有 demo 的分类 */
+export const DEMO_CATEGORIES: string[] = ["开场与品牌","文字与字卡","界面登场与陈列","运镜与空间","数据与指标","交互与功能演示","转场","节奏与蒙太奇","光效与强调","收尾"];

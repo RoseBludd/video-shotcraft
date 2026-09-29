@@ -1,5 +1,5 @@
-// Auto-generated, do not hand-edit: node scripts/gen-index.mjs
-// Film project public/ media manifest: scanned from the local public/ symlinks (not committed)
+// 自动生成，勿手改：node scripts/gen-index.mjs
+// 成片工程 public/ 素材清单：按本机 public/ 下的链接扫描生成（不进库）
 export type MediaItem = { file: string; dir: string; name: string; kind: "video" | "image" | "audio" };
 export const MEDIA_ITEMS: MediaItem[] = [
   {
@@ -370,7 +370,7 @@ export const MEDIA_ITEMS: MediaItem[] = [
   }
 ];
 
-/** Repo SFX library assets/audio/sfx/<category>/ (linked at public/sfxlib) */
+/** 仓库音效库 assets/audio/sfx/<类别>/（public/sfxlib 链接） */
 export type LibAudio = { file: string; cat: string; name: string };
 export const SFX_LIB: LibAudio[] = [
   {
@@ -1120,7 +1120,7 @@ export const SFX_LIB: LibAudio[] = [
   }
 ];
 
-/** Repo BGM options assets/audio/bgm/ (linked at public/bgmlib) */
+/** 仓库 BGM 备选 assets/audio/bgm/（public/bgmlib 链接） */
 export const BGM_LIB: LibAudio[] = [
   {
     "file": "bgmlib/bgm-tech-house.mp3",

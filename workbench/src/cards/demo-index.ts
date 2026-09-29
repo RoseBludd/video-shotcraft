@@ -1,4 +1,4 @@
-// Auto-generated, do not hand-edit: node scripts/gen-index.mjs
+// 自动生成，勿手改：node scripts/gen-index.mjs
 import type React from "react";
 import { Basic3DScene as c0, BASIC_3D_SCENE_DURATION as d0 } from "@demos/camera/basic-3d-scene/Basic3DScene";
 import { CrashImpactReal as c1, CRASHIMPACT_DUR as d1 } from "@demos/camera/crash-zoom-punch/CrashImpactReal";
@@ -222,7 +222,7 @@ export type DemoModule = {
   slug: string;
   component: React.ComponentType<Record<string, unknown>>;
   duration: number;
-  /** Duration source: export=exported by the demo / card=shot-card md / gallery=gallery / inline=constant in the file / default=150f fallback */
+  /** 时长来源：export=demo 自己导出 / card=镜头卡 md / gallery=画廊 / inline=文件内常量 / default=缺省 150f */
   durationSource: "export" | "card" | "gallery" | "inline" | "default";
 };
 
