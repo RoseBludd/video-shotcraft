@@ -2,6 +2,8 @@ import { Composition } from 'remotion';
 import { AiflMain, AIFL_TOTAL } from './aifl/Main';
 import { GosMain } from './gos/Main';
 import { GOS_TOTAL } from './gos/timing';
+import { RooferzsMain } from './rooferzs/Main';
+import { ROOF_TOTAL } from './rooferzs/timing';
 
 export const Root: React.FC = () => {
   return (
@@ -18,6 +20,14 @@ export const Root: React.FC = () => {
         id="GeniusOsPromo"
         component={GosMain}
         durationInFrames={GOS_TOTAL}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+      <Composition
+        id="RooferzsPromo"
+        component={RooferzsMain}
+        durationInFrames={ROOF_TOTAL}
         fps={30}
         width={1920}
         height={1080}
