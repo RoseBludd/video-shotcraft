@@ -1,0 +1,53 @@
+{
+  "generated": "10/05/2026, 18:08:00 CT",
+  "gates": {
+    "L8": "CAPTURED",
+    "L1": "PASS",
+    "L2": "PASS",
+    "L3": "PASS",
+    "L4": "PASS",
+    "L5": "PASS_or_PARTIAL",
+    "L6": "PASS_or_PARTIAL",
+    "L7": "FAIL"
+  },
+  "meta": {
+    "liveValues": {
+      "rcv": ","
+    },
+    "chosenJob": null,
+    "nav": [],
+    "notes": [
+      {
+        "jobHrefs": [
+          "/dashboard/jobs"
+        ]
+      }
+    ]
+  },
+  "files": [
+    "S03-rail-hero.png",
+    "S04-storm-map.png",
+    "S06-door-knock.png",
+    "S07-prospect-call.png",
+    "S08-email-drafts.png",
+    "S10-photos-proof.png",
+    "S11-cadis-embed.png",
+    "S12-job-record.png",
+    "S12-jobs-list.png",
+    "S13-roles-config.png",
+    "S15-portal-update-fallback.png",
+    "S15-portal-update.png",
+    "S16-isol-upload.png",
+    "S17-jbc-numbers.png",
+    "S18-margin-punch.png",
+    "S19-pm-approve.png",
+    "S20-pm-schedule.png",
+    "S21-integrations.png"
+  ],
+  "recapture": {
+    "at": "10/05/2026, 18:08:00 CT",
+    "S04": "inline live maps.geniuzs.com severity polygons",
+    "S06": "door-pin map + Listed door pins + Mockingbird/Coit/Legacy/Preston",
+    "jobDeepTabs": "unchanged \u2014 JOB_OPEN_FAILED"
+  }
+}

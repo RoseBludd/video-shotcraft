@@ -1,0 +1,114 @@
+{
+  "railHero": {
+    "file": "S03-rail-hero.png",
+    "w": 3840,
+    "h": 2160,
+    "pageH": 1080,
+    "src": "rooferzs/live/S03-rail-hero.png"
+  },
+  "stormMap": {
+    "file": "S04-storm-map.png",
+    "w": 3840,
+    "h": 2160,
+    "pageH": 1080,
+    "src": "rooferzs/live/S04-storm-map.png"
+  },
+  "doorKnock": {
+    "file": "S06-door-knock.png",
+    "w": 3840,
+    "h": 2160,
+    "pageH": 1080,
+    "src": "rooferzs/live/S06-door-knock.png"
+  },
+  "prospectCall": {
+    "file": "S07-prospect-call.png",
+    "w": 3840,
+    "h": 2160,
+    "pageH": 1080,
+    "src": "rooferzs/live/S07-prospect-call.png"
+  },
+  "emailDrafts": {
+    "file": "S08-email-drafts.png",
+    "w": 3840,
+    "h": 2160,
+    "pageH": 1080,
+    "src": "rooferzs/live/S08-email-drafts.png"
+  },
+  "photosProof": {
+    "file": "S10-photos-proof.png",
+    "w": 3840,
+    "h": 2160,
+    "pageH": 1080,
+    "src": "rooferzs/live/S10-photos-proof.png"
+  },
+  "cadisEmbed": {
+    "file": "S11-cadis-embed.png",
+    "w": 3840,
+    "h": 2160,
+    "pageH": 1080,
+    "src": "rooferzs/live/S11-cadis-embed.png"
+  },
+  "jobRecord": {
+    "file": "S12-job-record.png",
+    "w": 3840,
+    "h": 2160,
+    "pageH": 1080,
+    "src": "rooferzs/live/S12-job-record.png"
+  },
+  "rolesConfig": {
+    "file": "S13-roles-config.png",
+    "w": 3840,
+    "h": 2160,
+    "pageH": 1080,
+    "src": "rooferzs/live/S13-roles-config.png"
+  },
+  "portalUpdate": {
+    "file": "S15-portal-update.png",
+    "w": 3840,
+    "h": 2160,
+    "pageH": 1080,
+    "src": "rooferzs/live/S15-portal-update.png"
+  },
+  "isolUpload": {
+    "file": "S16-isol-upload.png",
+    "w": 3840,
+    "h": 2160,
+    "pageH": 1080,
+    "src": "rooferzs/live/S16-isol-upload.png"
+  },
+  "jbcNumbers": {
+    "file": "S17-jbc-numbers.png",
+    "w": 3840,
+    "h": 2160,
+    "pageH": 1080,
+    "src": "rooferzs/live/S17-jbc-numbers.png"
+  },
+  "marginPunch": {
+    "file": "S18-margin-punch.png",
+    "w": 3840,
+    "h": 2160,
+    "pageH": 1080,
+    "src": "rooferzs/live/S18-margin-punch.png"
+  },
+  "pmApprove": {
+    "file": "S19-pm-approve.png",
+    "w": 3840,
+    "h": 2160,
+    "pageH": 1080,
+    "src": "rooferzs/live/S19-pm-approve.png"
+  },
+  "pmSchedule": {
+    "file": "S20-pm-schedule.png",
+    "w": 3840,
+    "h": 2160,
+    "pageH": 1080,
+    "src": "rooferzs/live/S20-pm-schedule.png"
+  },
+  "integrations": {
+    "file": "S21-integrations.png",
+    "w": 3840,
+    "h": 2160,
+    "pageH": 1080,
+    "src": "rooferzs/live/S21-integrations.png"
+  }
+}

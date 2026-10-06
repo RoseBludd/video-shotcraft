@@ -1,6 +1,9 @@
 # Single source of truth for frame math (30fps). Beats at placeholder 120 BPM => 15f/beat.
-# REWRITE 2026-10-05 (CT): footage source = LIVE agentic surface (agent.rooferzs.com + app.rooferzs.com),
-# tenant bluebonnetpeakroofing / Jordan Hale chrome. No rooferzs.com marketing-demo textures.
+# V2 REWRITE 2026-10-06 (CT): Linear/Stripe/Notion/Raycast launch grammar.
+# KILLS: Saturday day-clock open, "Same storm. Different Saturday." as open, time-of-day paper title cards,
+#        LEAD-once-per-shot restraint, HUD Saturday clock, clock-wipe seam.
+# KEEP: 1800f @ 30fps, AG/EMB/APP/GFX sources only, tenant bluebonnetpeakroofing / Jordan Hale.
+# Companion: V2-MOTION-DIRECTION.md · V2-EFFECTS-CATALOG.md (≥100 stacked motions) · V2-CAPTURE-GATES.md
 FPS=30; BEAT=15
 # Footage source codes (column 8):
 #   AG  = agent.rooferzs.com standalone OpenBot (Full launch), AGENTIC ROOFING 8-bot rail, chrome "JH Jordan Hale"
@@ -10,29 +13,29 @@ FPS=30; BEAT=15
 ALLOWED_SRC={"AG","EMB","APP","GFX"}
 SHOTS = [
  # id, slug, beats, segment, content, camera/transition, VO cue, source
- ("S01","cold-open",4,"① Brand open","Dark field, rain streaks; split-flap clock flips to SAT · 6:00 AM; sub: HAIL · NORTH DALLAS, TX (matches seeded tenant storm ‘DFW Hail Cell — North Dallas’)","LEAD split-flap-title · CAM tension B dutch-roll-to-level (−10° hold → rolls level on beat 4) · OUT in-camera roll + cut on downbeat","V1 0.3–1.9s “Six a.m. Hail overnight.”","GFX"),
- ("S02","brand",6,"① Brand open","Wordmark “roof·erzs·.” materializes on gray-950 field + tagline ‘Same storm. Different Saturday.’ — hold ≥36f","LEAD letterspace-materialize · OUT shot-transitions B dark-tunnel (push out 10f → dark glide 6f → live agent shell rises from depth 12f)","V2 2.4–4.6s “Same storm. Different Saturday.”","GFX"),
- ("S03","rail-hero",5,"② Hero","LIVE agent.rooferzs.com (tenant bluebonnetpeakroofing): spotlight locks the AGENTIC ROOFING rail with extra hold; 8 bot cards light top→bottom (Integration · Config · Storm · Canvassing · Prospecting · Budget · Project Management · Display); cursor taps Storm Bot → helper line flips ‘Active seat: rooferzs-storm’; footer chip ‘JH Jordan Hale’ in frame","LEAD spotlight-hero-card (PageCam 2.5D, protagonist = 8-bot rail) · IN dark-tunnel · OUT in-camera glide right into the Storm Bot channel (same page)","V3 starts 5.2s “Rooferzs maps the impact zone live —”","AG"),
- ("S04","storm-map",8,"② Hero","Storm Bot channel: inline live map card renders (seeded demo data) — severity polygon over North Dallas; storm row ‘DFW Hail Cell — North Dallas · Hail — Severe · score 5’; camera rises off the chat bubble to reveal full map; reply rows embed with crew chip ‘Crew Alpha — North Dallas’ (row-embed supporting); 15f rest","LEAD crane-rise-reveal · IN in-camera glide from rail · OUT shot-transitions D black (fade 8f)","V3 …9.6s “— and tags every lead inside it.” (LIVE-CHECK L3; alt V3b)","AG"),
- ("S05","tc1-crews",3,"③ Climb","BLACK title card #1: ‘7:30 AM — Crews roll with the *route*.’","LEAD paper-title-card (D black variant) · IN/OUT D fades 8f","— no VO (card breath)","GFX"),
- ("S06","door-knock",7,"③ Climb","Canvassing Bot active on rail → channel ‘Canvassing Bot’: inline door-pin map (open vs pinned) for Crew Alpha; camera flies pin→pin to 3 seeded doors (e.g. 4121 Mockingbird Ln, 2201 Colt Rd, 5400 Legacy Dr); cursor taps each; pin status chips read from LIVE legend; open/pinned counter ticks; optional APP canvass tap if tenant surface exists","LEAD cursor-flyover · IN D fade-in · OUT shot-transitions E whip-pan (basic, 8f, CameraMotionBlur)","V4 13.2–16.0s “Reps log every door the second they knock.”","AG"),
- ("S07","prospect-call",6,"③ Climb","Prospecting Bot seat → reply row with seeded demo contact + (972) 555-xxxx phone chip inline (no call placed) → phone chip ripples out into 4 rep chips ‘Rooferzs Agent 1–4’ → Callerzs campaign preview card ‘Rooferzs Door Knock Follow-up · 9 AM–4 PM Central · not deployed — preview only, no live calls’","LEAD radial-ripple-phone-chips · IN whip-pan · OUT line-carry-transition (campaign window bar carries camera right)","V5 16.6–18.0s “AI voices work the call list.” + 18.0–19.3s narrator silent (ripple on music; no voice sample)","AG"),
- ("S08","email-drafts",6,"③ Climb","Integration Bot seat → tool card ‘Checked email workflows’ → LIVE Emailzs table: 9 rows ‘Roofing follow-up: …’ all status ‘draft’; row ‘Roofing follow-up: Post-inspection, no action’ lifts to pill → click opens the draft body (read-only) — no activate / enroll / send / preview-send","LEAD chip-lift-to-user-pill · FULL-FRAME HIT #1 = shot-transitions A white-flash (FlashCut, cut at local f45 on draft open) · OUT cut on downbeat to paper card","V6 19.8–21.9s “Follow-ups, drafted for your review.” (replaces landing line; G0)","AG"),
- ("S09","tc2-proof",3,"③ Climb","LIGHT paper title card #2: ‘11:00 AM — Proof before the *ladder* comes down.’","LEAD paper-title-card (light paper) · OUT rule collapse → cut on beat","— no VO (card breath)","GFX"),
- ("S10","photos-proof",6,"③ Climb","APP job record ‹JOB› (seeded Bluebonnet job) Gallery/Documents: seeded inspection photos fill; adjuster packet / photo report pops center, L-brackets, scan passes; damage tags exactly as LIVE renders them (LIVE-CHECK L10e — no landing photo sim)","LEAD scan-bracket-sweep · OUT card-flip-reveal (packet flips 180° Y → embed AGENT panel)","V7 24.7–27.3s “Photos sort themselves into an adjuster packet.” (LIVE-CHECK; alt V7b)","APP"),
- ("S11","cadis-embed",7,"③ Climb","EMB: app.rooferzs.com Dynamic Dashboard → AGENT side tab → panel ‘Agent · roofing · OpenBot · 8 tools for your role’; prompt typed in ‘Ask anything’ → plain-label tool cards stream ✓ → approval-gated write card (e.g. pin DFW Hail Cell → Crew Alpha) → cursor Approve (seeded demo write, G1-approved) → ≥15f completion still","LEAD ai-stream-response · IN card-flip-reveal · OUT shot-transitions F mask-wipe (reply row ‹JOB› grows into APP job record)","V8 27.8–30.6s “Ask CADIS. Every write waits for your approval.”","EMB"),
- ("S12","job-record",6,"③ Climb","APP master job record ‹JOB› — segmented thumb glides across the LIVE tab bar (tab names read at discovery; e.g. Overview → Documents → Estimating → Schedule); more air so the master record reads as the CRM hero","LEAD segmented-thumb-hero · IN mask-wipe · OUT focus hand-off (rail: Config Bot card)","V9 31.1–34.8s “One job record for every team — and margins stay private.”","APP"),
- ("S13","roles-config",4,"③ Climb","Config Bot seat (‘Branding, roles, permissions, tool selection’) → reply role cards stack (LIVE role labels, e.g. Admin · Manager · Sales rep · Technician) with tool/permission scope; embed header ‘8 tools for your role’ as proof chip","LEAD list-stack-press · IN focus hand-off · OUT D black (fade 8f)","(V9 tail — margin privacy LIVE-CHECK L10g)","AG"),
- ("S14","tc3-sign",3,"③ Climb","BLACK title card #2: ‘5:00 PM — One link. One *tap*.’","LEAD paper-title-card (D black variant) · IN/OUT D fades 8f","— no VO (card breath)","GFX"),
- ("S15","portal-update",6,"③ Climb","APP client portal / client link for ‹JOB› if live (milestones + approve/sign tap); else Project Management Bot (‘client updates’) drafts the homeowner update with milestone list inline — draft only, not sent","LEAD input-trigger-moves · cursor-performance · OUT wipe-transitions · clock-wipe (5:00 → 5:30)","V10 37.2–39.8s “Clients sign from one link. No login.” (LIVE-CHECK L10f; alt V10b)","APP"),
- ("S16","isol-upload",5,"③ Climb","Budget Bot seat (‘Scan and import ISOL; display editable numbers’) → seeded demo ISOL PDF for ‹JOB› attaches via composer paperclip → line items write in as editable rows (APP Estimating / JBC sheet if that is where they land)","LEAD document-typewriter-reveal · IN clock-wipe · OUT continuous PageCam glide (same page)","V11 40.2–42.0s “Drop the carrier scope.”","AG"),
- ("S17","jbc-numbers",4,"③ Climb","Display Bot inline stat tiles (or APP Estimating / JBC header): RCV ‹RCV› · ACV ‹ACV› · depreciation tile — LIVE values from ‹JOB›, rolled in","LEAD odometer-digit-roll · OUT in-camera into crash zoom","V12 42.6–44.3s “R-C-V and A-C-V, instantly.”","AG"),
- ("S18","margin-punch",2,"③ Climb","LIVE margin field for ‹JOB› (‹MARGIN›) punched to frame-filling close-up","LEAD crash-zoom-punch = FULL-FRAME HIT #2 (6f punch + 24f hold) · OUT in-camera ease-back into slow push","V13 44.6–45.9s “‹MARGIN› percent margin.” (spoken = live value)","APP"),
- ("S19","pm-approve",5,"③ Climb","APP Estimating / JBC approval state for ‹JOB› (LIVE label, e.g. ‘Awaiting PM approval’) → slow push toward the LIVE approve control; cursor clicks at apex (seeded demo write, G1-approved)","CAM tension C slow-push-in (1.00→1.12, Easing.in quad + vignette) · OUT zero-transition HARD CUT (release)","V14 46.3–47.4s “PM approves.” → total silence 47.6–48.0s","APP"),
- ("S20","pm-schedule",6,"③ Climb","Project Management Bot seat (‘Crew scheduling, client updates, materials’) → crew/material schedule inline, or APP PM schedule/Gantt; camera travels the week axis; bars pop (Crew Alpha tear-off, material delivery, dumpster — LIVE labels)","LEAD timeline-travel · IN hard cut · OUT (integration-hub-map flip is S21's entry)","V15 48.2–50.6s “Next morning, production's already scheduled.”","AG"),
- ("S21","integrations",4,"④ Launch","Page flips 180° → Integration Bot card at hub center; chips = connectors the LIVE tenant lists (Email · connected via Emailzs, + others shown in APP integrations settings); text chips only","LEAD integration-hub-map · OUT focus hand-off","V16 51.1–52.6s “Works with your stack.”","AG"),
- ("S22","pricing-trial",5,"④ Launch","‘14’ counts up → ‘-day free trial’ + confetti; plan row Growth · Storm Team (Most popular) · Enterprise — typographic GFX, no pricing-page screenshot","LEAD counter-confetti · OUT lights-down into outro stage","V17 53.1–55.2s “Fourteen days free. No credit card.”","GFX"),
- ("S23","outro",9,"④ Launch","LIVE crops fly in around wordmark: 8 rail cards (fan), storm polygon, door pin, Agent 1–4 chip, ‘draft’ follow-up row, Approve chip, job tab bar, role card, ‹RCV› tile, schedule bar, ‘Email · connected’ chip; crane + stage light; wordmark stamp (local f75) + CTA rooferzs.com · Get started free; hold ≥60f","LEAD outro-group-photo-launch · FULL-FRAME HIT #3 = wordmark stamp impact","V18 56.0–57.5s “Rooferzs. Storm to nail.” → silence/ music tail on hold","GFX"),
+ ("S01","kinetic-hook",4,"① Hook","Near-black gray-950; kinetic type cascade STORM → DOOR → JOB → MARGIN (sky accent on active word); locks to hook line ‘Storm to nail. One agent.’ — NO clock, NO Saturday, NO rain-diary","STACK kinetic-stamp×4 · letterspace-lock · near-black-vignette · micro-grain · OUT hard-cut","V1 0.3–1.6s “Storm to nail.”","GFX"),
+ ("S02","brand-claim",6,"① Hook","Wordmark “roof·erzs·.” materializes on gray-950 + subline ‘The Agentic Roofing CRM’ — hold ≥36f. Tagline ‘Same storm. Different Saturday.’ RETIRED from open","STACK letterspace-materialize · subline-fade · sky-dot-glint · OUT shot-transitions B dark-tunnel (push 10f → dark 6f → live agent shell rises 12f)","V2 2.2–4.4s “One agent. Eight bots.”","GFX"),
+ ("S03","rail-hero",5,"② Proof","LIVE agent.rooferzs.com (tenant bluebonnetpeakroofing): PageCam drift + spotlight locks AGENTIC ROOFING rail; DOF blurs empty chat; 8 bot cards cascade top→bottom; cursor bezier taps Storm Bot → punch-in; callout ‘8 BOTS · ONE AGENT’; footer ‘JH Jordan Hale’ sharp","STACK spotlight-hero-card · PC-drift · DOF · cascade-8 · cursor-bezier · tap-ripple · punch-in · callout · IN dark-tunnel · OUT in-camera glide right into Storm channel","V3 starts 5.0s “Rooferzs maps the impact zone live —”","AG"),
+ ("S04","storm-map",8,"② Proof","Storm Bot channel: inline live map — severity polygon over North Dallas metro (region-zoom, NOT continental); storm row ‘DFW Hail Cell — North Dallas · Hail — Severe · score 5’; crane-rise off chat bubble; Crew Alpha chip row-embed; callout score; DOF on composer; 15f rest","STACK crane-rise-reveal · polygon-trace · region-zoom-ndallas · row-embed · callout · DOF · IN glide · OUT TS D black fade 8f","V3 …9.4s “— and tags every lead inside it.” (LIVE-CHECK L3)","AG"),
+ ("S05","kc-storm-doors",3,"② Proof","PROMISE kinetic card (NOT a clock): ‘STORM → DOORS’ on near-black; sky arrow morph; rule converge — REPLACES ‘7:30 AM — Crews roll…’","STACK promise-stamp-STORM · arrow-morph · promise-stamp-DOORS · rule-converge · IN/OUT D fades 8f","— no VO (promise breath)","GFX"),
+ ("S06","door-knock",7,"② Proof","Canvassing Bot: inline door-pin map ZOOMED TO North Dallas neighborhood / street level with ≥4 visually distinct pins at Mockingbird, Preston, Coit, Legacy (continental US zoom = FAIL / L4b); cursor flyover pin→pin; open/pinned counter ticks; pin markers sized for 1080p contrast","STACK seat-cue · PC-drift · street-zoom-lock · pin-pop×4 · cursor-flyover · counter-tick · IN D fade-in · OUT TS E whip-pan 8f CameraMotionBlur","V4 13.0–15.8s “Reps log every door the second they knock.”","AG"),
+ ("S07","prospect-call",6,"② Proof","Prospecting Bot → seeded contact + (972) 555-xxxx phone chip pulse → radial ripple into Rooferzs Agent 1–4 → Callerzs campaign preview ‘Rooferzs Door Knock Follow-up · 9 AM–4 PM Central · not deployed — preview only, no live calls’; callout preview-only; DOF on rail","STACK phone-pulse · radial-ripple-phone-chips · campaign-slide · callout · DOF · IN whip-pan · OUT line-carry-transition","V5 16.4–17.8s “AI voices work the call list.” + 17.8–19.1s narrator silent (ripple on music; no voice sample)","AG"),
+ ("S08","email-drafts",6,"② Proof","Integration Bot → tool card ‘Checked email workflows’ → 9 ‘Roofing follow-up: …’ rows all draft (stagger); chip-lift ‘Post-inspection, no action’ → punch-in + FULL-FRAME HIT #1 white-flash → draft body read-only; callout ‘NOTHING SENDS WITHOUT YOU’ — no activate/enroll/send","STACK row-stagger · chip-lift-to-user-pill · punch-in · FlashCut HIT#1 · vignette-hold · callout · OUT hard-cut","V6 19.6–21.7s “Follow-ups, drafted for your review.”","AG"),
+ ("S09","kc-proof-job",3,"② Proof","PROMISE kinetic card (NOT a clock): ‘PROOF → JOB’; packet glyph morphs to job-record glyph — REPLACES ‘11:00 AM — Proof before the ladder…’","STACK promise-stamp-PROOF · glyph-morph · promise-stamp-JOB · letterspace · rule-collapse-out","— no VO (promise breath)","GFX"),
+ ("S10","photos-proof",6,"② Proof","APP seeded job ‹JOB› Gallery/Documents: non-empty inspection photos stagger-fill; adjuster packet pops center, L-brackets, scan sweeps; punch-in first tile; callout; DOF on sidebar (LIVE-CHECK L10 Gallery — no landing photo sim)","STACK gallery-stagger · L-brackets · scan-bracket-sweep · punch-in · callout · DOF · OUT card-flip-reveal","V7 24.5–27.1s “Photos sort themselves into an adjuster packet.”","APP"),
+ ("S11","cadis-embed",7,"② Proof","EMB: Dynamic Dashboard with Key Metrics NON-ZERO behind scrim (L9: Alerts, Leads, Pipeline, Jobs In Progress, Active Jobs all >0); AGENT panel ‘8 tools for your role’; prompt types → tool cards stream ✓ → approval card → cursor Approve → emerald check; callout ‘EVERY WRITE WAITS’; ≥15f still","STACK panel-slide · kpi-scrim-nonzero · typewriter · ai-stream-response · cursor-approve · emerald-pop · callout · IN card-flip · OUT TS F mask-wipe","V8 27.6–30.4s “Ask CADIS. Every write waits for your approval.”","EMB"),
+ ("S12","job-record",6,"② Proof","APP openable seeded job ‹JOB› — segmented thumb glides Overview → Documents → Estimating → Schedule; PageCam drift + punch-in on tab bar; callout ‘ONE MASTER JOB RECORD’ (L10)","STACK segmented-thumb-hero · PC-drift · punch-in · callout · IN mask-wipe · OUT focus hand-off (Config Bot)","V9 30.9–34.6s “One job record for every team — and margins stay private.”","APP"),
+ ("S13","roles-config",4,"② Proof","Config Bot → role cards stack (Admin · Manager · Sales rep · Technician) with scope chips ripple; proof chip ‘8 tools for your role’; callout margins-private","STACK list-stack-press · chip-ripple · proof-chip · callout · IN focus hand-off · OUT D black fade 8f","(V9 tail — margin privacy L10g)","AG"),
+ ("S14","kc-scope-margin",3,"② Proof","PROMISE kinetic card (NOT a clock): ‘SCOPE → MARGIN’ with % stamp impact between words — REPLACES ‘5:00 PM — One link. One tap.’","STACK promise-stamp-SCOPE · percent-stamp · promise-stamp-MARGIN · sky-flash-micro · IN/OUT D fades","— no VO (promise breath)","GFX"),
+ ("S15","portal-update",6,"② Proof","APP client portal / link for ‹JOB› (L10): milestones check stagger → cursor sign tap → emerald signed; callout ‘ONE LINK · NO LOGIN’; else PM Bot draft update (not sent). Seam OUT = mask-wipe/hard-cut (clock-wipe RETIRED)","STACK milestone-stagger · cursor-performance · emerald-pop · callout · PC-drift · OUT mask-wipe (no clock-wipe)","V10 37.0–39.6s “Clients sign from one link. No login.”","APP"),
+ ("S16","isol-upload",5,"② Proof","Budget Bot → seeded ISOL PDF attaches → line items typewriter as editable rows (Estimating/JBC); punch-in first rows; callout ‘DROP THE ISOL’","STACK paperclip-attach · document-typewriter-reveal · punch-in · callout · IN mask-wipe · OUT continuous PageCam glide","V11 40.0–41.8s “Drop the carrier scope.”","AG"),
+ ("S17","jbc-numbers",4,"② Proof","Display Bot / APP Estimating: RCV ‹RCV› + ACV ‹ACV› odometer rolls (non-zero seeded $); depreciation tile if live; callout ‘NO RE-ENTRY’","STACK odometer-rcv · odometer-acv · depreciation-fade · callout · OUT focus hand-off into margin","V12 42.4–44.1s “R-C-V and A-C-V, instantly.”","AG"),
+ ("S18","margin-punch",2,"② Proof","LIVE non-zero margin ‹MARGIN› for ‹JOB› — crash-zoom-punch FULL-FRAME HIT #2 (6f punch + 24f hold) + number overshoot + vignette crush","STACK crash-zoom-punch HIT#2 · number-overshoot · vignette-crush · OUT ease-back","V13 44.4–45.7s “‹MARGIN› percent margin.” (spoken = live value)","APP"),
+ ("S19","pm-approve",5,"② Proof","APP Estimating/JBC ‘Awaiting PM approval’ → slow-push-in 1.00→1.12 + vignette; cursor Approve at apex (seeded write); 12f silence; HARD CUT release","STACK tension-C slow-push · cursor-approve · silence-window · callout · OUT zero-transition HARD CUT","V14 46.1–47.2s “PM approves.” → silence 47.4–48.0s","APP"),
+ ("S20","pm-schedule",6,"② Proof","Project Management Bot / APP Gantt: timeline-travel week axis; bars pop (Crew Alpha tear-off, material, dumpster — LIVE labels); callout ‘NEXT AM · SCHEDULED’","STACK timeline-travel · bar-pop-stagger · PC-drift · callout · IN hard cut · OUT hub page-flip","V15 48.0–50.4s “Next morning, production's already scheduled.”","AG"),
+ ("S21","integrations",4,"③ Outcome","Page flips 180° → Integration Bot hub; live connector chips pop (Email · connected via Emailzs + APP integrations); callout ‘WORKS WITH YOUR STACK’","STACK integration-hub-map · connector-chip-pop · callout · OUT focus hand-off","V16 50.9–52.4s “Works with your stack.”","AG"),
+ ("S22","pricing-trial",5,"③ Outcome","‘14’ counts up → ‘-day free trial’ + confetti; plan row Growth · Storm Team (Most popular) · Enterprise — typographic GFX only","STACK counter-14 · confetti-burst · plan-row-stagger · most-popular-chip · OUT lights-down","V17 52.9–55.0s “Fourteen days free. No credit card.”","GFX"),
+ ("S23","outro-cta",9,"③ Outcome","LIVE crops fan around wordmark; crane + stage light; wordmark stamp FULL-FRAME HIT #3 (local f75); OVERSIZED CTA ‘rooferzs.com’ ≥72px + ‘Get started free’ — hold ≥60f (≥3s on CTA); soft ‘Built on Genius.’","STACK outro-group-photo · crane · particles · stamp HIT#3 · cta-oversized-rise · cta-get-started · hold-60f","V18 55.8–57.3s “Rooferzs. Storm to nail.” → silence/music tail","GFX"),
 ]
 def build():
     rows=[]; f=0
@@ -45,49 +48,56 @@ def build():
 if __name__=="__main__":
     rows=build()
     out=[]
-    out.append("# Rooferzs promo — timing skeleton (PRIMARY 60.0s · 1800f @ 30fps · 1920×1080)\n")
-    out.append("Generated 2026-10-05 from `.shots.py` (single source of truth; sum asserted = 1800f). "
+    out.append("# Rooferzs promo — timing skeleton V2 (PRIMARY 60.0s · 1800f @ 30fps · 1920×1080)\n")
+    out.append("Generated 2026-10-06 from `.shots.py` **V2 REWRITE** (single source of truth; sum asserted = 1800f). "
                "**Footage source = LIVE agentic surface**: agent.rooferzs.com (OpenBot, AGENTIC ROOFING 8-bot rail) + app.rooferzs.com signed-in product, tenant `bluebonnetpeakroofing` (Bluebonnet Peak Roofing, tenant 203) as **Jordan Hale**. No rooferzs.com marketing-demo textures. "
+               "**V2 grammar:** Linear/Stripe kinetic hook — NOT Saturday day-clock. Promise cards STORM→DOORS / PROOF→JOB / SCOPE→MARGIN replace time-of-day title cards. Dense stacked motion (≥100 instances — see `V2-EFFECTS-CATALOG.md`). "
                "Planning grid = **placeholder 120 BPM → 1 beat = 15f, 1 bar = 60f, 1 phrase (8 beats) = 120f**. "
                "Every cut sits on a beat of that grid; after the real BGM is analysed (Stage 6, librosa, `music-beat-sync.md`) the table is rewritten in `beatF(n)` and SFX re-pinned (S3).\n")
-    out.append("Legend: `LEAD` = the one motion technique that owns the shot (each used once as lead). `CAM` = camera grammar. IN/OUT = seam form (shot-transitions A–F / transition-travel / named cards). Transition frames are carved out of the adjacent shots' budgets, not added. "
+    out.append("Legend: `STACK` = dense Remotion motion instances on the shot (see V2-EFFECTS-CATALOG; LEAD-once law RETIRED). `CAM` = camera grammar. IN/OUT = seam form. Transition frames are carved out of adjacent shots' budgets, not added. "
                "**src**: `AG` agent.rooferzs.com standalone · `EMB` app.rooferzs.com AGENT embed panel · `APP` app.rooferzs.com product surface · `GFX` film-built graphic (no product footage). "
-               "`‹JOB›/‹RCV›/‹ACV›/‹MARGIN›` = values bound from the seeded Bluebonnet job at Stage 4 discovery (never landing numbers).\n")
+               "`‹JOB›/‹RCV›/‹ACV›/‹MARGIN›` = values bound from the seeded Bluebonnet job at Stage 4 discovery (never landing numbers). "
+               "**Killed in V2 open:** SAT·6:00 AM clock, ‘Same storm. Different Saturday.’, HUD Saturday clock, time-of-day paper cards, clock-wipe seam.\n")
     out.append("| shot | src | from_frame | duration_frames | duration_s | content | camera/transition | VO cue |")
     out.append("|---|---|---:|---:|---:|---|---|---|")
     for s,f0,d in rows:
         out.append(f"| {s[0]} `{s[1]}` | {s[7]} | {f0} | {d} | {d/FPS:.2f} | {s[4]} | {s[5]} | {s[6]} |")
     src={}
     for s,_,d in rows: src[s[7]]=src.get(s[7],0)+d
-    out.append(f"| **TOTAL** | — | — | **{sum(d for _,_,d in rows)}** | **{sum(d for _,_,d in rows)/FPS:.2f}** | 23 shots · 3 title cards (2 black) · 2 tension cams · 3 full-frame hits · all 8 rail bots on screen | | ~103 VO words (18 lines) |\n")
+    out.append(f"| **TOTAL** | — | — | **{sum(d for _,_,d in rows)}** | **{sum(d for _,_,d in rows)/FPS:.2f}** | 23 shots · 3 promise kinetic cards (no clocks) · dense STACK motion · 3 full-frame hits · all 8 rail bots on screen | | ~100 VO words (18 lines) |\n")
     out.append("## Footage-source budget\n")
     out.append("| src | frames | seconds | share |")
     out.append("|---|---:|---:|---:|")
     for k in ["AG","EMB","APP","GFX"]:
         out.append(f"| {k} | {src.get(k,0)} | {src.get(k,0)/FPS:.1f} | {100*src.get(k,0)/1800:.1f}% |")
-    out.append("\nAll product frames (AG + EMB + APP) are live captures; GFX = brand open, 3 title cards, trial card, outro stage (outro elements are live crops).\n")
+    out.append("\nAll product frames (AG + EMB + APP) are live captures; GFX = kinetic hook, brand claim, 3 promise cards, trial card, outro CTA stage (outro elements are live crops).\n")
     # segment summary
     seg={}
     for s,f0,d in rows: seg.setdefault(s[3],[f0,0]); seg[s[3]][1]+=d
-    out.append("## Segment budget (promo-energy-arc)\n")
+    out.append("## Segment budget (V2 SaaS launch arc)\n")
     out.append("| segment | frames | from–to | seconds | share | arc target |")
     out.append("|---|---:|---|---:|---:|---|")
-    tgt={"① Brand open":"8–12%","② Hero":"12–15%","③ Climb":"55–65%","④ Launch":"13–16%"}
+    tgt={"① Hook":"6–10% kinetic+brand, no UI","② Proof":"70–80% evidence ladder","③ Outcome":"12–16% stack+trial+CTA≥3s"}
     for k,(f0,d) in seg.items():
-        out.append(f"| {k} | {d} | {f0}–{f0+d} | {d/FPS:.1f} | {100*d/1800:.1f}% | {tgt[k]} |")
-    out.append("\nDeviation note: ③ runs ~67% (vs 55–65%) and ② ~10% because the brief requires all 12 features plus the 8-bot rail; logged in manifest §5.4.\n")
+        out.append(f"| {k} | {d} | {f0}–{f0+d} | {d/FPS:.1f} | {100*d/1800:.1f}% | {tgt.get(k,'—')} |")
+    out.append("\nV2 note: ① Hook replaces V1 Brand open (clock killed). ② Proof absorbs former Climb + Hero. ③ Outcome = Launch with oversized CTA hold.\n")
     out.append("## Beat-hit & key cue frames (absolute)\n")
     out.append("| cue | abs frame | time | beat # (120 BPM grid) | note |")
     out.append("|---|---:|---:|---:|---|")
-    cues=[("Brand wordmark lands (element-level)",96,"hold 96–150 (54f ≥ 36f)"),
+    cues=[("Hook lock ‘Storm to nail. One agent.’",42,"kinetic cascade settles"),
+          ("Brand wordmark lands (element-level)",96,"hold 96–150 (54f ≥ 36f)"),
           ("Dark-tunnel → live agent shell + 8-bot rail arrives",150,"B-form arrival into rail hero"),
           ("Storm Bot card tap → glide into live map",225,"element-level click into live map"),
+          ("Promise card STORM → DOORS",345,"replaces 7:30 AM clock card"),
+          ("L4b street-level pin lock (S06)",390,"North Dallas neighborhood; ≥4 pins"),
           ("HIT #1 white-flash (S08 open draft — read-only)",630,"FlashCut from=625, 5f each side"),
+          ("Promise card PROOF → JOB",675,"replaces 11:00 AM clock card"),
+          ("Promise card SCOPE → MARGIN",1065,"replaces 5:00 PM clock card"),
           ("HIT #2 crash-zoom-punch ‹MARGIN›",1335,"6f punch; strongest-hit candidate"),
           ("Silence window (pre-cut)",1428,"1428–1440 total silence"),
           ("Hard cut release → PM schedule",1440,"bar boundary"),
           ("Outro riser start",1665,"riser → impact → sparkle closing phrase"),
-          ("HIT #3 wordmark stamp",1740,"impact-deep-whoosh; hold 1740–1800 (60f)")]
+          ("HIT #3 wordmark stamp + CTA oversized",1740,"impact-deep-whoosh; hold 1740–1800 (60f ≥3s CTA)")]
     for n,fr,note in cues:
         out.append(f"| {n} | {fr} | {fr/FPS:.2f}s | {fr/BEAT:.0f} | {note} |")
     out.append("\nHit spacing: #1→#2 = 705f (47 beats), #2→#3 = 405f (27 beats) — both ≥16 beats (aesthetic-rules R4).\n")
@@ -97,10 +107,17 @@ if __name__=="__main__":
     for b,sid,p,a in [("Integration Bot","rooferzs-integration","S08 email drafts · S21 stack","S03, S23"),
                       ("Config Bot","rooferzs-config","S13 roles & permissions","S03, S23"),
                       ("Storm Bot","rooferzs-storm","S03 tap target · S04 live map","S23"),
-                      ("Canvassing Bot","rooferzs-canvassing","S06 door pins","S03, S23"),
+                      ("Canvassing Bot","rooferzs-canvassing","S06 door pins (L4b street-level)","S03, S23"),
                       ("Prospecting Bot","rooferzs-prospecting","S07 contact → call list","S03, S23"),
                       ("Budget Bot","rooferzs-budget","S16 ISOL import (→ S18/S19 APP budget)","S03, S23"),
                       ("Project Management Bot","rooferzs-project","S20 schedule · S15 fallback client update","S03, S23"),
                       ("Display Bot","rooferzs-display","S17 inline stat tiles","S03, S04 inline map render, S23")]:
         out.append(f"| {b} | `{sid}` | {p} | {a} |")
+    out.append("\n## V2 kill list (do not reintroduce)\n")
+    out.append("- SAT · 6:00 AM / Monday–Saturday day-clock open\n")
+    out.append("- ‘Same storm. Different Saturday.’ as S02 / VO open\n")
+    out.append("- Paper title cards that are only times of day (7:30 AM / 11:00 AM / 5:00 PM)\n")
+    out.append("- HUD Saturday clock device\n")
+    out.append("- clock-wipe seam (S15→S16)\n")
+    out.append("- LEAD-once-per-shot as house law (use STACK)\n")
     print("\n".join(out))

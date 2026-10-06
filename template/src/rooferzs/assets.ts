@@ -1,45 +1,135 @@
-// Rooferzs promo — LIVE capture slots + CSS page geometry (pageW fixed 1920 by PageCam).
-// Mirrors gos/assets.ts. EVERY slot is EMPTY until Stage 4 capture on the live surface
-// (agent.rooferzs.com / app.rooferzs.com, tenant bluebonnetpeakroofing, signed in as Jordan Hale).
-// Do NOT drop rooferzs.com marketing-demo screenshots or invented frames here.
-// When a capture lands: put the 2x PNG under public/rooferzs/, set `src` + measured `pageH`,
-// flip `ready: true`, and tune the PageCam keys in Scenes.tsx.
+// Rooferzs promo — LIVE capture slots + hybrid clips (V2 / L14 PASS 2026-10-06 CT).
+// Labels = landing product names only (no Budget 2.0). No generative-AI UI video.
 import type { ShotKey, ShotSrc } from './timing';
 
 export type CaptureSlot = {
-  src: string | null; // staticFile path, e.g. 'rooferzs/S03-rail-hero.png'
-  pageH: number; // CSS page height (measured at capture)
+  src: string | null;
+  pageH: number;
   ready: boolean;
   surface: ShotSrc;
-  target: string; // what the capture must show (zoom target / live chrome element)
+  target: string;
+  /** Optional L14 live clip under public/ (OffthreadVideo). */
+  clip?: string | null;
 };
 
-const slot = (surface: ShotSrc, target: string): CaptureSlot => ({
-  src: null,
-  pageH: 1080,
-  ready: false,
-  surface,
-  target,
-});
-
-/** Capture slots for every live (AG / EMB / APP) shot. GFX shots are film-built and have no slot. */
 export const ROOF_ASSETS = {
-  railHero: slot('AG', 'AGENTIC ROOFING 8-bot rail → Storm tap → "Active seat" helper line; JH Jordan Hale chip'),
-  stormMap: slot('AG', 'Storm channel inline live map: severity polygon North Dallas → storm row → Crew Alpha chip'),
-  doorKnock: slot('AG', 'Canvassing door-pin map (open vs pinned) for Crew Alpha; 3 seeded doors'),
-  prospectCall: slot('AG', 'Seeded contact + 555 phone chip → Agent 1–4 chips → campaign preview (not deployed)'),
-  emailDrafts: slot('AG', 'Email follow-ups table: 9 "Roofing follow-up" rows, status draft → open one (read-only)'),
-  photosProof: slot('APP', 'Job ‹JOB› Gallery/Documents → adjuster packet / photo report'),
-  cadisEmbed: slot('EMB', 'AGENT panel "8 tools for your role" → tool cards → approval card → Approve'),
-  jobRecord: slot('APP', 'Master job record ‹JOB› live tab bar'),
-  rolesConfig: slot('AG', 'Role cards with tool/permission scope (live role labels)'),
-  portalUpdate: slot('APP', 'Client portal / client link for ‹JOB› (fallback: drafted homeowner update)'),
-  isolUpload: slot('AG', 'Seeded ISOL PDF attach → editable line-item rows (Estimating / JBC)'),
-  jbcNumbers: slot('AG', 'RCV ‹RCV› · ACV ‹ACV› · depreciation tiles (live values)'),
-  marginPunch: slot('APP', 'Estimating / JBC margin field ‹MARGIN› close-up'),
-  pmApprove: slot('APP', 'Estimating / JBC approval state → live approve control'),
-  pmSchedule: slot('AG', 'Crew / material schedule week axis (live labels)'),
-  integrations: slot('AG', 'Connectors the live tenant lists (text chips only)'),
-} as const satisfies Partial<Record<ShotKey, CaptureSlot>>;
+  railHero: {
+    src: 'rooferzs/live/S03-rail-hero.png',
+    pageH: 1080,
+    ready: true,
+    surface: 'AG',
+    target: 'AGENTIC ROOFING 8-bot rail; JH Jordan Hale chip',
+  },
+  stormMap: {
+    // Prefer pins-overlay still when present (SW regional soft note mitigated).
+    src: 'rooferzs/live/S04-storm-map-pins-overlay.png',
+    pageH: 1080,
+    ready: true,
+    surface: 'AG',
+    target: 'Storm Tracker channel (L3 PASS — severity + pins overlay)',
+  },
+  doorKnock: {
+    src: 'rooferzs/live/S06-door-knock.png',
+    pageH: 1080,
+    ready: true,
+    surface: 'AG',
+    target: 'Canvassing · street-zoom door pins (L4/L14 PASS)',
+    clip: 'rooferzs/live/clip-door-pin-drop.webm',
+  },
+  prospectCall: {
+    src: 'rooferzs/live/S07-prospect-call.png',
+    pageH: 1080,
+    ready: true,
+    surface: 'AG',
+    target: 'Prospecting + Callerzs campaign preview (not deployed)',
+  },
+  emailDrafts: {
+    src: 'rooferzs/live/S08-email-drafts.png',
+    pageH: 1080,
+    ready: true,
+    surface: 'AG',
+    target: 'Integration Bot email follow-ups thread (read-only)',
+  },
+  photosProof: {
+    src: 'rooferzs/live/S10-photos-proof.png',
+    pageH: 1080,
+    ready: true,
+    surface: 'APP',
+    target: 'Jobs list fallback (job detail gallery not opened this pass)',
+  },
+  cadisEmbed: {
+    src: 'rooferzs/live/S11-cadis-embed.png',
+    pageH: 1080,
+    ready: true,
+    surface: 'EMB',
+    target: 'AGENT panel chat typing → CADIS Approve (L14 clip)',
+    clip: 'rooferzs/live/clip-chat-type.webm',
+  },
+  jobRecord: {
+    // Prefer BB-4121 financials job record still.
+    src: 'rooferzs/live/S12-job-record.png',
+    pageH: 1080,
+    ready: true,
+    surface: 'APP',
+    target: 'Master job record (BB-4121 financials)',
+  },
+  rolesConfig: {
+    src: 'rooferzs/live/S13-roles-config.png',
+    pageH: 1080,
+    ready: true,
+    surface: 'AG',
+    target: 'Config Bot roles reply',
+  },
+  portalUpdate: {
+    src: 'rooferzs/live/S15-portal-update.png',
+    pageH: 1080,
+    ready: true,
+    surface: 'AG',
+    target: 'PM Bot drafted client update (portal fallback)',
+  },
+  isolUpload: {
+    src: 'rooferzs/live/S16-isol-upload.png',
+    pageH: 1080,
+    ready: true,
+    surface: 'AG',
+    target: 'Budget Bot Estimating / JBC / ISOL thread',
+  },
+  jbcNumbers: {
+    src: 'rooferzs/live/S17-jbc-numbers.png',
+    pageH: 1080,
+    ready: true,
+    surface: 'AG',
+    target: 'Estimating / JBC RCV tile reveal (L14 clip)',
+    clip: 'rooferzs/live/clip-estimate-amount.webm',
+  },
+  marginPunch: {
+    src: 'rooferzs/live/S18-margin-punch.png',
+    pageH: 1080,
+    ready: true,
+    surface: 'AG',
+    target: 'Display tiles fallback for margin punch',
+  },
+  pmApprove: {
+    src: 'rooferzs/live/S19-pm-approve.png',
+    pageH: 1080,
+    ready: true,
+    surface: 'AG',
+    target: 'Estimating / JBC isol thread fallback for PM approve',
+  },
+  pmSchedule: {
+    src: 'rooferzs/live/S20-pm-schedule.png',
+    pageH: 1080,
+    ready: true,
+    surface: 'AG',
+    target: 'Project Management Bot schedule timeline',
+  },
+  integrations: {
+    src: 'rooferzs/live/S21-integrations.png',
+    pageH: 1080,
+    ready: true,
+    surface: 'AG',
+    target: 'Integration Bot connected tools',
+  },
+} satisfies Partial<Record<ShotKey, CaptureSlot>>;
 
 export type CaptureKey = keyof typeof ROOF_ASSETS;

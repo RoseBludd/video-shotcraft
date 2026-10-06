@@ -1,8 +1,5 @@
 // Rooferzs promo — shot map, copy, captions, SFX beats (60.0s @ 30fps, 1800f, 1920×1080).
-// Mirrors gos/timing.ts. Shot table GENERATED from the locked `.shots.py`
-// (projects/rooferzs-promo/2026-10-05, optimal lock 2026-10-05 17:19 CT) — see ./timing-table.md.
-// Planning grid = placeholder 120 BPM → 1 beat = 15f, 1 bar = 60f. Re-time in beatF(n) after
-// BGM analysis (Stage 6). Viewer-facing labels = landing / product names only.
+// V2 2026-10-06 CT: kinetic open + promise cards (Saturday clock killed). Labels = landing names only.
 
 export const FPS = 30;
 export const BEAT = 15; // frames per beat @ placeholder 120 BPM
@@ -67,13 +64,14 @@ export const ROOF_TOTAL = 1800;
   }
 }
 
+/** V2 promise cards (clock TC copy killed). Kept for docs / grep; Main uses KineticPromiseCard pairs. */
 export const TITLE_CARDS = {
-  tc1Crews: { text: '7:30 AM — Crews roll with the *route*.', variant: 'dark' },
-  tc2Proof: { text: '11:00 AM — Proof before the *ladder* comes down.', variant: 'light' },
-  tc3Sign: { text: '5:00 PM — One link. One *tap*.', variant: 'dark' },
+  tc1Crews: { text: 'STORM → *DOORS*', variant: 'dark' },
+  tc2Proof: { text: 'PROOF → *JOB*', variant: 'light' },
+  tc3Sign: { text: 'SCOPE → *MARGIN*', variant: 'dark' },
 } as const;
 
-// Brand tokens (film-built graphics only; live UI is never recolored). Manifest §3.
+// Brand tokens (film-built graphics only; live UI is never recolored).
 export const FIELD = '#030712'; // gray-950 stage
 export const RAISED = '#1f2937'; // gray-800
 export const HAIRLINE = '#374151'; // gray-700
@@ -85,15 +83,14 @@ export const STORM = '#f59e0b'; // amber-500 — storm/hail semantics only
 export const SUCCESS = '#059669'; // emerald-600 — approvals
 export const MUTED = '#9ca3af';
 
-/** Burned-in captions (pre-C1 placeholder copy; final rewrite after picture lock).
- * Rule §5.1: enter ≥8f after shot start, hold ≥40f, clear ≥6f before the cut.
- * Title cards (S05/S09/S14) and S18 carry no caption. Landing / product names only. */
+/** Burned-in captions. Landing / product names only. No Budget 2.0. No Saturday open. */
 const cap = (k: ShotKey, text: string) => {
   const s = ROOF_SHOTS[k];
   return { shot: s.id, from: s.from + 8, duration: s.duration - 14, text };
 };
 export const CAPTIONS = [
-  cap('coldOpen', 'SAT · 6:00 AM · HAIL · NORTH DALLAS, TX'),
+  cap('coldOpen', 'STORM TO NAIL · ONE AGENT'),
+  cap('brand', 'THE AGENTIC ROOFING CRM'),
   cap('railHero', 'AGENTIC ROOFING · 8 BOTS · ONE AGENT'),
   cap('stormMap', 'STORM TRACKER · IMPACT ZONE, LIVE · EVERY DOOR TIED TO A CREW'),
   cap('doorKnock', 'CANVASSING · EVERY DOOR, OPEN OR PINNED'),
@@ -114,41 +111,40 @@ export const CAPTIONS = [
 
 /** Full-frame hits (aesthetic-rules R4: ≤3, spaced ≥16 beats). */
 export const HITS = {
-  flash: 630, // HIT #1 white-flash on S08 draft open (FlashCut from 625, 5f each side)
+  flash: 630, // HIT #1 white-flash on S08 draft open
   crashZoom: 1335, // HIT #2 crash-zoom-punch ‹MARGIN› (S18)
   stamp: 1740, // HIT #3 outro wordmark stamp (S23 local f75)
 } as const;
 export const FLASH_CUTS = [HITS.flash] as const;
 
-/** Key cue frames (absolute) from timing-table.md. */
+/** Key cue frames (absolute). */
 export const CUES = {
   wordmarkLands: 96,
   railArrives: 150,
   stormTap: 225,
-  silenceStart: 1428, // 1428–1440 total silence
+  silenceStart: 1428,
   hardCut: 1440,
   outroRiser: 1665,
 } as const;
 
-/** Beat-pinned SFX. Only files present in public/audio are referenced; manifest assets not yet
- * licensed/imported (thunder/rain bed, mech flaps, impact-deep-whoosh, ui/switch-*) are TODO. */
+/** Beat-pinned SFX. Only files present in public/audio are referenced. */
 export const SFX: { from: number; src: string; volume: number; duration: number }[] = [
-  { from: 96, src: 'transition-soft.mp3', volume: 0.4, duration: 45 }, // wordmark lands
-  { from: 140, src: 'whoosh-big.mp3', volume: 0.4, duration: 45 }, // dark-tunnel → agent shell
-  { from: 240, src: 'whoosh-big.mp3', volume: 0.4, duration: 45 }, // S04 crane rise
-  { from: 345, src: 'swoosh-quick.mp3', volume: 0.4, duration: 30 }, // TC1
-  { from: 487, src: 'whoosh-fast.mp3', volume: 0.35, duration: 30 }, // S06 → S07 whip-pan
-  { from: 630, src: 'click-camera.mp3', volume: 0.6, duration: 30 }, // HIT #1 draft open
-  { from: 675, src: 'swoosh-quick.mp3', volume: 0.4, duration: 30 }, // TC2
-  { from: 830, src: 'keyboard.mp3', volume: 0.4, duration: 30 }, // S11 prompt typing (trimmed 30f)
-  { from: 1065, src: 'swoosh-quick.mp3', volume: 0.4, duration: 30 }, // TC3
-  { from: 1205, src: 'keyboard.mp3', volume: 0.35, duration: 44 }, // S16 ISOL write-in (trimmed 44f)
-  { from: 1335, src: 'transition-snap.mp3', volume: 0.5, duration: 30 }, // HIT #2 crash zoom
-  { from: 1424, src: 'click-camera.mp3', volume: 0.5, duration: 4 }, // S19 approve click at apex — must clear by 1428 (silence)
-  { from: 1530, src: 'whoosh-fast.mp3', volume: 0.4, duration: 30 }, // S21 page flip
-  { from: 1665, src: 'riser-cine.mp3', volume: 0.5, duration: 75 }, // outro riser
-  { from: 1740, src: 'impact-cine.mp3', volume: 0.55, duration: 60 }, // HIT #3 stamp (sub for impact-deep-whoosh)
-  { from: 1765, src: 'sparkle.mp3', volume: 0.3, duration: 35 }, // sparkle tail
+  { from: 96, src: 'transition-soft.mp3', volume: 0.4, duration: 45 },
+  { from: 140, src: 'whoosh-big.mp3', volume: 0.4, duration: 45 },
+  { from: 240, src: 'whoosh-big.mp3', volume: 0.4, duration: 45 },
+  { from: 345, src: 'swoosh-quick.mp3', volume: 0.4, duration: 30 },
+  { from: 487, src: 'whoosh-fast.mp3', volume: 0.35, duration: 30 },
+  { from: 630, src: 'click-camera.mp3', volume: 0.6, duration: 30 },
+  { from: 675, src: 'swoosh-quick.mp3', volume: 0.4, duration: 30 },
+  { from: 830, src: 'keyboard.mp3', volume: 0.4, duration: 30 },
+  { from: 1065, src: 'swoosh-quick.mp3', volume: 0.4, duration: 30 },
+  { from: 1205, src: 'keyboard.mp3', volume: 0.35, duration: 44 },
+  { from: 1335, src: 'transition-snap.mp3', volume: 0.5, duration: 30 },
+  { from: 1424, src: 'click-camera.mp3', volume: 0.5, duration: 4 },
+  { from: 1530, src: 'whoosh-fast.mp3', volume: 0.4, duration: 30 },
+  { from: 1665, src: 'riser-cine.mp3', volume: 0.5, duration: 75 },
+  { from: 1740, src: 'impact-cine.mp3', volume: 0.55, duration: 60 },
+  { from: 1765, src: 'sparkle.mp3', volume: 0.3, duration: 35 },
 ];
 
 /** `*word*` marks the accent (italic accent color) in title-card copy. */
